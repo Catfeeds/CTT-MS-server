@@ -17,7 +17,7 @@ Route::post('login','index/Auth/login');
 Route::rule('logout','index/Auth/logout');
 
 //权限认证，只允许post方式请求
-Route::rule('checkauth','index/Auth/checkAuth');
+Route::post('checkauth','index/Auth/checkAuth');
 
 //添加装维人员，只允许post请求
-Route::rule('staff/add','index/Staff/add');
+Route::post('staff/add','index/Staff/add');
