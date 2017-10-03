@@ -10,14 +10,22 @@
 // +----------------------------------------------------------------------
 use think\Route;
 
-//login页面
-Route::post('login','index/Auth/login');
+//权限认证Auth类
+Route::rule([
+    //logout页面
+    'logout' =>  'index/Auth/logout',
+    //login页面，只允许post请求
+    'login'  =>  ['index/Auth/login',['method'=>'post']],
+    //权限认证，只允许post方式请求
+    'checkauth' =>  ['index/Auth/checkAuth',['method'=>'post|get']],
+]);
 
-//logout页面
-Route::rule('logout','index/Auth/logout');
-
-//权限认证，只允许post方式请求
-Route::post('checkauth','index/Auth/checkAuth');
-
-//添加装维人员，只允许post请求
-Route::post('staff/add','index/Staff/add');
+//装维人员管理Staff控制器，只允许post请求
+Route::rule([
+    //添加装维人员
+    'staff/add'  =>  'index/Staff/add',
+    //查看所有装维人员
+    'staff/check' =>  'index/Staff/check',
+    //查看某个装维人员详情
+    'staff/detail' =>  'index/Staff/detail',
+]);

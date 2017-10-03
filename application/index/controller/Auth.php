@@ -81,7 +81,6 @@ class Auth extends Controller
 
         //认证成功，返回权限json列表
         $auth = \app\index\model\Auth::get(1);
-        echo $auth->hidden(['id'])->toJson();
-        return json(['state'=>'success','username'=>$user['username']]);
+        return json(['state'=>'success','username'=>$user['username']]+$auth->hidden(['id'])->toArray());
     }
 }

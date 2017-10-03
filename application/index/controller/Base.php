@@ -9,12 +9,16 @@
 namespace app\index\controller;
 use think\Controller;
 
-//除了Auth类，其他类都应继承Base类，用于检测根据cookie返回权限列表
+//除了Auth类，其他控制器类都应继承Base类，用于检测根据cookie返回权限列表
 class Base extends Controller
 {
     //Auth模型对象，用于检测权限
     protected $authList;
 
+    //Model模型对象，派生类应该实例化相应的Model类并赋值给$model
+    protected $model;
+
+    //构造方法通过检测cookie的值，判断登录是否非法；若合法，将赋值auth对象给$authList
     public function __construct(){
         parent::__construct();
         //允许ajax跨域
@@ -25,7 +29,6 @@ class Base extends Controller
             die(json_encode(['state'=>'error','message'=>'请先登录'],JSON_UNESCAPED_UNICODE));
         }
 
-
         //检测username是否正确
         $cookieUsername = cookie('username');
         $user = db('user')->where('cookie_username',$cookieUsername)->find();
@@ -33,7 +36,7 @@ class Base extends Controller
             die(json_encode(['state'=>'error','message'=>'该帐号已在其他地点登录'],JSON_UNESCAPED_UNICODE));
         }
 
-        //找到该用户对应的权限,赋值给$authList
+        //找到该用户对应的model的Auth对象,赋值给$authList
         $auth =  \app\index\model\Auth::get($user['id']);
         $this->authList = $auth;
     }
