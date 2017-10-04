@@ -18,6 +18,9 @@ class Base extends Controller
     //Model模型对象，派生类应该实例化相应的Model类并赋值给$model
     protected $model;
 
+    //Validate验证器对象，派生类应该实例化相应的Validate类并赋值给$validate
+    protected $validate;
+
     //构造方法通过检测cookie的值，判断登录是否非法；若合法，将赋值auth对象给$authList
     public function __construct(){
         parent::__construct();

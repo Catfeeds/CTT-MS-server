@@ -70,3 +70,1502 @@
 [ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000471s ]
 [ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.001652s ]
 [ sql ] [ SQL ] 0 [ RunTime:0.000577s ]
+---------------------------------------------------------------
+[ 2017-10-04T00:16:48+08:00 ] ::1 ::1 POST /CTT-MS-server/checkauth
+[ info ] localhost/CTT-MS-server/checkauth [运行时间：0.077701s][吞吐率：12.87req/s] [内存消耗：3,672.66kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => '*/*',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'referer' => 'http://localhost/CTT-MS/main.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=rng13e0ec0kmfvuma7qqg9jcc3; username=409449f571c1aa7cfac271b2ac2c3142',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ D:\wamp64\www\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001452s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.002056s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '409449f571c1aa7cfac271b2ac2c3142' LIMIT 1 [ RunTime:0.000798s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001203s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000696s ]
+---------------------------------------------------------------
+[ 2017-10-04T00:17:05+08:00 ] ::1 ::1 POST /CTT-MS-server/checkauth
+[ info ] localhost/CTT-MS-server/checkauth [运行时间：0.053666s][吞吐率：18.63req/s] [内存消耗：3,672.66kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => '*/*',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'referer' => 'http://localhost/CTT-MS/main.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=rng13e0ec0kmfvuma7qqg9jcc3; username=409449f571c1aa7cfac271b2ac2c3142',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ D:\wamp64\www\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000986s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001257s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '409449f571c1aa7cfac271b2ac2c3142' LIMIT 1 [ RunTime:0.000544s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001008s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000427s ]
+---------------------------------------------------------------
+[ 2017-10-04T00:17:08+08:00 ] ::1 ::1 POST /CTT-MS-server/checkauth
+[ info ] localhost/CTT-MS-server/checkauth [运行时间：0.052993s][吞吐率：18.87req/s] [内存消耗：3,672.66kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => '*/*',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'referer' => 'http://localhost/CTT-MS/main.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=rng13e0ec0kmfvuma7qqg9jcc3; username=409449f571c1aa7cfac271b2ac2c3142',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ D:\wamp64\www\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001084s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001245s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '409449f571c1aa7cfac271b2ac2c3142' LIMIT 1 [ RunTime:0.000445s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001183s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000674s ]
+---------------------------------------------------------------
+[ 2017-10-04T00:17:10+08:00 ] ::1 ::1 POST /CTT-MS-server/checkauth
+[ info ] localhost/CTT-MS-server/checkauth [运行时间：0.068131s][吞吐率：14.68req/s] [内存消耗：3,672.66kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => '*/*',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'referer' => 'http://localhost/CTT-MS/main.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=rng13e0ec0kmfvuma7qqg9jcc3; username=409449f571c1aa7cfac271b2ac2c3142',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ D:\wamp64\www\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001250s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001298s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '409449f571c1aa7cfac271b2ac2c3142' LIMIT 1 [ RunTime:0.000604s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001501s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000749s ]
+---------------------------------------------------------------
+[ 2017-10-04T00:21:19+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/add
+[ info ] localhost/CTT-MS-server/Staff/add [运行时间：0.064373s][吞吐率：15.53req/s] [内存消耗：3,666.43kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=rng13e0ec0kmfvuma7qqg9jcc3; username=409449f571c1aa7cfac271b2ac2c3142',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->add[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001780s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001112s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '409449f571c1aa7cfac271b2ac2c3142' LIMIT 1 [ RunTime:0.000651s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001030s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000635s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.001150s ]
+[ sql ] [ SQL ] 0 [ RunTime:0.000613s ]
+---------------------------------------------------------------
+[ 2017-10-04T00:21:34+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/add
+[ info ] localhost/CTT-MS-server/Staff/add [运行时间：0.055994s][吞吐率：17.86req/s] [内存消耗：3,666.43kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=rng13e0ec0kmfvuma7qqg9jcc3; username=409449f571c1aa7cfac271b2ac2c3142',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->add[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000874s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001074s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '409449f571c1aa7cfac271b2ac2c3142' LIMIT 1 [ RunTime:0.000493s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001657s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000506s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.000827s ]
+[ sql ] [ SQL ] 0 [ RunTime:0.000538s ]
+---------------------------------------------------------------
+[ 2017-10-04T00:22:15+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/add
+[ info ] localhost/CTT-MS-server/Staff/add [运行时间：0.063593s][吞吐率：15.72req/s] [内存消耗：3,666.40kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=rng13e0ec0kmfvuma7qqg9jcc3; username=409449f571c1aa7cfac271b2ac2c3142',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->add[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000968s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001481s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '409449f571c1aa7cfac271b2ac2c3142' LIMIT 1 [ RunTime:0.000456s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000887s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000474s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.000872s ]
+[ sql ] [ SQL ] 0 [ RunTime:0.000511s ]
+---------------------------------------------------------------
+[ 2017-10-04T00:22:18+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/add
+[ info ] localhost/CTT-MS-server/Staff/add [运行时间：0.061449s][吞吐率：16.27req/s] [内存消耗：3,666.40kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=rng13e0ec0kmfvuma7qqg9jcc3; username=409449f571c1aa7cfac271b2ac2c3142',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->add[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000838s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000998s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '409449f571c1aa7cfac271b2ac2c3142' LIMIT 1 [ RunTime:0.000451s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000833s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000544s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.002271s ]
+[ sql ] [ SQL ] 0 [ RunTime:0.000726s ]
+---------------------------------------------------------------
+[ 2017-10-04T00:22:34+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/add
+[ info ] localhost/CTT-MS-server/Staff/add [运行时间：0.069658s][吞吐率：14.36req/s] [内存消耗：3,666.01kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=rng13e0ec0kmfvuma7qqg9jcc3; username=409449f571c1aa7cfac271b2ac2c3142',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->add[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000947s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000995s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '409449f571c1aa7cfac271b2ac2c3142' LIMIT 1 [ RunTime:0.000510s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000900s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000518s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.000867s ]
+[ sql ] [ SQL ] 0 [ RunTime:0.000541s ]
+---------------------------------------------------------------
+[ 2017-10-04T00:22:35+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/add
+[ info ] localhost/CTT-MS-server/Staff/add [运行时间：0.059265s][吞吐率：16.87req/s] [内存消耗：3,666.01kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=rng13e0ec0kmfvuma7qqg9jcc3; username=409449f571c1aa7cfac271b2ac2c3142',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->add[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000809s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000887s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '409449f571c1aa7cfac271b2ac2c3142' LIMIT 1 [ RunTime:0.000486s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001423s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000540s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.001684s ]
+[ sql ] [ SQL ] 0 [ RunTime:0.000534s ]
+---------------------------------------------------------------
+[ 2017-10-04T11:00:10+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/add
+[ info ] localhost/CTT-MS-server/Staff/add [运行时间：0.723335s][吞吐率：1.38req/s] [内存消耗：2,182.49kb] [文件加载：44]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-04T11:00:16+08:00 ] ::1 ::1 POST /CTT-MS-server/login
+[ info ] localhost/CTT-MS-server/login [运行时间：0.509623s][吞吐率：1.96req/s] [内存消耗：3,269.52kb] [文件加载：52]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'login',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '36',
+  'cache-control' => 'max-age=0',
+  'origin' => 'http://localhost',
+  'upgrade-insecure-requests' => '1',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/CTT-MS/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'user1',
+  'password' => '123456',
+  'code' => '',
+)
+[ info ] [ RUN ] app\index\controller\Auth->login[ D:\wamp64\www\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001328s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001241s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `username` = 'user1' LIMIT 1 [ RunTime:0.000505s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `cookie_username`='0debd5908e475a6a21a29152c989afc3'  WHERE  `username` = 'user1' [ RunTime:0.000485s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `last_login_time`='2017-10-04 11:00:16'  WHERE  `username` = 'user1' [ RunTime:0.000390s ]
+---------------------------------------------------------------
+[ 2017-10-04T11:00:18+08:00 ] ::1 ::1 POST /CTT-MS-server/checkauth
+[ info ] localhost/CTT-MS-server/checkauth [运行时间：0.143752s][吞吐率：6.96req/s] [内存消耗：3,672.66kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => '*/*',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'referer' => 'http://localhost/CTT-MS/main.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=3ahn25185nlur1o1pc5135e646; username=0debd5908e475a6a21a29152c989afc3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ D:\wamp64\www\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001809s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001856s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '0debd5908e475a6a21a29152c989afc3' LIMIT 1 [ RunTime:0.000637s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001382s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000729s ]
+---------------------------------------------------------------
+[ 2017-10-04T11:00:36+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/add
+[ info ] localhost/CTT-MS-server/Staff/add [运行时间：0.421208s][吞吐率：2.37req/s] [内存消耗：3,737.68kb] [文件加载：61]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=3ahn25185nlur1o1pc5135e646; username=0debd5908e475a6a21a29152c989afc3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->add[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001128s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001069s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '0debd5908e475a6a21a29152c989afc3' LIMIT 1 [ RunTime:0.000577s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000875s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000516s ]
+[ error ] [0]类型错误: Argument 2 passed to app\index\controller\Manage::add() must be an instance of think\Validate, array given, called in D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php on line 36[D:\wamp64\www\CTT-MS-server\application\index\controller\Manage.php:23]
+---------------------------------------------------------------
+[ 2017-10-04T11:00:58+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/add
+[ info ] localhost/CTT-MS-server/Staff/add [运行时间：0.060333s][吞吐率：16.57req/s] [内存消耗：3,686.61kb] [文件加载：58]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=3ahn25185nlur1o1pc5135e646; username=0debd5908e475a6a21a29152c989afc3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->add[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001033s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000976s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '0debd5908e475a6a21a29152c989afc3' LIMIT 1 [ RunTime:0.000427s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000819s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001722s ]
+---------------------------------------------------------------
+[ 2017-10-04T11:00:59+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/add
+[ info ] localhost/CTT-MS-server/Staff/add [运行时间：0.058973s][吞吐率：16.96req/s] [内存消耗：3,686.61kb] [文件加载：58]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=3ahn25185nlur1o1pc5135e646; username=0debd5908e475a6a21a29152c989afc3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->add[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000898s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001994s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '0debd5908e475a6a21a29152c989afc3' LIMIT 1 [ RunTime:0.000447s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000805s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000559s ]
+---------------------------------------------------------------
+[ 2017-10-04T11:08:16+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/add
+[ info ] localhost/CTT-MS-server/Staff/add [运行时间：0.071339s][吞吐率：14.02req/s] [内存消耗：3,686.77kb] [文件加载：58]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=3ahn25185nlur1o1pc5135e646; username=0debd5908e475a6a21a29152c989afc3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->add[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002365s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001586s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '0debd5908e475a6a21a29152c989afc3' LIMIT 1 [ RunTime:0.000606s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000885s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000424s ]
+---------------------------------------------------------------
+[ 2017-10-04T11:10:45+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/add
+[ info ] localhost/CTT-MS-server/Staff/add [运行时间：0.071272s][吞吐率：14.03req/s] [内存消耗：3,717.16kb] [文件加载：59]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=3ahn25185nlur1o1pc5135e646; username=0debd5908e475a6a21a29152c989afc3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001069s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001481s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '0debd5908e475a6a21a29152c989afc3' LIMIT 1 [ RunTime:0.000397s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000852s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000383s ]
+[ error ] [0]致命错误: Class 'app\index\validate\Staff' not found[D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php:27]
+---------------------------------------------------------------
+[ 2017-10-04T11:10:46+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/add
+[ info ] localhost/CTT-MS-server/Staff/add [运行时间：0.074840s][吞吐率：13.36req/s] [内存消耗：3,717.16kb] [文件加载：59]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=3ahn25185nlur1o1pc5135e646; username=0debd5908e475a6a21a29152c989afc3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001020s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001039s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '0debd5908e475a6a21a29152c989afc3' LIMIT 1 [ RunTime:0.000469s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001069s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000455s ]
+[ error ] [0]致命错误: Class 'app\index\validate\Staff' not found[D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php:27]
+---------------------------------------------------------------
+[ 2017-10-04T11:11:02+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/add
+[ info ] localhost/CTT-MS-server/Staff/add [运行时间：0.060801s][吞吐率：16.45req/s] [内存消耗：3,687.16kb] [文件加载：58]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=3ahn25185nlur1o1pc5135e646; username=0debd5908e475a6a21a29152c989afc3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->add[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000998s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000878s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '0debd5908e475a6a21a29152c989afc3' LIMIT 1 [ RunTime:0.000509s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000807s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000502s ]
+---------------------------------------------------------------
+[ 2017-10-04T11:34:15+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/add
+[ info ] localhost/CTT-MS-server/Staff/add [运行时间：0.063336s][吞吐率：15.79req/s] [内存消耗：3,687.43kb] [文件加载：58]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=3ahn25185nlur1o1pc5135e646; username=0debd5908e475a6a21a29152c989afc3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->add[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001609s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001452s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '0debd5908e475a6a21a29152c989afc3' LIMIT 1 [ RunTime:0.000808s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001098s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000580s ]
+---------------------------------------------------------------
+[ 2017-10-04T11:34:30+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/add
+[ info ] localhost/CTT-MS-server/Staff/add [运行时间：0.058024s][吞吐率：17.23req/s] [内存消耗：3,687.42kb] [文件加载：58]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=3ahn25185nlur1o1pc5135e646; username=0debd5908e475a6a21a29152c989afc3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->add[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000890s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001132s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '0debd5908e475a6a21a29152c989afc3' LIMIT 1 [ RunTime:0.001108s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000921s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000520s ]
+---------------------------------------------------------------
+[ 2017-10-04T11:34:49+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/add
+[ info ] localhost/CTT-MS-server/Staff/add [运行时间：0.053902s][吞吐率：18.55req/s] [内存消耗：3,687.37kb] [文件加载：58]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=3ahn25185nlur1o1pc5135e646; username=0debd5908e475a6a21a29152c989afc3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->add[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000911s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001926s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '0debd5908e475a6a21a29152c989afc3' LIMIT 1 [ RunTime:0.000413s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000771s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000476s ]
+---------------------------------------------------------------
+[ 2017-10-04T11:35:37+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/add
+[ info ] localhost/CTT-MS-server/Staff/add [运行时间：0.057953s][吞吐率：17.26req/s] [内存消耗：3,693.42kb] [文件加载：59]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=3ahn25185nlur1o1pc5135e646; username=0debd5908e475a6a21a29152c989afc3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->add[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001007s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001029s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '0debd5908e475a6a21a29152c989afc3' LIMIT 1 [ RunTime:0.000514s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001832s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000527s ]
+---------------------------------------------------------------
+[ 2017-10-04T11:35:38+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/add
+[ info ] localhost/CTT-MS-server/Staff/add [运行时间：0.055670s][吞吐率：17.96req/s] [内存消耗：3,693.42kb] [文件加载：59]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=3ahn25185nlur1o1pc5135e646; username=0debd5908e475a6a21a29152c989afc3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->add[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000921s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000853s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '0debd5908e475a6a21a29152c989afc3' LIMIT 1 [ RunTime:0.000489s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000851s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000545s ]
+---------------------------------------------------------------
+[ 2017-10-04T11:37:58+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/check
+[ info ] localhost/CTT-MS-server/Staff/check [运行时间：0.060377s][吞吐率：16.56req/s] [内存消耗：3,696.58kb] [文件加载：59]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'check',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=3ahn25185nlur1o1pc5135e646; username=0debd5908e475a6a21a29152c989afc3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->check[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001101s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001918s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '0debd5908e475a6a21a29152c989afc3' LIMIT 1 [ RunTime:0.000559s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000854s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000647s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.000955s ]
+[ sql ] [ SQL ] SELECT * FROM `staff` [ RunTime:0.000547s ]
+---------------------------------------------------------------
+[ 2017-10-04T11:39:03+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/add
+[ info ] localhost/CTT-MS-server/Staff/add [运行时间：0.064865s][吞吐率：15.42req/s] [内存消耗：3,739.92kb] [文件加载：61]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=3ahn25185nlur1o1pc5135e646; username=0debd5908e475a6a21a29152c989afc3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->add[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002793s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001769s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '0debd5908e475a6a21a29152c989afc3' LIMIT 1 [ RunTime:0.000603s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001196s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000553s ]
+[ error ] [0]类型错误: Argument 3 passed to app\index\controller\Manage::add() must be of the type array, object given, called in D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php on line 43[D:\wamp64\www\CTT-MS-server\application\index\controller\Manage.php:23]
+---------------------------------------------------------------
+[ 2017-10-04T11:39:30+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/add
+[ info ] localhost/CTT-MS-server/Staff/add [运行时间：0.057741s][吞吐率：17.32req/s] [内存消耗：3,683.98kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=3ahn25185nlur1o1pc5135e646; username=0debd5908e475a6a21a29152c989afc3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->add[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001049s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001017s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '0debd5908e475a6a21a29152c989afc3' LIMIT 1 [ RunTime:0.000532s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000880s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000649s ]
+---------------------------------------------------------------
+[ 2017-10-04T11:40:25+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/add
+[ info ] localhost/CTT-MS-server/Staff/add [运行时间：0.056204s][吞吐率：17.79req/s] [内存消耗：3,684.01kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=3ahn25185nlur1o1pc5135e646; username=0debd5908e475a6a21a29152c989afc3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->add[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000964s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000997s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '0debd5908e475a6a21a29152c989afc3' LIMIT 1 [ RunTime:0.000439s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000931s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000534s ]
+---------------------------------------------------------------
+[ 2017-10-04T11:40:55+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/add
+[ info ] localhost/CTT-MS-server/Staff/add [运行时间：0.061753s][吞吐率：16.19req/s] [内存消耗：3,663.30kb] [文件加载：59]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=3ahn25185nlur1o1pc5135e646; username=0debd5908e475a6a21a29152c989afc3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->add[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002233s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000991s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '0debd5908e475a6a21a29152c989afc3' LIMIT 1 [ RunTime:0.000509s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000856s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000584s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.000872s ]
+[ sql ] [ SQL ] INSERT INTO `staff` (`name` , `sex` , `on_guard` , `idcard` , `area` , `phone` , `qq` , `sec_linkman` , `sec_phone` , `address` , `education` , `school` , `operator` , `emloyment_date` , `per_pic` , `idcard_front_pic` , `idcard_back_pic` , `remark`) VALUES ('赵浩云' , '男' , '是' , '510107199611014219' , '四川-雅安' , '18728193218' , '640246255' , NULL , NULL , NULL , NULL , NULL , 'Horol' , '2017-10-03' , '333' , '333' , '333' , NULL) [ RunTime:0.000560s ]
+---------------------------------------------------------------
+[ 2017-10-04T11:42:05+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/add
+[ info ] localhost/CTT-MS-server/Staff/add [运行时间：0.062048s][吞吐率：16.12req/s] [内存消耗：3,694.91kb] [文件加载：59]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=3ahn25185nlur1o1pc5135e646; username=0debd5908e475a6a21a29152c989afc3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->add[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000913s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001026s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '0debd5908e475a6a21a29152c989afc3' LIMIT 1 [ RunTime:0.000553s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000913s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000497s ]
+---------------------------------------------------------------
+[ 2017-10-04T11:42:07+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/add
+[ info ] localhost/CTT-MS-server/Staff/add [运行时间：0.061627s][吞吐率：16.23req/s] [内存消耗：3,694.91kb] [文件加载：59]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=3ahn25185nlur1o1pc5135e646; username=0debd5908e475a6a21a29152c989afc3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->add[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000981s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001011s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '0debd5908e475a6a21a29152c989afc3' LIMIT 1 [ RunTime:0.000513s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000851s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000654s ]
+---------------------------------------------------------------
+[ 2017-10-04T13:28:37+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/add
+[ info ] localhost/CTT-MS-server/Staff/add [运行时间：0.066877s][吞吐率：14.95req/s] [内存消耗：3,663.83kb] [文件加载：59]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'add',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=3ahn25185nlur1o1pc5135e646; username=0debd5908e475a6a21a29152c989afc3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->add[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001206s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001250s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '0debd5908e475a6a21a29152c989afc3' LIMIT 1 [ RunTime:0.000585s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000886s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000646s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.000911s ]
+[ sql ] [ SQL ] INSERT INTO `staff` (`name` , `sex` , `on_guard` , `idcard` , `area` , `phone` , `qq` , `sec_linkman` , `sec_phone` , `address` , `education` , `school` , `operator` , `emloyment_date` , `per_pic` , `idcard_front_pic` , `idcard_back_pic` , `remark`) VALUES ('赵浩云' , '男' , '是' , '510107199611014219' , '四川-雅安' , '18728193218' , '640246255' , NULL , NULL , NULL , NULL , NULL , 'Horol' , '2017-10-03' , '333' , '333' , '333' , NULL) [ RunTime:0.000651s ]
+---------------------------------------------------------------
+[ 2017-10-04T13:46:09+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/change
+[ info ] localhost/CTT-MS-server/Staff/change [运行时间：0.142167s][吞吐率：7.03req/s] [内存消耗：1,853.61kb] [文件加载：40]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'Staff',
+    1 => 'change',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=3ahn25185nlur1o1pc5135e646; username=0debd5908e475a6a21a29152c989afc3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-04T13:46:27+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/change
+[ info ] localhost/CTT-MS-server/Staff/change [运行时间：0.049763s][吞吐率：20.10req/s] [内存消耗：3,744.70kb] [文件加载：61]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'change',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=3ahn25185nlur1o1pc5135e646; username=0debd5908e475a6a21a29152c989afc3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->change[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001164s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001089s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '0debd5908e475a6a21a29152c989afc3' LIMIT 1 [ RunTime:0.000541s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000882s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000514s ]
+[ error ] [0]类型错误: Argument 3 passed to app\index\controller\Manage::change() must be of the type array, null given, called in D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php on line 58[D:\wamp64\www\CTT-MS-server\application\index\controller\Manage.php:42]
+---------------------------------------------------------------
+[ 2017-10-04T13:47:31+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/change
+[ info ] localhost/CTT-MS-server/Staff/change [运行时间：0.046846s][吞吐率：21.35req/s] [内存消耗：3,685.99kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'change',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=3ahn25185nlur1o1pc5135e646; username=0debd5908e475a6a21a29152c989afc3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->change[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001018s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001032s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '0debd5908e475a6a21a29152c989afc3' LIMIT 1 [ RunTime:0.000597s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000908s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000658s ]
+---------------------------------------------------------------
+[ 2017-10-04T13:47:32+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/change
+[ info ] localhost/CTT-MS-server/Staff/change [运行时间：0.042567s][吞吐率：23.49req/s] [内存消耗：3,685.99kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'change',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=3ahn25185nlur1o1pc5135e646; username=0debd5908e475a6a21a29152c989afc3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->change[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001217s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000946s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '0debd5908e475a6a21a29152c989afc3' LIMIT 1 [ RunTime:0.000487s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000860s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000529s ]
+---------------------------------------------------------------
+[ 2017-10-04T13:47:54+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/change
+[ info ] localhost/CTT-MS-server/Staff/change [运行时间：0.051994s][吞吐率：19.23req/s] [内存消耗：3,685.99kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'change',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=3ahn25185nlur1o1pc5135e646; username=0debd5908e475a6a21a29152c989afc3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->change[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001017s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001342s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '0debd5908e475a6a21a29152c989afc3' LIMIT 1 [ RunTime:0.000532s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000857s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000532s ]
+---------------------------------------------------------------
+[ 2017-10-04T13:47:55+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/change
+[ info ] localhost/CTT-MS-server/Staff/change [运行时间：0.043375s][吞吐率：23.05req/s] [内存消耗：3,685.99kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'change',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=3ahn25185nlur1o1pc5135e646; username=0debd5908e475a6a21a29152c989afc3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->change[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000933s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001056s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '0debd5908e475a6a21a29152c989afc3' LIMIT 1 [ RunTime:0.000587s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000825s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000552s ]
+---------------------------------------------------------------
+[ 2017-10-04T13:49:58+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/change
+[ info ] localhost/CTT-MS-server/Staff/change [运行时间：0.352253s][吞吐率：2.84req/s] [内存消耗：3,715.13kb] [文件加载：63]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'change',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=3ahn25185nlur1o1pc5135e646; username=0debd5908e475a6a21a29152c989afc3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->change[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001094s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001115s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '0debd5908e475a6a21a29152c989afc3' LIMIT 1 [ RunTime:0.000537s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000914s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000552s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.000849s ]
+[ error ] [10501]SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '3' for key 'PRIMARY'[D:\wamp64\www\CTT-MS-server\thinkphp\library\think\db\Connection.php:451]
+---------------------------------------------------------------
+[ 2017-10-04T13:56:19+08:00 ] ::1 ::1 GET /CTT-MS-server/Staff/change
+[ info ] localhost/CTT-MS-server/Staff/change [运行时间：0.146897s][吞吐率：6.81req/s] [内存消耗：3,754.98kb] [文件加载：62]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Staff',
+    2 => 'change',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=3ahn25185nlur1o1pc5135e646; username=0debd5908e475a6a21a29152c989afc3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Staff->change[ D:\wamp64\www\CTT-MS-server\application\index\controller\Staff.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001099s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001047s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '0debd5908e475a6a21a29152c989afc3' LIMIT 1 [ RunTime:0.000582s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000861s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000550s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `staff` [ RunTime:0.001086s ]
+[ sql ] [ SQL ] UPDATE `staff`  SET `name`='易铮',`sex`='男',`on_guard`='是',`idcard`='510107199611014219',`area`='四川-雅安',`phone`='18728193218',`qq`='640246255',`sec_linkman`=NULL,`sec_phone`=NULL,`address`=NULL,`education`=NULL,`school`=NULL,`operator`='Horol',`emloyment_date`='2017-10-03',`per_pic`='333',`idcard_front_pic`='333',`idcard_back_pic`='333',`remark`=NULL  WHERE  `id` = 3 [ RunTime:0.023034s ]

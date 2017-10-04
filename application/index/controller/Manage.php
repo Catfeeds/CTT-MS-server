@@ -8,24 +8,26 @@
 
 namespace app\index\controller;
 use Think\Model;
+use Think\Validate;
 
 //Manage类，提供添加，修改，查看，详细等的静态方法
 class Manage
 {
     /**
      * add方法：添加数据，需要对应的Model类和对应的同名Validate类进行验证
-     * @param Model $model 对应Model类
+     * @param Model $model 对应模型类
+     * @param Validate $validate 对应的验证器类
      * @param array $data  数据数组
      * @return string 成功信息或错误信息
      */
-    public static function add(Model $model,array $data){
-        //model添加数据
-        $result = $model->validate(true)->save($data);
-        if(false === $result){
-            // 验证失败 输出错误信息
-            return $model->getError();
+    public static function add(Model $model,Validate $validate,array $data){
+        //验证数据
+        if(!$validate->check($data)){
+            return ['error'=>$validate->getError()];
         }
-        return 'success';
+        //添加数据
+        $model->data($data)->allowField(true)->save();
+        return ['success'=>'添加成功'];
     }
 
     /**
@@ -37,8 +39,23 @@ class Manage
         return $model->where(1)->select();
     }
 
-    public static function change($var){
-        return  $var;
+    /**
+     * change方法：修改数据，需要对应的Model类和对应的同名Validate类进行验证
+     * @param Model $model 对应模型类
+     * @param Validate $validate 对应的验证器类
+     * @param array $data  数据数组
+     * @return string 成功信息或错误信息
+     */
+    public static function change(Model $model,Validate $validate,array $data){
+        //验证数据
+        if(!$validate->check($data)){
+            return ['error'=>$validate->getError()];
+        }
+        $id = $data['id'];
+        unset($data['id']);
+        //更新数据
+        $model->allowField(true)->save($data,['id'=>$id]);
+        return ['success'=>'修改成功'];
     }
 
 }

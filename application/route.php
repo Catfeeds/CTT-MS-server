@@ -27,5 +27,5 @@ Route::rule([
     //查看所有装维人员
     'staff/check' =>  'index/Staff/check',
     //查看某个装维人员详情
-    'staff/detail' =>  'index/Staff/detail',
+    'staff/change' =>  'index/Staff/change',
 ]);
