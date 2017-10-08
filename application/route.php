@@ -15,17 +15,27 @@ Route::rule([
     //logout页面
     'logout' =>  'index/Auth/logout',
     //login页面，只允许post请求
-    'login'  =>  ['index/Auth/login',['method'=>'post']],
+    'login'  =>  ['index/Auth/login',['method'=>'post|get']],
     //权限认证，只允许post方式请求
     'checkauth' =>  ['index/Auth/checkAuth',['method'=>'post|get']],
 ]);
 
-//装维人员管理Staff控制器，只允许post请求
+//装维人员管理，只允许post请求
 Route::rule([
     //添加装维人员
-    'staff/add'  =>  'index/Staff/add',
+    'staff/add'  =>  'index/StaffManage/add',
     //查看所有装维人员
-    'staff/check' =>  'index/Staff/check',
+    'staff/check' =>  'index/StaffManage/check',
     //查看某个装维人员详情
-    'staff/change' =>  'index/Staff/change',
+    'staff/change' =>  'index/StaffManage/change',
+    //删除某个装维人员
+    'staff/delete' => 'index/StaffManage/delete'
+]);
+
+//管理员员管理，只允许post请求
+Route::rule([
+    'User/add'  =>  'index/UserManage/add',
+    'User/check' =>  'index/UserManage/check',
+    'User/change' =>  'index/UserManage/change',
+    'User/delete' => 'index/UserManage/delete'
 ]);

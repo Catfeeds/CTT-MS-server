@@ -10,23 +10,27 @@ namespace app\index\controller;
 use think\Controller;
 use think\Session;
 use think\Cookie;
+use think\Request;
 
 class Auth extends Controller
 {
     //初始化方法，允许ajax跨域
     public function _initialize(){
-        header('Access-Control-Allow-Origin:*');
+        //允许ajax跨域
+        header("Access-Control-Allow-Credentials: true");
+        header('Access-Control-Allow-Origin:http://10.2.130.195:8000');
     }
 
     //登录，只允许post请求
     public function login($username,$password){
+
         if(!input('?username')||!input('?password')) return json(['state'=>'error','message'=>'帐号或密码不存在']);
 
         //检测帐号和密码
         $password = sha1(md5($password));
         $user = db('user')->where('username',$username)->find();
-        if(!$user) $this->error('用户名不存在');
-        if($user['password']!=$password) $this->error('密码错误');
+        if(!$user) return json(['state'=>'error','message'=>'帐号不存在']);
+        if($user['password']!=$password) return json(['state'=>'error','message'=>'密码错误']);
 
         //将当前ip写入session，每次操作时再检测是否为本ip
         $ip = get_proxy_ip();
@@ -37,11 +41,13 @@ class Auth extends Controller
         Cookie::set('username',$cookieUsername);
         db('user')->where('username',$username)->setField('cookie_username',$cookieUsername);
 
-        //记录登录时间
-        db('user')->where('username',$username)->setField('last_login_time',date('Y-m-d H:i:s'));
+        //记录登录时间，更新登出时间
+        $curDateTime = date('Y-m-d H:i:s');
+        db('user')->where('username',$username)->setField('last_login_time',$curDateTime);
+        db('user')->where('username',$username)->setField('last_logout_time',$curDateTime);
 
-        //跳转主页
-        return '<script type="text/javascript">window.location.href="/CTT-MS/main.html";</script>';
+        //登录成功，将cookieUsername的值返回前端
+        return json(['state'=>'success','message'=>$cookieUsername]);
     }
 
     //退出登录
@@ -59,7 +65,7 @@ class Auth extends Controller
             Session::clear();
             Cookie::set('username',null);
 
-            return '<script type="text/javascript">window.location.href="/CTT-MS/login.html";</script>';
+            return json(['state'=>'success','message'=>'注销成功']);
         }
     }
 

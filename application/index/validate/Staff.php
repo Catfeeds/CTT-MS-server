@@ -25,7 +25,7 @@ class Staff extends Validate
         'education'=>['max'=>20],
         'school'=>['max'=>50],
         'operator'=>['require','max'=>50],
-        'emloyment_date'=>['require','date'],
+        'employment_date'=>['require','date'],
         'per_pic'=>['require','max'=>200],
         'idcard_front_pic'=>['require','max'=>200],
         'idcard_back_pic'=>['require','max'=>200],
@@ -54,11 +54,11 @@ class Staff extends Validate
         'idcard.require'=>'身份证号不能为空',
         'area.require'=>'归属地区不能为空',
         'operator.require'=>'经办人员不能为空',
-        'emloyment_date.require'=>'入职时间不能为空',
+        'employment_date.require'=>'入职时间不能为空',
         'per_pic.require'=>'个人照片路径不能为空',
         'idcard_front_pic.require'=>'身份证正面照不能为空',
         'idcard_back_pic.require'=>'身份证背面照不能为空',
 
-        'emloyment_date.date'=>'入职时间格式错误'
+        'employment_date.date'=>'入职时间格式错误',
     ];
 }
