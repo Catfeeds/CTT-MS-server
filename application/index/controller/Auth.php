@@ -52,31 +52,31 @@ class Auth extends Controller
 
     //退出登录
     public function logout(){
-        //ajax请求时，说明是切换、关闭、刷新窗口时js发送的请求，只执行更新最后注销时间操作，而不修改cookie等，防止不能操作
-        //若不是ajax请求时，说明是点击注销的请求，执行所有注销操作
-        $cookieUsername = cookie('username');
+        //从cookie中或者请求参数中获取cookieUsername
+        $cookieUsername = cookie('?username')?cookie('username'):input('cookie');
+
         //更新最后注销时间
         db('user')->where('cookie_username',$cookieUsername)->setField('last_logout_time',date('Y-m-d H:i:s'));
-        if (!request()->isAjax()){
-            //清空数据库中对应的cookie_username项
-            db('user')->where('cookie_username',$cookieUsername)->setField('cookie_username',null);
 
-            //删除session和cookie
-            Session::clear();
-            Cookie::set('username',null);
+        //清空数据库中对应的cookie_username项
+        db('user')->where('cookie_username',$cookieUsername)->setField('cookie_username',null);
 
-            return json(['state'=>'success','message'=>'注销成功']);
-        }
+        //删除session和cookie
+        Session::clear();
+        Cookie::set('username',null);
+
+        return json(['state'=>'success','message'=>'注销成功']);
+
     }
 
     //根据cookie和session检测用户权限，只允许post请求
     public function checkAuth(){
         //检测cookie是否存在
-        if(!cookie('?username'))
+        if(!cookie('?username') && input('cookie')=='undefined')
             return json(['state'=>'error','message'=>'请先登录']);
 
         //检测username是否正确
-        $cookieUsername = cookie('username');
+        $cookieUsername = cookie('?username')?cookie('username'):input('cookie');
         $user = db('user')->where('cookie_username',$cookieUsername)->find();
         if(!$user)
             return json(['state'=>'error','message'=>'该帐号已在其他地点登录']);

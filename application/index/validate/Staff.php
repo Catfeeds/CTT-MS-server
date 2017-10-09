@@ -26,9 +26,9 @@ class Staff extends Validate
         'school'=>['max'=>50],
         'operator'=>['require','max'=>50],
         'employment_date'=>['require','date'],
-        'per_pic'=>['require','max'=>200],
-        'idcard_front_pic'=>['require','max'=>200],
-        'idcard_back_pic'=>['require','max'=>200],
+        'per_pic'=>['max'=>300],
+        'idcard_front_pic'=>['max'=>300],
+        'idcard_back_pic'=>['max'=>300],
     ];
     protected $message = [
         'name.max'=>'姓名不能超过20个字符',
@@ -44,9 +44,9 @@ class Staff extends Validate
         'education.max'=>'学历不能超过20个字符',
         'school.max'=>'毕业学校不能超过50个字符',
         'operator.max'=>'经办人员不能超过50个字符',
-        'per_pic.max'=>'个人照片路径不能超过200个字符',
-        'idcard_front_pic.max'=>'身份证正面照不能超过200个字符',
-        'idcard_back_pic.max'=>'身份证背面照不能超过200个字符',
+        'per_pic.max'=>'个人照片路径不能超过300个字符',
+        'idcard_front_pic.max'=>'身份证正面照不能超过300个字符',
+        'idcard_back_pic.max'=>'身份证背面照不能超过300个字符',
 
         'name.require'=>'装维人员姓名不能为空',
         'sex.require'=>'性别不能为空',
@@ -55,9 +55,6 @@ class Staff extends Validate
         'area.require'=>'归属地区不能为空',
         'operator.require'=>'经办人员不能为空',
         'employment_date.require'=>'入职时间不能为空',
-        'per_pic.require'=>'个人照片路径不能为空',
-        'idcard_front_pic.require'=>'身份证正面照不能为空',
-        'idcard_back_pic.require'=>'身份证背面照不能为空',
 
         'employment_date.date'=>'入职时间格式错误',
     ];

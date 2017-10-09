@@ -41,36 +41,19 @@ class Manage
         if(isset($pageinfo)){
             //如果有限制条件，则限制查询
             if(isset($limit)){
-                //$limit 参数示例
-//                $limit = [
-//                    'order'=>'id desc',
-//                    'condition'=>[
-//                        'where'=>['on_guard','是'],
-//                        'like'=>['area','%四川%'],
-//                        'between'=>['id',[1,8]]
-//                    ]
-//                ];
-
-                //查询示例
-//                $data = $model
-//                    ->where($limit['condition']['where'][0],$limit['condition']['where'][1])
-//                    ->where($limit['condition']['like'][0],'like',$limit['condition']['like'][1])
-//                    ->where($limit['condition']['between'][0],'between',$limit['condition']['between'][1])
-//                    ->page($pageinfo['curpage'],$pageinfo['pageinate'])
-//                    ->order($order)
-//                    ->select();
-                $order = isset($limit['order'])?$limit['order']:null;
+                $order = isset($limit['order'])?$limit['order']:'id';
 
                 //若排序条件为normal，则将$oeder赋值为null，默认顺序
                 $con = explode(' ',$order);
-                if(isset($con[1]) && $con[1]=='normal') $order=null;
+                if(isset($con[1]) && $con[1]=='normal') $order='id';
 
                 //计算符合条件的数据总条数
                 foreach ($limit['condition'] as $keyword=>$value){
-                    if($keyword=='where')
-                        if(isset($value[0])&&$value[1])
-                        $model = $model->where($value[0],$value[1]);
+                    if($keyword=='where'){
+                        if(isset($value[0])&&isset($value[1]))
+                            $model = $model->where($value[0],$value[1]);
                         else  $model = $model->where(1);
+                    }
                     else
                         $model = $model->where($value[0],$keyword,$value[1]);
                 }
@@ -93,11 +76,11 @@ class Manage
                 $data = $model->page($pageinfo['curpage'],$pageinfo['pageinate'])->select();
             }
             //计算符合条件的总页数
-            array_unshift($data,['pagecount'=>$dataCount]);
+            array_unshift($data,['datacount'=>$dataCount]);
             return $data;
         }else{
             //否则返回所有数据，分页、详情、条件查询等由js在前端完成
-            return $model->where(1)->select();
+            return $model->where(1)->order('id')->select();
         }
     }
 

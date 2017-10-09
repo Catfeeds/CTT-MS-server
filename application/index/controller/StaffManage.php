@@ -32,13 +32,38 @@ class StaffManage extends Base
 
     //添加装维人员
     public function add(){
-        //获取所有的请求变量
-//        $data = Request::instance()->param();
-        $json = '{"name":"如同i公布","sex":"女","on_guard":"是","idcard":"510107199611014219","area":"四川-雅安","phone":"18728193218","qq":"640246255","sec_linkman":null,"sec_phone":null,"address":null,"education":null,"school":null,"operator":"Horol","employment_date":"2017-10-03","per_pic":"333","idcard_front_pic":"333","idcard_back_pic":"333","remark":null}';
-        //将json转化为数组
-        $data = json_decode($json,true);
-
-
+        //获取所有的请求变量并验证
+        $data = Request::instance()->param();
+        $result = $this->validate($data,'Staff');
+        if(true !== $result){
+            // 验证失败 输出错误信息
+            return json(['state'=>'warning','message'=>$result]);
+        }
+        // 获取表单上传文件
+        $files = request()->file('img');
+        $i=0;
+        foreach($files as $file){
+            switch ($i){//判断图片相应的键名
+                case 0:
+                    $key = 'per_pic'; break;
+                case 1:
+                    $key = 'idcard_front_pic';break;
+                case 2:
+                    $key = 'idcard_back_pic';break;
+                default: $key = '';
+            }
+            $i++;
+            // 移动到框架应用根目录/public/staff/ 目录下
+            $path = ROOT_PATH . 'public' . DS . 'staff/'.$key.'/';
+            $info = $file->validate(['ext'=>'jpg,png,gif,jpeg,bmp'])->move($path);
+            if($info){
+                //将路径+文件名存入$data数组
+                $data[$key]=$path.$info->getSaveName();
+            }else{
+                // 上传失败获取错误信息
+                return json(['state'=>'warning','message'=>$file->getError()]);
+            }
+        }
         //使用Manage类的add静态方法验证、添加数据
         return json(Manage::add($this->model,$this->validate,$data));
     }
@@ -76,9 +101,54 @@ class StaffManage extends Base
 
     //修改装维人员信息
     public function change(){
-        $json = '{"id":"3","name":"易铮","sex":"男","on_guard":"是","idcard":"520107199611014219","area":"四川-雅安","phone":"18728193218","qq":"640246255","sec_linkman":null,"sec_phone":null,"address":null,"education":null,"school":null,"operator":"Horol","employment_date":"2017-10-03","per_pic":"333","idcard_front_pic":"333","idcard_back_pic":"333","remark":null}';
-        //将json转化为数组
-        $data = json_decode($json,true);
+        //获取所有的请求变量
+        $data = Request::instance()->param();
+        // 获取表单上传文件
+        if(isset($_FILES['per_pic']['name'])){
+            $file1 = request()->file('per_pic');
+            if($file1){
+                // 移动到框架应用根目录/public/staff/ 目录下
+                $path = ROOT_PATH . 'public' . DS . 'staff/per_pic/';
+                $info = $file1->validate(['ext'=>'jpg,png,gif,jpeg,bmp']) ->move($path);
+                if($info){
+                    //将路径+文件名存入$data数组
+                    $data['per_pic']=$path.$info->getSaveName();
+                }else{
+                    // 上传失败获取错误信息
+                    return json(['state'=>'warning','message'=>$file1->getError()]);
+                }
+            }
+        }
+        if(isset($_FILES['idcard_front_pic']['name'])){
+            $file2 = request()->file('idcard_front_pic');
+            if($file2){
+                // 移动到框架应用根目录/public/staff/ 目录下
+                $path = ROOT_PATH . 'public' . DS . 'staff/per_pic/';
+                $info = $file2->validate(['ext'=>'jpg,png,gif,jpeg,bmp']) ->move($path);
+                if($info){
+                    //将路径+文件名存入$data数组
+                    $data['per_pic']=$path.$info->getSaveName();
+                }else{
+                    // 上传失败获取错误信息
+                    return json(['state'=>'warning','message'=>$file2->getError()]);
+                }
+            }
+        }
+        if(isset($_FILES['idcard_back_pic']['name'])){
+            $file3 = request()->file('idcard_back_pic');
+            if($file3){
+                // 移动到框架应用根目录/public/staff/ 目录下
+                $path = ROOT_PATH . 'public' . DS . 'staff/idcard_back_pic/';
+                $info = $file3->validate(['ext'=>'jpg,png,gif,jpeg,bmp']) ->move($path);
+                if($info){
+                    //将路径+文件名存入$data数组
+                    $data['idcard_back_pic']=$path.$info->getSaveName();
+                }else{
+                    // 上传失败获取错误信息
+                    return json(['state'=>'warning','message'=>$file3->getError()]);
+                }
+            }
+        }
         //使用Manage类的change静态方法验证、修改数据
         return json(Manage::change($this->model,$this->validate,$data));
     }

@@ -33,8 +33,8 @@ class UserManage extends Base
     //添管理员
     public function add(){
         //获取所有的请求变量
-//        $data = Request::instance()->param();
-        $json = '[{"username":"002","password":"10470c3b4b1fed12c3baac014be15fac67c6e815","area":"雅安","name":"李四","sex":"男","phone":"13608178123","qq":null,"email":null,"address":null,"idcard":"510107199711014217"},
+        $json = Request::instance()->param('json');
+        $json = '[{"username":"003","password":"10470c3b4b1fed12c3baac014be15fac67c6e815","area":"雅安","name":"哈哈明","sex":"男","phone":"13608178123","qq":null,"email":null,"address":null,"idcard":"510107199711014217"},
         {"stuff_in":0,"stuff_out":0,"stuff_back":0,"stuff_leave":0,"stuff_use":0,"stuff_count":0,"stuff_inventory":0,"tool_in":0,"tool_out":0,"tool_back":0,"tool_leave":0,"tool_count":0,"tool_infoconsummate":0,"safty_in":0,"safty_out":0,"safty_back":0,"safty_count":0,"safty_infoconsummate":0,"staff_manage":1,"user_manage":1}]';
 
         //将json转化为数组
@@ -58,45 +58,62 @@ class UserManage extends Base
 
     //查找管理员
     public function check(){
-        //示例json
-//        $json = '{
-//                    "pageinfo":{"curpage":2,"pageinate":3},
-//                    "order":"id desc",
-//                    "condition":{
-//                                "where":["on_guard","是"],
-//                                "like":["area|name","%四川%"],
-//                                "between":["employment_date",["2017-10-01","2017-10-08"]]
-//                                }
-//                    }';
-//        $array = json_decode($json,true);
-//        $pageinfo = $array['pageinfo'];
-//        unset($array['pageinfo']);
-//        $limit = $array;
-        //使用Manage类的check静态方法
-        $staff = Manage::check($this->model);
-        //dump($staff);
-        //$auth = Manage::check(new \app\index\model\Auth());
-        $auth = [];
-//        foreach ($staff as $iterm){
-//           array_push($auth,$iterm['id']);
-//            dump($iterm);
-//        }
-        return json($staff);
+        //有参数的情况
+        $query = isset(Request::instance()->post(false)['query'])?Request::instance()->post(false)['query']:null;
+        if(!$query){
+            //示例json
+            $json = '{
+                    "pageinfo":{"curpage":1,"pageinate":1},
+                    "order":"id desc",
+                    "condition":{
+                                "where":[]
+                                }
+                    }';
+            //$json = $query;
+            $array = json_decode($json,true);
+            $pageinfo = $array['pageinfo'];
+            unset($array['pageinfo']);
+            $limit = $array;
+            //使用Manage类的check静态方法
+            if(empty($limit))
+                $staff = Manage::check($this->model,$pageinfo);
+            else
+                $staff = Manage::check($this->model,$pageinfo,$limit);
+        }
+        else  //没有参数的情况
+            $staff = Manage::check($this->model);
+
+        //根据返回数据中的id到Auth表中找到对应的权限数据
+        $tmp = $staff;
+        if(is_array($tmp[0])) array_shift($tmp);
+        $idList = [];
+        foreach($tmp as $key=>$user){
+            array_push($idList,$user->id);
+        }
+        $auth = \app\index\model\Auth::all($idList);
+
+        //将staff对象和auth对象分别转换成数组后合并
+        $staffWithAuth =  array_merge(json_decode(json_encode($staff),true),json_decode(json_encode($auth),true));
+        return json($staffWithAuth);
     }
 
     //修改管理员信息
     public function change(){
-        $json = '{"id":"1","username":"001","password":"10470c3b4b1fed12c3baac014be15fac67c6e815","area":"雅安","name":"李四","sex":"男","phone":"13608178123","qq":null,"email":null,"address":null,"idcard":"510107199711014217","cookie_username":"086cbfb4d2e91aeac1a16aa66162e85d","last_login_time":"2017-10-06 10:39:53","last_logout_time":"2017-10-06 10:39:53"}';
+        $json = '[{"id":"4","username":"003","password":"10470c3b4b1fed12c3baac014be15fac67c6e815","area":"雅安","name":"哈哈明","sex":"男","phone":"13608178123","qq":null,"email":null,"address":null,"idcard":"510107199711014217"},
+        {"id":"4","stuff_in":0,"stuff_out":0,"stuff_back":0,"stuff_leave":0,"stuff_use":0,"stuff_count":0,"stuff_inventory":0,"tool_in":0,"tool_out":0,"tool_back":0,"tool_leave":0,"tool_count":0,"tool_infoconsummate":0,"safty_in":0,"safty_out":0,"safty_back":0,"safty_count":0,"safty_infoconsummate":0,"staff_manage":1,"user_manage":1}]';
         //将json转化为数组
         $data = json_decode($json,true);
 
+        //修改权限
+        Manage::change(new \app\index\model\Auth(),new \app\index\validate\Auth(),$data[1]);
+
         //使用Manage类的change静态方法验证、修改数据
-        return json(Manage::change($this->model,$this->validate,$data));
+        return json(Manage::change($this->model,$this->validate,$data[0]));
     }
 
     //删除管理员
     public function delete(){
-        $id = range(2,11);
+        $id = input('id');
         //删除Auth表中的数据
         $result = Manage::delete(new \app\index\model\Auth(),$id);
         if($result['state']!='success')

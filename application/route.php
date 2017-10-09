@@ -11,13 +11,13 @@
 use think\Route;
 
 //权限认证Auth类
-Route::rule([
+Route::post([
     //logout页面
     'logout' =>  'index/Auth/logout',
     //login页面，只允许post请求
-    'login'  =>  ['index/Auth/login',['method'=>'post|get']],
+    'login'  =>  ['index/Auth/login',['method'=>'post']],
     //权限认证，只允许post方式请求
-    'checkauth' =>  ['index/Auth/checkAuth',['method'=>'post|get']],
+    'checkauth' =>  ['index/Auth/checkAuth',['method'=>'post']],
 ]);
 
 //装维人员管理，只允许post请求
@@ -34,8 +34,8 @@ Route::rule([
 
 //管理员员管理，只允许post请求
 Route::rule([
-    'User/add'  =>  'index/UserManage/add',
-    'User/check' =>  'index/UserManage/check',
-    'User/change' =>  'index/UserManage/change',
-    'User/delete' => 'index/UserManage/delete'
+    'user/add'  =>  'index/UserManage/add',
+    'user/check' =>  'index/UserManage/check',
+    'user/change' =>  'index/UserManage/change',
+    'user/delete' => 'index/UserManage/delete'
 ]);
