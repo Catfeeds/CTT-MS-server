@@ -34,8 +34,8 @@ class UserManage extends Base
     public function add(){
         //获取所有的请求变量
         $json = Request::instance()->param('json');
-        $json = '[{"username":"003","password":"10470c3b4b1fed12c3baac014be15fac67c6e815","area":"雅安","name":"哈哈明","sex":"男","phone":"13608178123","qq":null,"email":null,"address":null,"idcard":"510107199711014217"},
-        {"stuff_in":0,"stuff_out":0,"stuff_back":0,"stuff_leave":0,"stuff_use":0,"stuff_count":0,"stuff_inventory":0,"tool_in":0,"tool_out":0,"tool_back":0,"tool_leave":0,"tool_count":0,"tool_infoconsummate":0,"safty_in":0,"safty_out":0,"safty_back":0,"safty_count":0,"safty_infoconsummate":0,"staff_manage":1,"user_manage":1}]';
+//        $json = '[{"username":"003","password":"10470c3b4b1fed12c3baac014be15fac67c6e815","area":"雅安","name":"哈哈明","sex":"男","phone":"13608178123","qq":null,"email":null,"address":null,"idcard":"510107199711014217"},
+//        {"stuff_in":0,"stuff_out":0,"stuff_back":0,"stuff_leave":0,"stuff_use":0,"stuff_count":0,"stuff_inventory":0,"tool_in":0,"tool_out":0,"tool_back":0,"tool_leave":0,"tool_count":0,"tool_infoconsummate":0,"safty_in":0,"safty_out":0,"safty_back":0,"safty_count":0,"safty_infoconsummate":0,"staff_manage":1,"user_manage":1}]';
 
         //将json转化为数组
         $data = json_decode($json,true);
@@ -60,29 +60,26 @@ class UserManage extends Base
     public function check(){
         //有参数的情况
         $query = isset(Request::instance()->post(false)['query'])?Request::instance()->post(false)['query']:null;
-        if(!$query){
-            //示例json
-            $json = '{
-                    "pageinfo":{"curpage":1,"pageinate":1},
-                    "order":"id desc",
-                    "condition":{
-                                "where":[]
-                                }
-                    }';
-            //$json = $query;
-            $array = json_decode($json,true);
-            $pageinfo = $array['pageinfo'];
-            unset($array['pageinfo']);
-            $limit = $array;
-            //使用Manage类的check静态方法
-            if(empty($limit))
-                $staff = Manage::check($this->model,$pageinfo);
-            else
-                $staff = Manage::check($this->model,$pageinfo,$limit);
-        }
-        else  //没有参数的情况
-            $staff = Manage::check($this->model);
-
+        if(!$query)
+            return json(['state'=>'warning','message'=>'缺少查询条件']);
+        //示例json
+//            $json = '{
+//                    "pageinfo":{"curpage":1,"pageinate":1},
+//                    "order":"id desc",
+//                    "condition":{
+//                                "where":[]
+//                                }
+//                    }';
+        $json = $query;
+        $array = json_decode($json,true);
+        $pageinfo = $array['pageinfo'];
+        unset($array['pageinfo']);
+        $limit = $array;
+        //使用Manage类的check静态方法
+        if(empty($limit))
+            $staff = Manage::check($this->model,$pageinfo);
+        else
+            $staff = Manage::check($this->model,$pageinfo,$limit);
         //根据返回数据中的id到Auth表中找到对应的权限数据
         $tmp = $staff;
         if(is_array($tmp[0])) array_shift($tmp);

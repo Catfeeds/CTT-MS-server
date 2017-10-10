@@ -6,6 +6,6 @@ class Index extends Controller
 {
     public function index()
     {
-        return 'CTT-MS';
+       return dirname($_SERVER['SCRIPT_NAME']);
     }
 }

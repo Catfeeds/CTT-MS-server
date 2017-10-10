@@ -22,6 +22,9 @@ class Base extends Controller
     //Validate验证器对象，派生类应该实例化相应的Validate类并赋值给$validate
     protected $validate;
 
+    //cookie中的值
+    protected $cookieUsername;
+
     //构造方法通过检测cookie的值，判断登录是否非法；若合法，将赋值auth对象给$authList
     public function __construct(){
         parent::__construct();
@@ -29,12 +32,14 @@ class Base extends Controller
         header("Access-Control-Allow-Credentials: true");
         header('Access-Control-Allow-Origin:http://10.2.130.195:8000');
 
+        dump(input()); die;
         //检测cookie是否存在
         if(!cookie('?username') && (input('cookie')=='undefined'||input('cookie')==null))
             die(json_encode(['state'=>'error','message'=>'请先登录'],JSON_UNESCAPED_UNICODE));
 
         //检测username是否正确
         $cookieUsername = cookie('?username')?cookie('username'):input('cookie');
+        $this->cookieUsername = $cookieUsername;
         $user = db('user')->where('cookie_username',$cookieUsername)->find();
         if(!$user){
             die(json_encode(['state'=>'error','message'=>'该帐号已在其他地点登录'],JSON_UNESCAPED_UNICODE));

@@ -54,16 +54,19 @@ class StaffManage extends Base
             }
             $i++;
             // 移动到框架应用根目录/public/staff/ 目录下
-            $path = ROOT_PATH . 'public' . DS . 'staff/'.$key.'/';
+            $path = ROOT_PATH.'public'.DS.'staff/'.$key.'/';
             $info = $file->validate(['ext'=>'jpg,png,gif,jpeg,bmp'])->move($path);
             if($info){
                 //将路径+文件名存入$data数组
-                $data[$key]=$path.$info->getSaveName();
+                $data[$key]=dirname($_SERVER['SCRIPT_NAME']).DS.'public'.DS.'staff'.DS.$key.DS.$info->getSaveName();
             }else{
                 // 上传失败获取错误信息
                 return json(['state'=>'warning','message'=>$file->getError()]);
             }
         }
+        //通过cookie来找到当前管理员姓名
+        $operator = db('user')->where('cookie_username',$this->cookieUsername)->value('name');
+        $data['operator'] = $operator;
         //使用Manage类的add静态方法验证、添加数据
         return json(Manage::add($this->model,$this->validate,$data));
     }
@@ -108,7 +111,7 @@ class StaffManage extends Base
             $file1 = request()->file('per_pic');
             if($file1){
                 // 移动到框架应用根目录/public/staff/ 目录下
-                $path = ROOT_PATH . 'public' . DS . 'staff/per_pic/';
+                $path = dirname($_SERVER['SCRIPT_NAME']).DS. 'public' . DS . 'staff/per_pic/';
                 $info = $file1->validate(['ext'=>'jpg,png,gif,jpeg,bmp']) ->move($path);
                 if($info){
                     //将路径+文件名存入$data数组
@@ -123,7 +126,7 @@ class StaffManage extends Base
             $file2 = request()->file('idcard_front_pic');
             if($file2){
                 // 移动到框架应用根目录/public/staff/ 目录下
-                $path = ROOT_PATH . 'public' . DS . 'staff/per_pic/';
+                $path = dirname($_SERVER['SCRIPT_NAME']).DS. 'public' . DS . 'staff/per_pic/';
                 $info = $file2->validate(['ext'=>'jpg,png,gif,jpeg,bmp']) ->move($path);
                 if($info){
                     //将路径+文件名存入$data数组
@@ -138,7 +141,7 @@ class StaffManage extends Base
             $file3 = request()->file('idcard_back_pic');
             if($file3){
                 // 移动到框架应用根目录/public/staff/ 目录下
-                $path = ROOT_PATH . 'public' . DS . 'staff/idcard_back_pic/';
+                $path = dirname($_SERVER['SCRIPT_NAME']).DS. 'public' . DS . 'staff/idcard_back_pic/';
                 $info = $file3->validate(['ext'=>'jpg,png,gif,jpeg,bmp']) ->move($path);
                 if($info){
                     //将路径+文件名存入$data数组
@@ -149,6 +152,9 @@ class StaffManage extends Base
                 }
             }
         }
+        //通过cookie来找到当前管理员姓名
+        $operator = db('user')->where('cookie_username',$this->cookieUsername)->value('name');
+        $data['operator'] = $operator;
         //使用Manage类的change静态方法验证、修改数据
         return json(Manage::change($this->model,$this->validate,$data));
     }

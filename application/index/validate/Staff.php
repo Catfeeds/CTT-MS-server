@@ -24,7 +24,7 @@ class Staff extends Validate
         'address'=>['max'=>50],
         'education'=>['max'=>20],
         'school'=>['max'=>50],
-        'operator'=>['require','max'=>50],
+        'operator'=>['max'=>50],
         'employment_date'=>['require','date'],
         'per_pic'=>['max'=>300],
         'idcard_front_pic'=>['max'=>300],
@@ -53,7 +53,6 @@ class Staff extends Validate
         'on_guard.require'=>'是否在岗不能为空',
         'idcard.require'=>'身份证号不能为空',
         'area.require'=>'归属地区不能为空',
-        'operator.require'=>'经办人员不能为空',
         'employment_date.require'=>'入职时间不能为空',
 
         'employment_date.date'=>'入职时间格式错误',
