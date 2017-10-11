@@ -60,44 +60,78 @@ class UserManage extends Base
     public function check(){
         //有参数的情况
         $query = isset(Request::instance()->post(false)['query'])?Request::instance()->post(false)['query']:null;
-        if(!$query)
+        if($query)
             return json(['state'=>'warning','message'=>'缺少查询条件']);
-        //示例json
-//            $json = '{
-//                    "pageinfo":{"curpage":1,"pageinate":1},
-//                    "order":"id desc",
-//                    "condition":{
-//                                "where":[]
-//                                }
-//                    }';
         $json = $query;
+        //示例json
+        $json = '{
+        "pageinfo":{"curpage":1,"pageinate":2},
+        "order":"id desc",
+        "condition":{
+                    "like":["area","%雅%"]
+                    }
+        }';
         $array = json_decode($json,true);
         $pageinfo = $array['pageinfo'];
         unset($array['pageinfo']);
         $limit = $array;
-        //使用Manage类的check静态方法
-        if(empty($limit))
-            $staff = Manage::check($this->model,$pageinfo);
-        else
-            $staff = Manage::check($this->model,$pageinfo,$limit);
-        //根据返回数据中的id到Auth表中找到对应的权限数据
-        $tmp = $staff;
-        if(is_array($tmp[0])) array_shift($tmp);
-        $idList = [];
-        foreach($tmp as $key=>$user){
-            array_push($idList,$user->id);
+        $field = ['a.*','u.name','u.username','u.sex','u.area','u.phone','u.qq',
+                'u.email','u.address','u.idcard','u.last_login_time','u.last_logout_time',];
+        //join查询
+        if(empty($limit)){
+            $result = db('user')
+                ->alias('u')
+                ->join('auth a','a.uid=u.id')
+                ->field($field)
+                ->page($pageinfo['curpage'],$pageinfo['pageinate'])
+                ->select();
+            $result1 = db('user')
+                ->alias('u')
+                ->join('auth a','a.uid=u.id')
+                ->field($field);
+            $dataCount = count($result1->select());
         }
-        $auth = \app\index\model\Auth::all($idList);
-
-        //将staff对象和auth对象分别转换成数组后合并
-        $staffWithAuth =  array_merge(json_decode(json_encode($staff),true),json_decode(json_encode($auth),true));
-        return json($staffWithAuth);
+        //有查询条件
+        else{
+            $result = db('user')
+                ->alias('u')
+                ->join('auth a','a.uid=u.id')
+                ->field($field);
+            $result1 = db('user')
+                ->alias('u')
+                ->join('auth a','a.uid=u.id')
+                ->field($field);
+            $order = isset($limit['order'])?$limit['order']:'id';
+            //若排序条件为normal，则将$oeder赋值为null，默认顺序
+            $con = explode(' ',$order);
+            if(isset($con[1]) && $con[1]=='normal') $order='id';
+            foreach ($limit['condition'] as $keyword=>$value){
+                if($keyword=='where'){
+                    if(isset($value[0])&&isset($value[1])){
+                        $result = $result->where($value[0],$value[1]);
+                        $result1 = $result1->where($value[0],$value[1]);
+                    }
+                    else{
+                        $result = $result->where(1);
+                        $result1 = $result1->where(1);
+                    }
+                }
+                else{
+                    $result = $result->where($value[0],$keyword,$value[1]);
+                    $result1 = $result1->where($value[0],$keyword,$value[1]);
+                }
+            }
+            $result = $result ->order($order)->page($pageinfo['curpage'],$pageinfo['pageinate'])->select();
+            $dataCount = count($result1->select());
+        }
+        array_unshift($result,['datacount'=>$dataCount]);
+        return json($result);
     }
 
     //修改管理员信息
     public function change(){
         $json = '[{"id":"4","username":"003","password":"10470c3b4b1fed12c3baac014be15fac67c6e815","area":"雅安","name":"哈哈明","sex":"男","phone":"13608178123","qq":null,"email":null,"address":null,"idcard":"510107199711014217"},
-        {"id":"4","stuff_in":0,"stuff_out":0,"stuff_back":0,"stuff_leave":0,"stuff_use":0,"stuff_count":0,"stuff_inventory":0,"tool_in":0,"tool_out":0,"tool_back":0,"tool_leave":0,"tool_count":0,"tool_infoconsummate":0,"safty_in":0,"safty_out":0,"safty_back":0,"safty_count":0,"safty_infoconsummate":0,"staff_manage":1,"user_manage":1}]';
+        {"uid":"4","stuff_in":0,"stuff_out":0,"stuff_back":0,"stuff_leave":0,"stuff_use":0,"stuff_count":0,"stuff_inventory":0,"tool_in":0,"tool_out":0,"tool_back":0,"tool_leave":0,"tool_count":0,"tool_infoconsummate":0,"safty_in":0,"safty_out":0,"safty_back":0,"safty_count":0,"safty_infoconsummate":0,"staff_manage":1,"user_manage":1}]';
         //将json转化为数组
         $data = json_decode($json,true);
 

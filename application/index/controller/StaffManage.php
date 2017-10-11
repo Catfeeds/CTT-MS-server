@@ -107,49 +107,44 @@ class StaffManage extends Base
         //获取所有的请求变量
         $data = Request::instance()->param();
         // 获取表单上传文件
-        if(isset($_FILES['per_pic']['name'])){
-            $file1 = request()->file('per_pic');
-            if($file1){
-                // 移动到框架应用根目录/public/staff/ 目录下
-                $path = dirname($_SERVER['SCRIPT_NAME']).DS. 'public' . DS . 'staff/per_pic/';
-                $info = $file1->validate(['ext'=>'jpg,png,gif,jpeg,bmp']) ->move($path);
-                if($info){
-                    //将路径+文件名存入$data数组
-                    $data['per_pic']=$path.$info->getSaveName();
-                }else{
-                    // 上传失败获取错误信息
-                    return json(['state'=>'warning','message'=>$file1->getError()]);
-                }
+        $file1 = request()->file('per_pic');
+        if($file1){
+            // 移动到框架应用根目录/public/staff/ 目录下
+            $path = ROOT_PATH.'public' . DS . 'staff/per_pic/';
+            $info = $file1->validate(['ext'=>'jpg,png,gif,jpeg,bmp']) ->move($path);
+            if($info){
+                //将路径+文件名存入$data数组
+                $data['per_pic']=dirname($_SERVER['SCRIPT_NAME']).DS.'public'.DS.'staff'.DS.'per_pic'.DS.$info->getSaveName();
+            }else{
+                // 上传失败获取错误信息
+                return json(['state'=>'warning','message'=>$file1->getError()]);
             }
         }
-        if(isset($_FILES['idcard_front_pic']['name'])){
-            $file2 = request()->file('idcard_front_pic');
-            if($file2){
-                // 移动到框架应用根目录/public/staff/ 目录下
-                $path = dirname($_SERVER['SCRIPT_NAME']).DS. 'public' . DS . 'staff/per_pic/';
-                $info = $file2->validate(['ext'=>'jpg,png,gif,jpeg,bmp']) ->move($path);
-                if($info){
-                    //将路径+文件名存入$data数组
-                    $data['per_pic']=$path.$info->getSaveName();
-                }else{
-                    // 上传失败获取错误信息
-                    return json(['state'=>'warning','message'=>$file2->getError()]);
-                }
+        $file2 = request()->file('idcard_front_pic');
+        if($file2){
+            // 移动到框架应用根目录/public/staff/ 目录下
+            $path = ROOT_PATH.'public'. DS . 'staff/idcard_front_pic/';
+            $info = $file2->validate(['ext'=>'jpg,png,gif,jpeg,bmp']) ->move($path);
+            if($info){
+                //将路径+文件名存入$data数组
+                $data['idcard_front_pic']=dirname($_SERVER['SCRIPT_NAME']).DS.'public'.DS.'staff'.DS.'idcard_front_pic'.DS.$info->getSaveName();
+
+            }else{
+                // 上传失败获取错误信息
+                return json(['state'=>'warning','message'=>$file2->getError()]);
             }
         }
-        if(isset($_FILES['idcard_back_pic']['name'])){
-            $file3 = request()->file('idcard_back_pic');
-            if($file3){
-                // 移动到框架应用根目录/public/staff/ 目录下
-                $path = dirname($_SERVER['SCRIPT_NAME']).DS. 'public' . DS . 'staff/idcard_back_pic/';
-                $info = $file3->validate(['ext'=>'jpg,png,gif,jpeg,bmp']) ->move($path);
-                if($info){
-                    //将路径+文件名存入$data数组
-                    $data['idcard_back_pic']=$path.$info->getSaveName();
-                }else{
-                    // 上传失败获取错误信息
-                    return json(['state'=>'warning','message'=>$file3->getError()]);
-                }
+        $file3 = request()->file('idcard_back_pic');
+        if($file3){
+            // 移动到框架应用根目录/public/staff/ 目录下
+            $path = ROOT_PATH. 'public' . DS . 'staff/idcard_back_pic/';
+            $info = $file3->validate(['ext'=>'jpg,png,gif,jpeg,bmp']) ->move($path);
+            if($info){
+                //将路径+文件名存入$data数组
+                $data['idcard_back_pic']=dirname($_SERVER['SCRIPT_NAME']).DS.'public'.DS.'staff'.DS.'idcard_back_pic'.DS.$info->getSaveName();
+            }else{
+                // 上传失败获取错误信息
+                return json(['state'=>'warning','message'=>$file3->getError()]);
             }
         }
         //通过cookie来找到当前管理员姓名
