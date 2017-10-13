@@ -30,7 +30,6 @@ class UserManage extends Base
         }
     }
 
-
     //添管理员
     public function add(){
         //获取json
@@ -56,7 +55,6 @@ class UserManage extends Base
         //使用Manage类的add静态方法验证、添加user
         return json(Manage::add($this->model,$this->validate,$data[0]));
     }
-
 
     //查找管理员
     public function check(){
@@ -105,7 +103,6 @@ class UserManage extends Base
         }
         return json($staff);
     }
-
 
     //修改管理员信息
     public function change(){
