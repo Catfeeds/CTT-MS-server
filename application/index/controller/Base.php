@@ -8,7 +8,6 @@
 
 namespace app\index\controller;
 use think\Controller;
-use think\Request;
 
 //除了Auth类，其他控制器类都应继承Base类，用于检测根据cookie返回权限列表
 class Base extends Controller
@@ -31,6 +30,7 @@ class Base extends Controller
         //允许ajax跨域
         header("Access-Control-Allow-Credentials: true");
         header('Access-Control-Allow-Origin:http://10.2.130.195:8000');
+
 
         //检测cookie是否存在
         if(!cookie('?username') && (input('cookie')=='undefined'||input('cookie')==null))
