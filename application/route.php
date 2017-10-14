@@ -39,3 +39,16 @@ Route::rule([
     'user/change' =>  'index/UserManage/change',
     'user/delete' => 'index/UserManage/delete'
 ]);
+
+//地区管理
+Route::rule([
+    'area/add'  =>  'index/AreaManage/add',
+    'area/check' =>  'index/AreaManage/check',
+    'area/change' =>  'index/AreaManage/change',
+    'area/delete' => 'index/AreaManage/delete'
+]);
+
+//地区选择的查询
+Route::rule([
+    'areaquery' => 'index/AreaQuery/index'
+]);

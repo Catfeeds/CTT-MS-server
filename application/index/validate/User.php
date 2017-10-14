@@ -15,7 +15,7 @@ class User extends Validate
         'username'=>['require','max'=>50],
         'name'=>['require','max'=>20],
         'sex'=>['require','max'=>5],
-        'password'=>['require','max'=>200],
+        'password'=>['max'=>200],
         'idcard'=>['require','max'=>20],
         'area'=>['require','max'=>50],
         'phone'=>['max'=>20],
@@ -37,7 +37,6 @@ class User extends Validate
 
         'username.require'=>'员工编号不能为空',
         'name.require'=>'姓名不能为空',
-        'password.require'=>'密码不能为空',
         'sex.require'=>'性别不能为空',
         'idcard.require'=>'身份证号不能为空',
         'area.require'=>'归属地区不能为空',

@@ -32,8 +32,16 @@ class AreaManage extends Base
 
     //添加片区
     public function add(){
-        //获取所有的请求变量并验证
-        $data = Request::instance()->param();
+        $json = $_POST['json'];
+        $data = json_decode($json,true);
+        //查重
+        $result = db('area')
+            ->where('province',$data['province'])
+            ->where('city',$data['city'])
+            ->where('district',$data['district'])
+            ->find();
+        if($result)
+            return json(['state'=>'warning','message'=>'该片区已经存在']);
         //使用Manage类的add静态方法验证、添加数据
         return json(Manage::add($this->model,$this->validate,$data));
     }
@@ -44,15 +52,7 @@ class AreaManage extends Base
         $query = isset(Request::instance()->post(false)['query'])?Request::instance()->post(false)['query']:null;
         if($query){
             //示例json
-//            $json = '{
-//                    "pageinfo":{"curpage":2,"pageinate":3},
-//                    "order":"id desc",
-//                    "condition":{
-//                                "where":["on_guard","是"],
-//                                "like":["area|name","%四川%"],
-//                                "between":["employment_date",["2017-10-01","2017-10-08"]]
-//                                }
-//                    }';
+            //$json = '{"pageinfo":{"curpage":1,"pageinate":10},"order":"province desc"}';
             $json = $query;
             $array = json_decode($json,true);
             $pageinfo = $array['pageinfo'];
@@ -71,8 +71,16 @@ class AreaManage extends Base
 
     //修改地区信息
     public function change(){
-        //获取所有的请求变量
-        $data = Request::instance()->param();
+        $json = $_POST['json'];
+        $data = json_decode($json,true);
+        //查重
+        $result = db('area')
+            ->where('province',$data['province'])
+            ->where('city',$data['city'])
+            ->where('district',$data['district'])
+            ->find();
+        if($result)
+            return json(['state'=>'warning','message'=>'该片区已经存在']);
         //使用Manage类的change静态方法验证、修改数据
         return json(Manage::change($this->model,$this->validate,$data));
     }

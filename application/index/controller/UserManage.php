@@ -40,6 +40,7 @@ class UserManage extends Base
         //将json转化为数组
         $data = json_decode($json,true);
 
+
         //判断数据格式是否合法
         if(!isset($data[0])||!isset($data[1])) return '{"state":"warning","message":"非法数据格式"}';
 
@@ -109,8 +110,8 @@ class UserManage extends Base
         if(!isset($_POST['json']))
             return json(['state'=>'success','message'=>'没有更新信息']);
         $json = $_POST['json'];
-//        $json = '[{"id":"4","username":"003","password":"10470c3b4b1fed12c3baac014be15fac67c6e815","area":"雅安","name":"哈哈明","sex":"男","phone":"13608178123","qq":null,"email":null,"address":null,"idcard":"510107199711014217"},
-//        {"uid":"4","stuff_in":0,"stuff_out":0,"stuff_back":0,"stuff_leave":0,"stuff_use":0,"stuff_count":0,"stuff_inventory":0,"tool_in":0,"tool_out":0,"tool_back":0,"tool_leave":0,"tool_count":0,"tool_infoconsummate":0,"safty_in":0,"safty_out":0,"safty_back":0,"safty_count":0,"safty_infoconsummate":0,"staff_manage":1,"user_manage":1}]';
+//        $json = '[{"username":"004","name":"徐志雷","area":"湖北^宜昌^主城区","sex":"男","phone":"","qq":"","email":"","address":"","idcard":"1232134234","id":"9"},{"uid":9,"stuff_in":0,"stuff_out":0,"stuff_back":0,
+//        "stuff_leave":0,"stuff_use":0,"stuff_count":0,"stuff_inventory":0,"tool_in":0,"tool_out":0,"tool_back":0,"tool_leave":0,"tool_count":0,"tool_infoconsummate":0,"safty_in":0,"safty_out":0,"safty_back":0,"safty_count":0,"safty_infoconsummate":0,"staff_manage":1,"user_manage":1,"area_manage":0}]';
         //将json转化为数组
         $data = json_decode($json,true);
 

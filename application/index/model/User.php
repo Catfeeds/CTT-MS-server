@@ -11,7 +11,7 @@ use think\Model;
 
 class User extends Model
 {
-    //密码写入时自动加密
+    //密码新增、更改时自动加密
     protected $auto = ['password'];
     public function setPasswordAttr($value){
         return sha1(md5($value));
