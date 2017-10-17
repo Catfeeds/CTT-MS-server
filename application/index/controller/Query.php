@@ -9,10 +9,11 @@
 namespace app\index\controller;
 use think\Db;
 
-//该类用于地区选择的查询
-class AreaQuery extends Base
+//该类用于各种选择的查询
+class Query extends Base
 {
-    public function index(){
+    //查询存在的所有的地区
+    public function area(){
         $list = Db::table('area')->distinct(true)->field('province')->select();
         for ($i=0;$i<count($list);$i++){
            $city =  Db::table('area')
@@ -41,5 +42,25 @@ class AreaQuery extends Base
            $list[$i]['children'] = $city;
         }
        return json($list);
+    }
+
+    //查询某个地区所有的仓库
+    public function storehouse($area){
+        return json(db('storehouse')->where('area',$area)->column('name'));
+    }
+
+    //查询某个地区所有的班组
+    public function team($area){
+        return json(db('team')->where('area',$area)->column('name'));
+    }
+
+    //查询所有的材料大类
+    public function category(){
+        return json(db('category')->where(1)->column('name'));
+    }
+
+    //根据材料大类返回材料名称
+    public function stuff($category_name){
+        return json(db('stuff')->where('category_name',$category_name)->column('name'));
     }
 }

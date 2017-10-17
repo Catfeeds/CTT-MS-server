@@ -48,7 +48,26 @@ Route::rule([
     'area/delete' => 'index/AreaManage/delete'
 ]);
 
-//地区选择的查询
+//仓库管理
 Route::rule([
-    'areaquery' => 'index/AreaQuery/index'
+    'storehouse/add'  =>  'index/StorehouseManage/add',
+    'storehouse/check' =>  'index/StorehouseManage/check',
+    'storehouse/change' =>  'index/StorehouseManage/change',
+    'storehouse/delete' => 'index/StorehouseManage/delete'
+]);
+
+//班组管理
+Route::rule([
+    'team/add'  =>  'index/TeamManage/add',
+    'team/check' =>  'index/TeamManage/check',
+    'team/change' =>  'index/TeamManage/change',
+    'team/delete' => 'index/TeamManage/delete'
+]);
+
+//各种选择的查询
+Route::rule([
+    //地区查询
+    'areaquery' => 'index/Query/area',
+    'storehousequery' => 'index/Query/storehouse',
+    'teamquery' => 'index/Query/storehouse',
 ]);

@@ -62,3 +62,24 @@ function download($file_url,$new_name=''){
     echo fread($file_type,filesize($file_url));
     fclose($file_type);
 }
+
+/**
+ * 根据cookie查询user表中对应的数据
+ * @return array|false|PDOStatement|string|\think\Model
+ */
+function getUser(){
+    $cookieUsername = cookie('?username')?cookie('username'):input('cookie');
+    $user = db('user')->where('cookie_username',$cookieUsername)->find();
+    return $user;
+}
+
+/**
+ * 根据管理员姓名，找到对应user表中的数据；再根据user表中的area，找到对应的仓库数据
+ * @param $name
+ * @return array $storehouse
+ */
+function getStorehouse($name){
+    $user = db('user')->where('name',$name)->find();
+    $storehouse = db('storehouse')->where('area',$user['area'])->find();
+    return $storehouse;
+}

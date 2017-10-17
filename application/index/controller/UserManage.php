@@ -40,7 +40,6 @@ class UserManage extends Base
         //将json转化为数组
         $data = json_decode($json,true);
 
-
         //判断数据格式是否合法
         if(!isset($data[0])||!isset($data[1])) return '{"state":"warning","message":"非法数据格式"}';
 

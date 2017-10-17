@@ -9,44 +9,43 @@
 namespace app\index\controller;
 use think\Request;
 
-class AreaManage extends Base
+class StuffManage extends Base
 {
-    //检测该用户是否有地区管理权限
+    //检测该用户是否有物资名称管理权限
     public function __construct()
     {
         parent::__construct();
         //查询$authList中是否有该操作的权限
-        if($this->authList->area_manage == 0){
-            die(json_encode(['state'=>'warning','message'=>'没有片区管理权限'],JSON_UNESCAPED_UNICODE));
+        if($this->authList->stuff_manage == 0){
+            die(json_encode(['state'=>'warning','message'=>'没有物资名称管理权限'],JSON_UNESCAPED_UNICODE));
         }
 
-        //尝试实例化Area的模型类和验证器类，并且赋值给$model和$validate
+        //尝试实例化Stuff的模型类和验证器类，并且赋值给$model和$validate
         //若这两个类不存在，则抛出异常，返回错误信息
         try {
-            $this->model = new \app\index\model\Area();
-            $this->validate = new \app\index\validate\Area();
+            $this->model = new \app\index\model\Stuff();
+            $this->validate = new \app\index\validate\Stuff();
         }catch (Exception $e){
             die($e->getMessage());
         }
     }
 
-    //添加片区
+    //添加物资名称
     public function add(){
         $json = $_POST['json'];
         $data = json_decode($json,true);
         //查重
-        $result = db('area')
-            ->where('province',$data['province'])
-            ->where('city',$data['city'])
-            ->where('district',$data['district'])
+        $result = db('team')
+            ->where('name',$data['name'])
+            ->where('area',$data['area'])
             ->find();
         if($result)
-            return json(['state'=>'warning','message'=>'该片区已经存在']);
+            return json(['state'=>'warning','message'=>'该物资名称已经存在']);
         //使用Manage类的add静态方法验证、添加数据
         return json(Manage::add($this->model,$this->validate,$data));
     }
 
-    //查找的地区
+    //查找物资名称
     public function check(){
         //有参数的情况
         $query = isset(Request::instance()->post(false)['query'])?Request::instance()->post(false)['query']:null;
@@ -69,23 +68,22 @@ class AreaManage extends Base
         return json($staff);
     }
 
-    //修改地区信息
+    //修改物资名称
     public function change(){
         $json = $_POST['json'];
         $data = json_decode($json,true);
         //查重
-        $result = db('area')
-            ->where('province',$data['province'])
-            ->where('city',$data['city'])
-            ->where('district',$data['district'])
+        $result = db('team')
+            ->where('name',$data['name'])
+            ->where('area',$data['area'])
             ->find();
         if($result)
-            return json(['state'=>'warning','message'=>'该片区已经存在']);
+            return json(['state'=>'warning','message'=>'该物资名称已经存在']);
         //使用Manage类的change静态方法验证、修改数据
         return json(Manage::change($this->model,$this->validate,$data));
     }
 
-    //删除地区
+    //删除物资名称
     public function delete(){
         $id = input('id');
         return json(Manage::delete($this->model,$id));

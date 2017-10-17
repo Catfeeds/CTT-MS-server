@@ -37,9 +37,7 @@ class Base extends Controller
             die(json_encode(['state'=>'error','message'=>'请先登录'],JSON_UNESCAPED_UNICODE));
 
         //检测username是否正确
-        $cookieUsername = cookie('?username')?cookie('username'):input('cookie');
-        $this->cookieUsername = $cookieUsername;
-        $user = db('user')->where('cookie_username',$cookieUsername)->find();
+        $user = getUser();
         if(!$user){
             die(json_encode(['state'=>'error','message'=>'该帐号已在其他地点登录'],JSON_UNESCAPED_UNICODE));
         }
