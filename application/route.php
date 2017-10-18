@@ -64,10 +64,28 @@ Route::rule([
     'team/delete' => 'index/TeamManage/delete'
 ]);
 
+
+//材料大类管理
+Route::rule([
+    'category/add'  =>  'index/CategoryManage/add',
+    'category/check' =>  'index/CategoryManage/check',
+    'category/change' =>  'index/CategoryManage/change',
+    'category/delete' => 'index/CategoryManage/delete'
+]);
+
+//材料名称管理
+Route::rule([
+    'stuff/add'  =>  'index/StuffManage/add',
+    'stuff/check' =>  'index/StuffManage/check',
+    'stuff/change' =>  'index/StuffManage/change',
+    'stuff/delete' => 'index/StuffManage/delete'
+]);
+
 //各种选择的查询
 Route::rule([
-    //地区查询
-    'areaquery' => 'index/Query/area',
-    'storehousequery' => 'index/Query/storehouse',
-    'teamquery' => 'index/Query/storehouse',
+    'areaquery' => 'index/Query/area',    //地区查询
+    'storehousequery' => 'index/Query/storehouse',//仓库查询
+    'teamquery' => 'index/Query/team',//班组查询
+    'categoryquery' => 'index/Query/category',//材料大类查询
+    'stuffquery' => 'index/Query/stuff' //材料名称
 ]);

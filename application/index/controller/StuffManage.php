@@ -35,9 +35,8 @@ class StuffManage extends Base
         $json = $_POST['json'];
         $data = json_decode($json,true);
         //查重
-        $result = db('team')
-            ->where('name',$data['name'])
-            ->where('area',$data['area'])
+        $result = db('stuff')
+            ->where('stuff_name',$data['stuff_name'])
             ->find();
         if($result)
             return json(['state'=>'warning','message'=>'该物资名称已经存在']);
@@ -73,11 +72,11 @@ class StuffManage extends Base
         $json = $_POST['json'];
         $data = json_decode($json,true);
         //查重
-        $result = db('team')
-            ->where('name',$data['name'])
-            ->where('area',$data['area'])
-            ->find();
-        if($result)
+        $result = db('stuff')
+            ->where('id','neq',$data['id'])
+            ->where('stuff_name',$data['stuff_name'])
+            ->select();
+        if(count($result)>0)
             return json(['state'=>'warning','message'=>'该物资名称已经存在']);
         //使用Manage类的change静态方法验证、修改数据
         return json(Manage::change($this->model,$this->validate,$data));

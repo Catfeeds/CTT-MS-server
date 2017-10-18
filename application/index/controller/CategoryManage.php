@@ -35,9 +35,9 @@ class CategoryManage extends Base
         $json = $_POST['json'];
         $data = json_decode($json,true);
         //查重
-        $result = db('team')
-            ->where('name',$data['name'])
-            ->where('area',$data['area'])
+        $result = db('category')
+            ->where('category_name',$data['category_name'])
+            ->where('stuff_source',$data['stuff_source'])
             ->find();
         if($result)
             return json(['state'=>'warning','message'=>'该材料大类已经存在']);
@@ -73,9 +73,9 @@ class CategoryManage extends Base
         $json = $_POST['json'];
         $data = json_decode($json,true);
         //查重
-        $result = db('team')
-            ->where('name',$data['name'])
-            ->where('area',$data['area'])
+        $result = db('category')
+            ->where('category_name',$data['category_name'])
+            ->where('stuff_source',$data['stuff_source'])
             ->find();
         if($result)
             return json(['state'=>'warning','message'=>'该材料大类已经存在']);

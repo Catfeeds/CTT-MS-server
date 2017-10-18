@@ -5020,3 +5020,193 @@
 [ sql ] [ SQL ] UPDATE `user`  SET `cookie_username`='4e309a07cec93b11492e413ebf9b656f'  WHERE  `username` = '002' [ RunTime:0.000447s ]
 [ sql ] [ SQL ] UPDATE `user`  SET `last_login_time`='2017-10-17 22:01:54'  WHERE  `username` = '002' [ RunTime:0.000360s ]
 [ sql ] [ SQL ] UPDATE `user`  SET `last_logout_time`='2017-10-17 22:01:54'  WHERE  `username` = '002' [ RunTime:0.000370s ]
+---------------------------------------------------------------
+[ 2017-10-17T22:17:36+08:00 ] 10.2.130.178 10.5.105.36 POST /CTT-MS-server/login
+[ info ] 10.2.130.178/CTT-MS-server/login [运行时间：0.079006s][吞吐率：12.66req/s] [内存消耗：3,326.81kb] [文件加载：53]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'login',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '28',
+  'host' => '10.2.130.178',
+  'connection' => 'Keep-Alive',
+  'accept-encoding' => 'gzip',
+  'user-agent' => 'okhttp/3.9.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '002',
+  'password' => '123456',
+)
+[ info ] [ RUN ] app\index\controller\Auth->login[ D:\wamp64\www\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001552s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001892s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `username` = '002' LIMIT 1 [ RunTime:0.000881s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `cookie_username`='5a03bfa7ce3dbbcecaf37da6c049d05b'  WHERE  `username` = '002' [ RunTime:0.000748s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `last_login_time`='2017-10-17 22:17:36'  WHERE  `username` = '002' [ RunTime:0.000543s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `last_logout_time`='2017-10-17 22:17:36'  WHERE  `username` = '002' [ RunTime:0.000655s ]
+---------------------------------------------------------------
+[ 2017-10-17T22:21:39+08:00 ] 10.2.130.178 10.5.105.36 POST /CTT-MS-server/login
+[ info ] 10.2.130.178/CTT-MS-server/login [运行时间：0.062440s][吞吐率：16.02req/s] [内存消耗：3,320.95kb] [文件加载：52]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'login',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '19',
+  'host' => '10.2.130.178',
+  'connection' => 'Keep-Alive',
+  'accept-encoding' => 'gzip',
+  'user-agent' => 'okhttp/3.9.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '',
+  'password' => '',
+)
+[ info ] [ RUN ] app\index\controller\Auth->login[ D:\wamp64\www\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001090s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001147s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `username` = '' LIMIT 1 [ RunTime:0.000599s ]
+---------------------------------------------------------------
+[ 2017-10-17T22:21:55+08:00 ] 10.2.130.178 10.5.105.36 POST /CTT-MS-server/login
+[ info ] 10.2.130.178/CTT-MS-server/login [运行时间：0.069055s][吞吐率：14.48req/s] [内存消耗：3,320.95kb] [文件加载：52]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'login',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '19',
+  'host' => '10.2.130.178',
+  'connection' => 'Keep-Alive',
+  'accept-encoding' => 'gzip',
+  'user-agent' => 'okhttp/3.9.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '',
+  'password' => '',
+)
+[ info ] [ RUN ] app\index\controller\Auth->login[ D:\wamp64\www\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001133s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001089s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `username` = '' LIMIT 1 [ RunTime:0.000569s ]
+---------------------------------------------------------------
+[ 2017-10-17T22:22:04+08:00 ] 10.2.130.178 10.5.105.36 POST /CTT-MS-server/login
+[ info ] 10.2.130.178/CTT-MS-server/login [运行时间：0.126105s][吞吐率：7.93req/s] [内存消耗：3,326.81kb] [文件加载：53]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'login',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '28',
+  'host' => '10.2.130.178',
+  'connection' => 'Keep-Alive',
+  'accept-encoding' => 'gzip',
+  'user-agent' => 'okhttp/3.9.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '002',
+  'password' => '123456',
+)
+[ info ] [ RUN ] app\index\controller\Auth->login[ D:\wamp64\www\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001222s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001316s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `username` = '002' LIMIT 1 [ RunTime:0.000873s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `cookie_username`='1dd547a882359fce1f2b25e6f0038311'  WHERE  `username` = '002' [ RunTime:0.000722s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `last_login_time`='2017-10-17 22:22:04'  WHERE  `username` = '002' [ RunTime:0.001028s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `last_logout_time`='2017-10-17 22:22:04'  WHERE  `username` = '002' [ RunTime:0.001054s ]
+---------------------------------------------------------------
+[ 2017-10-17T22:22:20+08:00 ] 10.2.130.178 10.5.105.36 POST /CTT-MS-server/login
+[ info ] 10.2.130.178/CTT-MS-server/login [运行时间：0.072890s][吞吐率：13.72req/s] [内存消耗：3,326.81kb] [文件加载：53]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'login',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '28',
+  'host' => '10.2.130.178',
+  'connection' => 'Keep-Alive',
+  'accept-encoding' => 'gzip',
+  'user-agent' => 'okhttp/3.9.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '001',
+  'password' => '123456',
+)
+[ info ] [ RUN ] app\index\controller\Auth->login[ D:\wamp64\www\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001245s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001466s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `username` = '001' LIMIT 1 [ RunTime:0.000753s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `cookie_username`='09ad504a29938a870e98e3dbfac9c610'  WHERE  `username` = '001' [ RunTime:0.000595s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `last_login_time`='2017-10-17 22:22:20'  WHERE  `username` = '001' [ RunTime:0.000458s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `last_logout_time`='2017-10-17 22:22:20'  WHERE  `username` = '001' [ RunTime:0.000463s ]

@@ -56,7 +56,13 @@ class Query extends Base
 
     //查询所有的材料大类
     public function category(){
-        return json(db('category')->where(1)->column('name'));
+        $category = db('category')->where(1)->column('category_name');
+        $list = [];
+        foreach ($category as $value){
+            $tmp = ['value'=>$value,'label'=>$value];
+            array_push($list,$tmp);
+        }
+        return json($list);
     }
 
     //根据材料大类返回材料名称

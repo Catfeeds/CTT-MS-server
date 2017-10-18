@@ -67,6 +67,8 @@ class StaffManage extends Base
         //通过cookie来找到当前管理员姓名
         $operator = db('user')->where('cookie_username',$this->cookieUsername)->value('name');
         $data['operator'] = $operator;
+        //将手机号码加密后存入password字段
+        $data['password'] = sha1(md5($data['phone']));
         //使用Manage类的add静态方法验证、添加数据
         return json(Manage::add($this->model,$this->validate,$data));
     }
