@@ -39,6 +39,16 @@ class StaffManage extends Base
             // 验证失败 输出错误信息
             return json(['state'=>'warning','message'=>$result]);
         }
+
+        //查询装维人员是否已经存在
+        $result = db('staff')->where('name',$data['name'])->select();
+        if($result) return '{"state":"warning","message":"装维人员姓名姓名已存在"}';
+
+        //查询班组和对应的地区是否合法
+        $result0 = db('team')->where('name',$data['team'])->where('area',$data['area'])->select();
+        if(!$result0)
+            return '{"state":"warning","message":"所属班组或地址有误"}';
+
         // 获取表单上传文件
         $files = request()->file('img');
         $i=0;
@@ -108,6 +118,16 @@ class StaffManage extends Base
     public function change(){
         //获取所有的请求变量
         $data = Request::instance()->param();
+
+        //查询装维人员是否已经存在
+        $result = db('staff')->where('id','neq',$data['id'])->where('name',$data['name'])->select();
+        if($result) return '{"state":"warning","message":"装维人员姓名姓名已存在"}';
+
+        //查询班组和对应的地区是否合法
+        $result0 = db('team')->where('name',$data['team'])->where('area',$data['area'])->select();
+        if(!$result0)
+            return '{"state":"warning","message":"所属班组或地址有误"}';
+
         // 获取表单上传文件
         $file1 = request()->file('per_pic');
         if($file1){

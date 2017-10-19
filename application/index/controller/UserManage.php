@@ -47,6 +47,11 @@ class UserManage extends Base
         $result = db('user')->where('username',$data[0]['username'])->whereOr('name',$data[0]['name'])->select();
         if($result) return '{"state":"warning","message":"员工编号或姓名已存在"}';
 
+        //查询仓库和对应的地区是否合法
+        $result0 = db('sotrehouse')->where('name',$data[0]['storehouse'])->where('area',$data[0]['area'])->select();
+        if(!$result0)
+            return '{"state":"warning","message":"归属仓库或地址有误"}';
+
         //使用Manage类的add静态方法验证、添加auth
         $result1 =  Manage::add(new \app\index\model\Auth(),new \app\index\validate\Auth(),$data[1]);
         if($result1['state']!='success')
@@ -113,6 +118,15 @@ class UserManage extends Base
 //        "stuff_leave":0,"stuff_use":0,"stuff_count":0,"stuff_inventory":0,"tool_in":0,"tool_out":0,"tool_back":0,"tool_leave":0,"tool_count":0,"tool_infoconsummate":0,"safty_in":0,"safty_out":0,"safty_back":0,"safty_count":0,"safty_infoconsummate":0,"staff_manage":1,"user_manage":1,"area_manage":0}]';
         //将json转化为数组
         $data = json_decode($json,true);
+
+        //查询工号和管理员姓名是否已经存在
+        $result = db('user')->where('id','neq',$data[0]['id'])->where('username',$data[0]['username'])->whereOr('name',$data[0]['name'])->select();
+        if($result) return '{"state":"warning","message":"员工编号或姓名已存在"}';
+
+        //查询仓库和对应的地区是否合法
+        $result0 = db('sotrehouse')->where('name',$data[0]['storehouse'])->where('area',$data[0]['area'])->select();
+        if(!$result0)
+            return '{"state":"warning","message":"归属仓库或地址有误"}';
 
         //修改权限
         $result1 = Manage::change(new \app\index\model\Auth(),new \app\index\validate\Auth(),$data[1]);

@@ -118,5 +118,4 @@ class Manage
             return ['state'=>'warning','message'=>'删除失败'];
         }
     }
-
 }

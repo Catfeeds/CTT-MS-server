@@ -17,7 +17,7 @@ class StuffManage extends Base
         parent::__construct();
         //查询$authList中是否有该操作的权限
         if($this->authList->stuff_manage == 0){
-            die(json_encode(['state'=>'warning','message'=>'没有物资名称管理权限'],JSON_UNESCAPED_UNICODE));
+            die(json_encode(['state'=>'warning','message'=>'没有材料名称管理权限'],JSON_UNESCAPED_UNICODE));
         }
 
         //尝试实例化Stuff的模型类和验证器类，并且赋值给$model和$validate
@@ -39,7 +39,11 @@ class StuffManage extends Base
             ->where('stuff_name',$data['stuff_name'])
             ->find();
         if($result)
-            return json(['state'=>'warning','message'=>'该物资名称已经存在']);
+            return json(['state'=>'warning','message'=>'该材料名称已经存在']);
+        //验证材料大类是否真实存在
+        $result1 = db('category')->where('category_name',$data['category_name'])->find();
+        if(!$result1) return json(['state'=>'warning','message'=>'材料大类不存在']);
+
         //使用Manage类的add静态方法验证、添加数据
         return json(Manage::add($this->model,$this->validate,$data));
     }
@@ -77,7 +81,12 @@ class StuffManage extends Base
             ->where('stuff_name',$data['stuff_name'])
             ->select();
         if(count($result)>0)
-            return json(['state'=>'warning','message'=>'该物资名称已经存在']);
+            return json(['state'=>'warning','message'=>'该材料名称已经存在']);
+
+        //验证材料大类是否真实存在
+        $result1 = db('category')->where('category_name',$data['category_name'])->find();
+        if(!$result1) return json(['state'=>'warning','message'=>'材料大类不存在']);
+
         //使用Manage类的change静态方法验证、修改数据
         return json(Manage::change($this->model,$this->validate,$data));
     }

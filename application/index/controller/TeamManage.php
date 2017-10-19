@@ -34,6 +34,12 @@ class TeamManage extends Base
     public function add(){
         $json = $_POST['json'];
         $data = json_decode($json,true);
+
+        //查看地区是否真实存在
+        $result = db('area')->where('area',$data['area'])->find();
+        if(!$result)
+            return json(['state'=>'warning','message'=>'地区不存在']);
+
         //查重
         $result = db('team')
             ->where('name',$data['name'])
@@ -72,6 +78,12 @@ class TeamManage extends Base
     public function change(){
         $json = $_POST['json'];
         $data = json_decode($json,true);
+
+        //查看地区是否真实存在
+        $result = db('area')->where('area',$data['area'])->find();
+        if(!$result)
+            return json(['state'=>'warning','message'=>'地区不存在']);
+
         //查重
         $result = db('team')
             ->where('name',$data['name'])

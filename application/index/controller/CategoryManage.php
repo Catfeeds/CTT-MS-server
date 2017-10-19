@@ -74,10 +74,10 @@ class CategoryManage extends Base
         $data = json_decode($json,true);
         //查重
         $result = db('category')
+            ->where('id','neq',$data['id'])
             ->where('category_name',$data['category_name'])
-            ->where('stuff_source',$data['stuff_source'])
-            ->find();
-        if($result)
+            ->select();
+        if(count($result)>0)
             return json(['state'=>'warning','message'=>'该材料大类已经存在']);
         //使用Manage类的change静态方法验证、修改数据
         return json(Manage::change($this->model,$this->validate,$data));
