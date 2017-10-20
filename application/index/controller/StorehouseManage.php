@@ -36,8 +36,7 @@ class StorehouseManage extends Base
         $data = json_decode($json,true);
 
         //查看地区是否真实存在
-        $result = db('area')->where('area',$data['area'])->find();
-        if(!$result)
+        if(!Manage::checkArea($data['area']))
             return json(['state'=>'warning','message'=>'地区不存在']);
 
         //查重
@@ -52,7 +51,7 @@ class StorehouseManage extends Base
         return json(Manage::add($this->model,$this->validate,$data));
     }
 
-    //查找的地区
+    //查找仓库
     public function check(){
         //有参数的情况
         $query = isset(Request::instance()->post(false)['query'])?Request::instance()->post(false)['query']:null;
@@ -81,17 +80,27 @@ class StorehouseManage extends Base
         $data = json_decode($json,true);
 
         //查看地区是否真实存在
-        $result = db('area')->where('area',$data['area'])->find();
-        if(!$result)
+        if(!Manage::checkArea($data['area']))
             return json(['state'=>'warning','message'=>'地区不存在']);
 
         //查重
         $result = db('storehouse')
+            ->where('id','neq',$data['id'])
             ->where('name',$data['name'])
             ->where('area',$data['area'])
             ->find();
         if($result)
             return json(['state'=>'warning','message'=>'该仓库已经存在']);
+
+        //修改其他表中存放的仓库名
+        $tableList = ['user'];
+        $preStorehouse = db('storehouse')->where('id',$data['id'])->find();
+        foreach ($tableList as $table){
+            db($table)->where('storehouse',$preStorehouse['name'])->setField('storehouse',$data['name']);
+        }
+        //修改user表中的地址
+        db('user')->where('storehouse',$preStorehouse['name'])->setField('area',$data['area']);
+
         //使用Manage类的change静态方法验证、修改数据
         return json(Manage::change($this->model,$this->validate,$data));
     }
@@ -99,6 +108,13 @@ class StorehouseManage extends Base
     //删除仓库
     public function delete(){
         $id = input('id');
+        //查找其他表中是否有该仓库，若有则不能删除
+        $storehouse = db('storehouse')->where('id',$id)->find();
+        $tableList=['user'];
+        foreach ($tableList as $table){
+            $res = db($table)->where('storehouse',$storehouse['name'])->find();
+            if($res) return json(['state'=>'warning','message'=>'该仓库不能删除，因为在其它表中还存在该仓库']);
+        }
         return json(Manage::delete($this->model,$id));
     }
 }

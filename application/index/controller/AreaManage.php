@@ -81,6 +81,12 @@ class AreaManage extends Base
             ->find();
         if($result)
             return json(['state'=>'warning','message'=>'该片区已经存在']);
+
+        //修改其他表中area字段的值
+        $newArea = $data['province'].'^'.$data['city'].'^'.$data['district'];
+        $res = Manage::changeArea($data['id'],$newArea,['staff','user','team','storehouse']);
+        if(true!==$res) return json($res);
+
         //使用Manage类的change静态方法验证、修改数据
         return json(Manage::change($this->model,$this->validate,$data));
     }
@@ -88,6 +94,15 @@ class AreaManage extends Base
     //删除地区
     public function delete(){
         $id = input('id');
+        //检测其他表中是否还有该地区存在，若存在，则不能删除
+        $area = db('area')->where('id',$id)->find();
+        $areStr = $area['province'].'^'.$area['city'];
+        $tableList=['staff','user','team','storehouse'];
+        foreach ($tableList as $table){
+            $res = db($table)->where('area','like','%'.$areStr.'%')->find();
+            if($res) return json(['state'=>'warning','message'=>'该地区不能删除，因为在其它表中还存在该地区']);
+        }
+
         return json(Manage::delete($this->model,$id));
     }
 }

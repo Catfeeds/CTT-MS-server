@@ -34,8 +34,7 @@ class UserManage extends Base
     public function add(){
         //获取json
         $json = $_POST['json'];
-//        $json = '[{"username":"003","password":"10470c3b4b1fed12c3baac014be15fac67c6e815","area":"雅安","name":"哈哈明","sex":"男","phone":"13608178123","qq":null,"email":null,"address":null,"idcard":"510107199711014217"},
-//        {"stuff_in":0,"stuff_out":0,"stuff_back":0,"stuff_leave":0,"stuff_use":0,"stuff_count":0,"stuff_inventory":0,"tool_in":0,"tool_out":0,"tool_back":0,"tool_leave":0,"tool_count":0,"tool_infoconsummate":0,"safty_in":0,"safty_out":0,"safty_back":0,"safty_count":0,"safty_infoconsummate":0,"staff_manage":1,"user_manage":1}]';
+        //$json = '[{"username":"007","name":"11","password":"111","confirm_password":"111","area":"四川^雅安^雨城区","storehouse":"雅安主仓","sex":"男","phone":"111","qq":"","email":"","address":"","idcard":"111"},{"stuff_in":"0","stuff_out":"0","stuff_back":"0","stuff_leave":"0","stuff_use":"0","stuff_count":"0","stuff_inventory":"0","tool_in":"0","tool_out":"0","tool_back":"0","tool_leave":"0","tool_count":"0","tool_infoconsummate":"0","safty_in":"0","safty_out":"1","safty_back":"0","safty_count":"0","safty_infoconsummate":"0","staff_manage":"1","user_manage":"0"}]';
 
         //将json转化为数组
         $data = json_decode($json,true);
@@ -48,7 +47,7 @@ class UserManage extends Base
         if($result) return '{"state":"warning","message":"员工编号或姓名已存在"}';
 
         //查询仓库和对应的地区是否合法
-        $result0 = db('sotrehouse')->where('name',$data[0]['storehouse'])->where('area',$data[0]['area'])->select();
+        $result0 = db('storehouse')->where('name',$data[0]['storehouse'])->where('area',$data[0]['area'])->select();
         if(!$result0)
             return '{"state":"warning","message":"归属仓库或地址有误"}';
 

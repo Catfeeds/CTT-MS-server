@@ -14,7 +14,7 @@ class Area extends Validate
     protected $rule=[
         'province'=>['require','max'=>20],
         'city'=>['require','max'=>20],
-        'district'=>['max'=>20]
+        'district'=>['require','max'=>20]
     ];
     protected $message = [
         'province.max'=>'省名不能超过20个字符',
@@ -23,5 +23,6 @@ class Area extends Validate
 
         'province.require'=>'省名不能为空',
         'city.require'=>'市名不能为空',
+        'district.require'=>'区县名不能为空',
     ];
 }

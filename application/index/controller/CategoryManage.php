@@ -79,6 +79,14 @@ class CategoryManage extends Base
             ->select();
         if(count($result)>0)
             return json(['state'=>'warning','message'=>'该材料大类已经存在']);
+
+        //修改其他表中存放的班组名
+        $tableList = ['stuff'];
+        $preCategory = db('category')->where('id',$data['id'])->find();
+        foreach ($tableList as $table){
+            db($table)->where('category_name',$preCategory['category_name'])->setField('category_name',$data['category_name']);
+        }
+
         //使用Manage类的change静态方法验证、修改数据
         return json(Manage::change($this->model,$this->validate,$data));
     }
@@ -86,6 +94,13 @@ class CategoryManage extends Base
     //删除材料大类
     public function delete(){
         $id = input('id');
+        //查找其他表中是否有该材料大类，若有则不能删除
+        $category = db('category')->where('id',$id)->find();
+        $tableList=['stuff'];
+        foreach ($tableList as $table){
+            $res = db($table)->where('category_name',$category['category_name'])->find();
+            if($res) return json(['state'=>'warning','message'=>'该材料大类不能删除，因为在其它表中还存在该材料大类']);
+        }
         return json(Manage::delete($this->model,$id));
     }
 }

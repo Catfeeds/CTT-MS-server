@@ -118,4 +118,53 @@ class Manage
             return ['state'=>'warning','message'=>'删除失败'];
         }
     }
+
+    /**
+     * 根据地区字符串，在area表中查找地区是否真实存在
+     * @param string $area province^city^district格式的地区字符串
+     * @return bool
+     */
+    public static function checkArea($area){
+        $list = explode('^',$area);
+        $province=isset($list[0])?$list[0]:null;
+        $city=isset($list[1])?$list[1]:null;
+        $district=isset($list[2])?$list[2]:null;
+        if($district)
+            $result = db('area')
+                ->where('province',$province)
+                ->where('city',$city)
+                ->where('district',$district)
+                ->find();
+        else
+            $result = db('area')
+                ->where('province',$province)
+                ->where('city',$city)
+                ->find();
+        if(!$result) return false;
+        return true;
+    }
+
+    public static function changeArea($id,$newArea,array $tableList){
+        //根据id在area表中找到对应数据
+        $preArea = db('area')->where('id',$id)->find();
+        if(!$preArea) return ['state'=>'warning','message'=>'id不存在'];
+        $preAreaStr1 = $preArea['province'].'^'.$preArea['city']; //之前的市
+        $preAreaStr2 = $preAreaStr1.'^'.$preArea['district']; //之前的区县
+
+        $newAreaArr =  explode('^', $newArea);//将新的地区字符串分隔
+        $newAreaStr1 = $newAreaArr[0].'^'.$newAreaArr[1]; //更新后的市区
+        $newAreaStr2 = $newArea; //更新后的区县
+
+        //更新其他表中的市
+        foreach($tableList as $table){
+            db($table)->where('area',$preAreaStr1)->setField('area',$newAreaStr1);
+        }
+
+        //更新其他表中区县
+        foreach($tableList as $table){
+            db($table)->where('area',$preAreaStr2)->setField('area',$newAreaStr2);
+        }
+        return true;
+    }
+
 }
