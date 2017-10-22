@@ -76,14 +76,14 @@ class Auth extends Controller
             return json(['state'=>'error','message'=>'请先登录']);
 
         //检测username是否正确
-        $cookieUsername = cookie('?username')?cookie('username'):input('cookie');
-        $user = db('user')->where('cookie_username',$cookieUsername)->find();
+        $user = getUser();
         if(!$user)
             return json(['state'=>'error','message'=>'该帐号已在其他地点登录']);
 
         //对比本机ip和session里的ip，若不同，则说明已在异地登录
-        if(Session::get($user['username'])!=get_proxy_ip())
-            return json(['state'=>'error','message'=>'该帐号已在其他地点登录']);
+        //前后端分离，登录时生成的session没法传到收不到session
+//        if(Session::get($user['username'])!=get_proxy_ip())
+//            return json(['state'=>'error','message'=>'该帐号已在其他地点登录']);
 
         //认证成功，返回权限json列表
         $auth = \app\index\model\Auth::get(1);

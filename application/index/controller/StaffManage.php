@@ -45,9 +45,11 @@ class StaffManage extends Base
         if($result) return '{"state":"warning","message":"装维人员姓名姓名已存在"}';
 
         //查询班组和对应的地区是否合法
-        $result0 = db('team')->where('name',$data['team'])->where('area',$data['area'])->select();
-        if(!$result0)
-            return '{"state":"warning","message":"所属班组或地址有误"}';
+        if(!empty($data['team'])){
+            $result0 = db('team')->where('name',$data['team'])->where('area',$data['area'])->select();
+            if(!$result0)
+                return '{"state":"warning","message":"所属班组或地址有误"}';
+        }
 
         // 获取表单上传文件
         $files = request()->file('img');
@@ -124,9 +126,11 @@ class StaffManage extends Base
         if($result) return '{"state":"warning","message":"装维人员姓名姓名已存在"}';
 
         //查询班组和对应的地区是否合法
-        $result0 = db('team')->where('name',$data['team'])->where('area',$data['area'])->select();
-        if(!$result0)
-            return '{"state":"warning","message":"所属班组或地址有误"}';
+        if(!empty($data['team'])){
+            $result0 = db('team')->where('name',$data['team'])->where('area',$data['area'])->select();
+            if(!$result0)
+                return '{"state":"warning","message":"所属班组或地址有误"}';
+        }
 
         // 获取表单上传文件
         $file1 = request()->file('per_pic');

@@ -47,7 +47,7 @@ class UserManage extends Base
         if($result) return '{"state":"warning","message":"员工编号或姓名已存在"}';
 
         //查询仓库和对应的地区是否合法
-        if($data[0]['storehouse']!=''){
+        if(!empty($data[0]['storehouse'])){
             $result0 = db('storehouse')->where('name',$data[0]['storehouse'])->where('area',$data[0]['area'])->select();
             if(!$result0)
                 return '{"state":"warning","message":"归属仓库或地址有误"}';
@@ -112,22 +112,27 @@ class UserManage extends Base
 
     //修改管理员信息
     public function change(){
-        if(!isset($_POST['json']))
-            return json(['state'=>'success','message'=>'没有更新信息']);
-        $json = $_POST['json'];
-//        $json = '[{"username":"004","name":"徐志雷","area":"湖北^宜昌^主城区","sex":"男","phone":"","qq":"","email":"","address":"","idcard":"1232134234","id":"9"},{"uid":9,"stuff_in":0,"stuff_out":0,"stuff_back":0,
-//        "stuff_leave":0,"stuff_use":0,"stuff_count":0,"stuff_inventory":0,"tool_in":0,"tool_out":0,"tool_back":0,"tool_leave":0,"tool_count":0,"tool_infoconsummate":0,"safty_in":0,"safty_out":0,"safty_back":0,"safty_count":0,"safty_infoconsummate":0,"staff_manage":1,"user_manage":1,"area_manage":0}]';
+//        if(!isset($_POST['json']))
+//            return json(['state'=>'success','message'=>'没有更新信息']);
+//        $json = $_POST['json'];
+
+        $json ='[{"username":"002","name":"陈志豪","area":"四川^雅安^雨城区","storehouse":"","sex":"男","phone":"13608178123","qq":null,"email":null,"address":null,"idcard":"510107199711014217","id":"3"},{"uid":3,"stuff_in":1,"stuff_out":1,"stuff_back":1,"stuff_leave":1,"stuff_use":1,"stuff_count":1,"stuff_inventory":1,"tool_in":1,"tool_out":1,"tool_back":1,"tool_leave":1,"tool_count":1,"tool_infoconsummate":1,"safty_in":1,"safty_out":1,"safty_back":1,"safty_count":1,"safty_infoconsummate":1,"staff_manage":1,"user_manage":1,"area_manage":1,"storehouse_manage":1,"team_manage":1,"category_manage":1,"stuff_manage":1,"manufacturer_manage":1}]';
+
         //将json转化为数组
         $data = json_decode($json,true);
 
+
         //查询工号和管理员姓名是否已经存在
-        $result = db('user')->where('id','neq',$data[0]['id'])->where('username',$data[0]['username'])->whereOr('name',$data[0]['name'])->select();
-        if($result) return '{"state":"warning","message":"员工编号或姓名已存在"}';
+        $result = db('user')->where('id','neq',$data[0]['id'])->where('username',$data[0]['username'])->where('name',$data[0]['name'])->select();
+        if($result)
+            return '{"state":"warning","message":"员工编号或姓名已存在"}';
 
         //查询仓库和对应的地区是否合法
-        $result0 = db('sotrehouse')->where('name',$data[0]['storehouse'])->where('area',$data[0]['area'])->select();
-        if(!$result0)
-            return '{"state":"warning","message":"归属仓库或地址有误"}';
+        if(!empty($data[0]['storehouse'])){
+            $result0 = db('storehouse')->where('name',$data[0]['storehouse'])->where('area',$data[0]['area'])->find();
+            if(!$result0)
+                return '{"state":"warning","message":"归属仓库或地址有误"}';
+        }
 
         //修改权限
         $result1 = Manage::change(new \app\index\model\Auth(),new \app\index\validate\Auth(),$data[1]);

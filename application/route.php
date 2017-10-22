@@ -17,7 +17,7 @@ Route::rule([
     //login页面，只允许post请求
     'login'  =>  ['index/Auth/login',['method'=>'post']],
     //权限认证，只允许post方式请求
-    'checkauth' =>  ['index/Auth/checkAuth',['method'=>'post']],
+    'checkauth' =>  ['index/Auth/checkAuth',['method'=>'get|post']],
 ]);
 
 //装维人员管理，只允许post请求
