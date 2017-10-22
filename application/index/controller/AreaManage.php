@@ -84,7 +84,8 @@ class AreaManage extends Base
 
         //修改其他表中area字段的值
         $newArea = $data['province'].'^'.$data['city'].'^'.$data['district'];
-        $res = Manage::changeArea($data['id'],$newArea,['staff','user','team','storehouse']);
+        $tableList=['staff','user','team','storehouse'];
+        $res = Manage::changeArea($data['id'],$newArea,$tableList);
         if(true!==$res) return json($res);
 
         //使用Manage类的change静态方法验证、修改数据
@@ -96,11 +97,20 @@ class AreaManage extends Base
         $id = input('id');
         //检测其他表中是否还有该地区存在，若存在，则不能删除
         $area = db('area')->where('id',$id)->find();
-        $areStr = $area['province'].'^'.$area['city'];
         $tableList=['staff','user','team','storehouse'];
+        $areStr = $area['province'].'^'.$area['city'].'^'.$area['district'];
         foreach ($tableList as $table){
-            $res = db($table)->where('area','like','%'.$areStr.'%')->find();
+            $res = db($table)->where('area',$areStr)->find();
             if($res) return json(['state'=>'warning','message'=>'该地区不能删除，因为在其它表中还存在该地区']);
+        }
+        $count = count(db('area')->where('province',$area['province'])->where('city',$area['city'])->select());
+        //如果该省市只有一个区县的话，那么如果其他表存在该省^市，就不能删除
+        if($count<2){
+            $areStr = $area['province'].'^'.$area['city'];
+            foreach ($tableList as $table){
+                $res = db($table)->where('area','like','%'.$areStr.'%')->find();
+                if($res) return json(['state'=>'warning','message'=>'该地区不能删除，因为在其它表中还存在该地区']);
+            }
         }
 
         return json(Manage::delete($this->model,$id));

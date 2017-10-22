@@ -9,49 +9,46 @@
 namespace app\index\controller;
 use think\Request;
 
-class CategoryManage extends Base
+class ManufacturerManage extends Base
 {
-    //检测该用户是否有材料大类管理权限
+    //检测该用户是否有生产商大类管理权限
     public function __construct()
     {
         parent::__construct();
         //查询$authList中是否有该操作的权限
-        if($this->authList->category_manage == 0){
-            die(json_encode(['state'=>'warning','message'=>'没有材料大类管理权限'],JSON_UNESCAPED_UNICODE));
+        if($this->authList->manufacturer_manage == 0){
+            die(json_encode(['state'=>'warning','message'=>'没有生产商大类管理权限'],JSON_UNESCAPED_UNICODE));
         }
 
-        //尝试实例化Category的模型类和验证器类，并且赋值给$model和$validate
+        //尝试实例化Manufacturer的模型类和验证器类，并且赋值给$model和$validate
         //若这两个类不存在，则抛出异常，返回错误信息
         try {
-            $this->model = new \app\index\model\Category();
-            $this->validate = new \app\index\validate\Category();
+            $this->model = new \app\index\model\Manufacturer();
+            $this->validate = new \app\index\validate\Manufacturer();
         }catch (Exception $e){
             die($e->getMessage());
         }
     }
 
-    //添加材料大类
+    //添加生产商
     public function add(){
         $json = $_POST['json'];
         $data = json_decode($json,true);
         //查重
-        $result = db('category')
-            ->where('category_name',$data['category_name'])
-            ->where('stuff_source',$data['stuff_source'])
+        $result = db('manufacturer')
+            ->where('manufacturer',$data['manufacturer'])
             ->find();
         if($result)
-            return json(['state'=>'warning','message'=>'该材料大类已经存在']);
+            return json(['state'=>'warning','message'=>'该生产商已经存在']);
         //使用Manage类的add静态方法验证、添加数据
         return json(Manage::add($this->model,$this->validate,$data));
     }
 
-    //查找材料大类
+    //查找生产商
     public function check(){
         //有参数的情况
         $query = isset(Request::instance()->post(false)['query'])?Request::instance()->post(false)['query']:null;
         if($query){
-            //示例json
-            //$json = '{"pageinfo":{"curpage":1,"pageinate":10},"order":"province desc"}';
             $json = $query;
             $array = json_decode($json,true);
             $pageinfo = $array['pageinfo'];
@@ -68,38 +65,40 @@ class CategoryManage extends Base
         return json($staff);
     }
 
-    //修改材料大类
+    //修改生产商
     public function change(){
         $json = $_POST['json'];
         $data = json_decode($json,true);
         //查重
-        $result = db('category')
+        $result = db('manufacturer')
             ->where('id','neq',$data['id'])
-            ->where('category_name',$data['category_name'])
+            ->where('manufacturer',$data['manufacturer'])
             ->select();
         if(count($result)>0)
-            return json(['state'=>'warning','message'=>'该材料大类已经存在']);
+            return json(['state'=>'warning','message'=>'该生产商已经存在']);
 
-        //修改其他表中存放的材料大类名
-        $tableList = ['stuff'];
-        $preCategory = db('category')->where('id',$data['id'])->find();
+        //修改其他表中存放的生产商名
+        $tableList = [];
+        $preManufacturer = db('manufacturer')->where('id',$data['id'])->find();
         foreach ($tableList as $table){
-            db($table)->where('category_name',$preCategory['category_name'])->setField('category_name',$data['category_name']);
+            db($table)
+                ->where('manufacturer',$preManufacturer['manufacturer'])
+                ->setField('manufacturer',$data['manufacturer']);
         }
 
         //使用Manage类的change静态方法验证、修改数据
         return json(Manage::change($this->model,$this->validate,$data));
     }
 
-    //删除材料大类
+    //删除生产商大类
     public function delete(){
         $id = input('id');
-        //查找其他表中是否有该材料大类，若有则不能删除
-        $category = db('category')->where('id',$id)->find();
-        $tableList=['stuff'];
+        //查找其他表中是否有该生产商，若有则不能删除
+        $manufacturer = db('manufacturer')->where('id',$id)->find();
+        $tableList=[];
         foreach ($tableList as $table){
-            $res = db($table)->where('category_name',$category['category_name'])->find();
-            if($res) return json(['state'=>'warning','message'=>'该材料大类不能删除，因为在其它表中还存在该材料大类']);
+            $res = db($table)->where('manufacturer',$manufacturer['manufacturer'])->find();
+            if($res) return json(['state'=>'warning','message'=>'该生产商不能删除，因为在其它表中还存在该生产商']);
         }
         return json(Manage::delete($this->model,$id));
     }

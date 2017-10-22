@@ -47,9 +47,11 @@ class UserManage extends Base
         if($result) return '{"state":"warning","message":"员工编号或姓名已存在"}';
 
         //查询仓库和对应的地区是否合法
-        $result0 = db('storehouse')->where('name',$data[0]['storehouse'])->where('area',$data[0]['area'])->select();
-        if(!$result0)
-            return '{"state":"warning","message":"归属仓库或地址有误"}';
+        if($data[0]['storehouse']!=''){
+            $result0 = db('storehouse')->where('name',$data[0]['storehouse'])->where('area',$data[0]['area'])->select();
+            if(!$result0)
+                return '{"state":"warning","message":"归属仓库或地址有误"}';
+        }
 
         //使用Manage类的add静态方法验证、添加auth
         $result1 =  Manage::add(new \app\index\model\Auth(),new \app\index\validate\Auth(),$data[1]);

@@ -11,7 +11,7 @@
 use think\Route;
 
 //权限认证Auth类
-Route::post([
+Route::rule([
     //logout页面
     'logout' =>  'index/Auth/logout',
     //login页面，只允许post请求
@@ -79,6 +79,14 @@ Route::rule([
     'stuff/check' =>  'index/StuffManage/check',
     'stuff/change' =>  'index/StuffManage/change',
     'stuff/delete' => 'index/StuffManage/delete'
+]);
+
+//生产商管理
+Route::rule([
+    'manufacturer/add'  =>  'index/ManufacturerManage/add',
+    'manufacturer/check' =>  'index/ManufacturerManage/check',
+    'manufacturer/change' =>  'index/ManufacturerManage/change',
+    'manufacturer/delete' => 'index/ManufacturerManage/delete'
 ]);
 
 //各种选择的查询
