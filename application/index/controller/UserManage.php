@@ -112,18 +112,18 @@ class UserManage extends Base
 
     //修改管理员信息
     public function change(){
-//        if(!isset($_POST['json']))
-//            return json(['state'=>'success','message'=>'没有更新信息']);
-//        $json = $_POST['json'];
+        if(!isset($_POST['json']))
+            return json(['state'=>'success','message'=>'没有更新信息']);
+        $json = $_POST['json'];
 
-        $json ='[{"username":"002","name":"陈志豪","area":"四川^雅安^雨城区","storehouse":"","sex":"男","phone":"13608178123","qq":null,"email":null,"address":null,"idcard":"510107199711014217","id":"3"},{"uid":3,"stuff_in":1,"stuff_out":1,"stuff_back":1,"stuff_leave":1,"stuff_use":1,"stuff_count":1,"stuff_inventory":1,"tool_in":1,"tool_out":1,"tool_back":1,"tool_leave":1,"tool_count":1,"tool_infoconsummate":1,"safty_in":1,"safty_out":1,"safty_back":1,"safty_count":1,"safty_infoconsummate":1,"staff_manage":1,"user_manage":1,"area_manage":1,"storehouse_manage":1,"team_manage":1,"category_manage":1,"stuff_manage":1,"manufacturer_manage":1}]';
+//        $json ='[{"username":"002","name":"陈志豪","area":"四川^雅安^雨城区","storehouse":"","sex":"男","phone":"13608178123","qq":null,"email":null,"address":null,"idcard":"510107199711014217","id":"3"},{"uid":3,"stuff_in":1,"stuff_out":1,"stuff_back":1,"stuff_leave":1,"stuff_use":1,"stuff_count":1,"stuff_inventory":1,"tool_in":1,"tool_out":1,"tool_back":1,"tool_leave":1,"tool_count":1,"tool_infoconsummate":1,"safty_in":1,"safty_out":1,"safty_back":1,"safty_count":1,"safty_infoconsummate":1,"staff_manage":1,"user_manage":1,"area_manage":1,"storehouse_manage":1,"team_manage":1,"category_manage":1,"stuff_manage":1,"manufacturer_manage":1}]';
 
         //将json转化为数组
         $data = json_decode($json,true);
 
 
         //查询工号和管理员姓名是否已经存在
-        $result = db('user')->where('id','neq',$data[0]['id'])->where('username',$data[0]['username'])->where('name',$data[0]['name'])->select();
+        $result = db('user')->where('id','neq',$data[0]['id'])->where('username',$data[0]['username'])->select();
         if($result)
             return '{"state":"warning","message":"员工编号或姓名已存在"}';
 

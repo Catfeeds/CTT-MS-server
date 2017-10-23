@@ -17,6 +17,7 @@ class Staff extends Validate
         'on_guard'=>['require','max'=>5],
         'idcard'=>['require','max'=>20],
         'area'=>['require','max'=>50],
+        'team'=>['max'=>20],
         'phone'=>['require','max'=>20],
         'qq'=>['max'=>20],
         'sec_linkman'=>['max'=>20],

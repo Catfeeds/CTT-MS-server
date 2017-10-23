@@ -11819,3 +11819,35 @@
 [ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` <> 3  AND `username` = '002'  AND `name` = '陈志豪' [ RunTime:0.000501s ]
 [ sql ] [ SQL ] UPDATE `auth`  SET `stuff_in`=1,`stuff_out`=1,`stuff_back`=1,`stuff_leave`=1,`stuff_use`=1,`stuff_count`=1,`stuff_inventory`=1,`tool_in`=1,`tool_out`=1,`tool_back`=1,`tool_leave`=1,`tool_count`=1,`tool_infoconsummate`=1,`safty_in`=1,`safty_out`=1,`safty_back`=1,`safty_count`=1,`safty_infoconsummate`=1,`staff_manage`=1,`user_manage`=1,`area_manage`=1,`storehouse_manage`=1,`team_manage`=1,`category_manage`=1,`stuff_manage`=1,`manufacturer_manage`='1'  WHERE  `uid` = 3 [ RunTime:0.000600s ]
 [ sql ] [ SQL ] UPDATE `user`  SET `username`='002',`name`='陈志豪',`area`='四川^雅安^雨城区',`storehouse`='',`sex`='男',`phone`='13608178123',`qq`=NULL,`email`=NULL,`address`=NULL,`idcard`='510107199711014217',`password`='67a74306b06d0c01624fe0d0249a570f4d093747'  WHERE  `id` = 3 [ RunTime:0.000403s ]
+---------------------------------------------------------------
+[ 2017-10-22T23:04:10+08:00 ] 10.2.130.178 10.0.55.239 POST /CTT-MS-server/login
+[ info ] 10.2.130.178/CTT-MS-server/login [运行时间：0.063383s][吞吐率：15.78req/s] [内存消耗：3,348.09kb] [文件加载：52]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'login',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'content-type' => 'application/x-www-form-urlencoded',
+  'content-length' => '19',
+  'host' => '10.2.130.178',
+  'connection' => 'Keep-Alive',
+  'accept-encoding' => 'gzip',
+  'user-agent' => 'okhttp/3.9.0',
+)
+[ info ] [ PARAM ] array (
+  'username' => '',
+  'password' => '',
+)
+[ info ] [ RUN ] app\index\controller\Auth->login[ D:\wamp64\www\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001249s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001173s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `username` = '' LIMIT 1 [ RunTime:0.000667s ]
