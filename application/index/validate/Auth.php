@@ -14,7 +14,6 @@ class Auth extends Validate
     protected $rule=[
         'stuff_in'=>'boolean',
         'stuff_out'=>'boolean',
-        'stuff_back'=>'boolean',
         'stuff_leave'=>'boolean',
         'stuff_use'=>'boolean',
         'stuff_count'=>'boolean',

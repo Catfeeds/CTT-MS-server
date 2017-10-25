@@ -78,7 +78,7 @@ class ManufacturerManage extends Base
             return json(['state'=>'warning','message'=>'该生产商已经存在']);
 
         //修改其他表中存放的生产商名
-        $tableList = [];
+        $tableList = ['stuff_in_record','inventory'];
         $preManufacturer = db('manufacturer')->where('id',$data['id'])->find();
         foreach ($tableList as $table){
             db($table)
@@ -95,7 +95,7 @@ class ManufacturerManage extends Base
         $id = input('id');
         //查找其他表中是否有该生产商，若有则不能删除
         $manufacturer = db('manufacturer')->where('id',$id)->find();
-        $tableList=[];
+        $tableList=['stuff_in_record','inventory'];
         foreach ($tableList as $table){
             $res = db($table)->where('manufacturer',$manufacturer['manufacturer'])->find();
             if($res) return json(['state'=>'warning','message'=>'该生产商不能删除，因为在其它表中还存在该生产商']);

@@ -42,7 +42,6 @@ class StorehouseManage extends Base
         //查重
         $result = db('storehouse')
             ->where('name',$data['name'])
-            ->where('area',$data['area'])
             ->find();
         if($result)
             return json(['state'=>'warning','message'=>'该仓库已经存在']);
@@ -87,13 +86,12 @@ class StorehouseManage extends Base
         $result = db('storehouse')
             ->where('id','neq',$data['id'])
             ->where('name',$data['name'])
-            ->where('area',$data['area'])
             ->find();
         if($result)
             return json(['state'=>'warning','message'=>'该仓库已经存在']);
 
         //修改其他表中存放的仓库名
-        $tableList = ['user'];
+        $tableList = ['user','inventory','stuff_in_record'];
         $preStorehouse = db('storehouse')->where('id',$data['id'])->find();
         foreach ($tableList as $table){
             db($table)->where('storehouse',$preStorehouse['name'])->setField('storehouse',$data['name']);
@@ -110,7 +108,7 @@ class StorehouseManage extends Base
         $id = input('id');
         //查找其他表中是否有该仓库，若有则不能删除
         $storehouse = db('storehouse')->where('id',$id)->find();
-        $tableList=['user'];
+        $tableList = ['user','inventory','stuff_in_record'];
         foreach ($tableList as $table){
             $res = db($table)->where('storehouse',$storehouse['name'])->find();
             if($res) return json(['state'=>'warning','message'=>'该仓库不能删除，因为在其它表中还存在该仓库']);

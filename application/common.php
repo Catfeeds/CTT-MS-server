@@ -11,6 +11,22 @@
 
 // 应用公共文件
 
+//返回success提示和返回信息
+function returnSuccess($message){
+    return json(['state'=>'success','message'=>$message]);
+}
+
+//返回warning提示和错误信息
+function returnWarning($message){
+    return json(['state'=>'warning','message'=>$message]);
+}
+
+//返回error提示和错误信息
+function returnError($message){
+    return json(['state'=>'error','message'=>$message]);
+}
+
+
 //获取客户端真实ip
 function get_proxy_ip()
 {
@@ -74,7 +90,7 @@ function getUser(){
 }
 
 /**
- * 根据管理员姓名，找到对应user表中的数据；再根据user表中的area，找到对应的仓库数据
+ * 根据管理员姓名，找到对应user模型对象；再根据user表中的area，找到对应的仓库对象
  * @param $name
  * @return array $storehouse
  */
@@ -83,3 +99,19 @@ function getStorehouse($name){
     $storehouse = db('storehouse')->where('area',$user['area'])->find();
     return $storehouse;
 }
+
+
+/**
+ * 查询输入数据是否在数据库中存在
+ * @param string $table 表名
+ * @param string $column 字段名
+ * @param string $value 值
+ * @return bool
+ */
+function dataIsExist($table,$column,$value){
+    $res = db($table)->where($column,$value)->find();
+    if(!$res) return false;
+    return true;
+}
+
+

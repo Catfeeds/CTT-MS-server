@@ -116,7 +116,7 @@ class UserManage extends Base
             return json(['state'=>'success','message'=>'没有更新信息']);
         $json = $_POST['json'];
 
-//        $json ='[{"username":"002","name":"陈志豪","area":"四川^雅安^雨城区","storehouse":"","sex":"男","phone":"13608178123","qq":null,"email":null,"address":null,"idcard":"510107199711014217","id":"3"},{"uid":3,"stuff_in":1,"stuff_out":1,"stuff_back":1,"stuff_leave":1,"stuff_use":1,"stuff_count":1,"stuff_inventory":1,"tool_in":1,"tool_out":1,"tool_back":1,"tool_leave":1,"tool_count":1,"tool_infoconsummate":1,"safty_in":1,"safty_out":1,"safty_back":1,"safty_count":1,"safty_infoconsummate":1,"staff_manage":1,"user_manage":1,"area_manage":1,"storehouse_manage":1,"team_manage":1,"category_manage":1,"stuff_manage":1,"manufacturer_manage":1}]';
+        //$json = '[{"username":"001","name":"超管1","area":"四川^眉山^丹棱","storehouse":"丹棱库","sex":"男","phone":null,"qq":null,"email":null,"address":null,"idcard":"00001","id":"1"},{"uid":1,"stuff_in":1,"stuff_out":1,"stuff_leave":1,"stuff_use":1,"stuff_count":1,"stuff_inventory":1,"tool_in":1,"tool_out":1,"tool_back":1,"tool_leave":1,"tool_count":1,"tool_infoconsummate":1,"safty_in":1,"safty_out":1,"safty_back":1,"safty_count":1,"safty_infoconsummate":1,"staff_manage":1,"user_manage":1,"area_manage":1,"storehouse_manage":1,"team_manage":1,"category_manage":1,"stuff_manage":1,"manufacturer_manage":1}]';
 
         //将json转化为数组
         $data = json_decode($json,true);
@@ -134,6 +134,15 @@ class UserManage extends Base
                 return '{"state":"warning","message":"归属仓库或地址有误"}';
         }
 
+        //修改其他表中存放的管理员姓名
+        $tableList = ['stuff_in_record','staff'];
+        $preUser = db('user')->where('id',$data[0]['id'])->find();
+        foreach ($tableList as $table){
+            db($table)
+                ->where('operator',$preUser['name'])
+                ->setField('operator',$data[0]['name']);
+        }
+
         //修改权限
         $result1 = Manage::change(new \app\index\model\Auth(),new \app\index\validate\Auth(),$data[1]);
 
@@ -149,6 +158,13 @@ class UserManage extends Base
     //删除管理员
     public function delete(){
         $id = input('id');
+        //查找其他表中是否有该生产商，若有则不能删除
+        $user = db('user')->where('id',$id)->find();
+        $tableList = ['stuff_in_record','staff'];
+        foreach ($tableList as $table){
+            $res = db($table)->where('operator',$user['name'])->find();
+            if($res) return json(['state'=>'warning','message'=>'该管理员不能删除，因为在其它表中还存在该管理员']);
+        }
         //删除Auth表中的数据
         $result = Manage::delete(new \app\index\model\Auth(),$id);
         if($result['state']!='success')

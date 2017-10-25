@@ -41,6 +41,7 @@ class Base extends Controller
         if(!$user){
             die(json_encode(['state'=>'error','message'=>'该帐号已在其他地点登录'],JSON_UNESCAPED_UNICODE));
         }
+        $this->cookieUsername = cookie('?username')?cookie('username'):input('cookie');
 
         //找到该用户对应的model的Auth对象,赋值给$authList
         $auth =  \app\index\model\Auth::get($user['id']);

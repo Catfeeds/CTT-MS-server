@@ -89,11 +89,17 @@ Route::rule([
     'manufacturer/delete' => 'index/ManufacturerManage/delete'
 ]);
 
+//入库操作
+Route::rule([
+    'stuffin' => 'index/StuffIn/stuffIn',
+]);
+
 //各种选择的查询
 Route::rule([
     'areaquery' => 'index/Query/area',    //地区查询
     'storehousequery' => 'index/Query/storehouse',//仓库查询
     'teamquery' => 'index/Query/team',//班组查询
     'categoryquery' => 'index/Query/category',//材料大类查询
-    'stuffquery' => 'index/Query/stuff' //材料名称
+    'stuffquery' => 'index/Query/stuff', //材料名称
+    'stuffwithidquery' => 'index/Query/stuffWithId', //材料名称和id
 ]);

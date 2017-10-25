@@ -44,11 +44,21 @@ class Query extends Base
        return json($list);
     }
 
-    //将查询到的数据数组转换为前端需要的格式
+    //将查询到的数据数组转换为前端需要的格式(value、label都为值)
     private function arrayHandel(array $arr){
         $list = [];
         foreach ($arr as $value){
             $tmp = ['value'=>$value,'label'=>$value];
+            array_push($list,$tmp);
+        }
+        return $list;
+    }
+
+    //将查询到的数据数组转换为前端需要的格式(value为id、label为值)
+    private function arrayHandel2(array $arr){
+        $list = [];
+        foreach ($arr as $key=>$value){
+            $tmp = ['value'=>$value,'label'=>$key];
             array_push($list,$tmp);
         }
         return $list;
@@ -77,8 +87,15 @@ class Query extends Base
 
     //根据材料大类返回材料名称
     public function stuff($category_name){
-        $stuff = db('stuff')->where('category_name',$category_name)->column('name');
+        $stuff = db('stuff')->where('category_name',$category_name)->column('stuff_name');
         $list = $this->arrayHandel($stuff);
+        return json($list);
+    }
+
+    //根据材料大类返回材料名称和id
+    public function stuffWithId($category_name){
+        $stuff = db('stuff')->where('category_name',$category_name)->column('id','stuff_name');
+        $list = $this->arrayHandel2($stuff);
         return json($list);
     }
 }
