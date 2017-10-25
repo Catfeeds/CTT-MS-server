@@ -9,8 +9,6 @@
 namespace app\index\controller;
 
 
-use Illuminate\Database\Capsule\Manager;
-
 class StuffIn extends Base
 {
     //检测该用户是否有材料入库权限
@@ -77,8 +75,17 @@ class StuffIn extends Base
         if(!($opertor==$userName && $userName==$data['operator']))
             return returnWarning('你不是该入库材料经办人，无权修改');
 
+        //修改stuff_in_record表
+        $res = Manage::change($this->model,$this->validate,$data);
+        if($res['state']!='success') return json($res);
 
-        return json(Manage::change($this->model,$this->validate,$data));
+        //修改inventory表
+        return json(Manage::add(new \app\index\model\Inventory(),new \app\index\validate\Inventory(),$data));
+    }
 
+    //查看入库记录
+    public function check(){
+        $userName = getUser()['name'];
+        $list = db('stuff_in_record')->where('operator',$userName)->select();
     }
 }
