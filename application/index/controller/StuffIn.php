@@ -85,16 +85,8 @@ class StuffIn extends Base
 
     //查看入库记录
     public function check(){
-        $json ='{
-	"pageinfo":{"curpage":2,"pageinate":3},
-	"order":"id desc",//按id的倒序排列
-	"condition":{
-				//condition 里允许有多个条件，彼此的关系为and，如果要查询不同字段相同条件的or数据，请用|分隔开
-	            "where":["on_guard","是"],//查询所有on_guard为是的数据
-	            "like":["","%%"],
-	            "between":["stuff_in_date",["2017-10-01","2017-10-08"]]
-	            }
-}';
+        //$json = isset(Request::instance()->post(false)['query'])?Request::instance()->post(false)['query']:null;
+        $json ='{"pageinfo":{"curpage":1,"pageinate":3},"order":"a.id desc","condition":{"like":["manufacturer","%咪咕%"],"between":["stuff_in_date",["2017-10-01","2017-10-30"]]}}';
         $array = json_decode($json,true);
         $pageinfo = $array['pageinfo'];
         unset($array['pageinfo']);
@@ -102,14 +94,15 @@ class StuffIn extends Base
         $userStorehouse = getUser()['storehouse'];
         //查询登录用户所在的仓库的入库记录
         $filed = ['a.*','b.*'];
-        //return json(Manage::checkJoin($this->model,'stuff','stuff_id','id',$filed,$pageInfo));
-        $result = $this->model
+        $result = db('stuff_in_record')
             ->alias('a')
             ->join('stuff b','a.stuff_id = b.id')
+            ->field($filed)
             ->where('storehouse',$userStorehouse);
-        $result1 = $this->model
+        $result1 = db('stuff_in_record')
             ->alias('a')
             ->join('stuff b','a.stuff_id = b.id')
+            ->field($filed)
             ->where('storehouse',$userStorehouse);
         $order = isset($limit['order'])?$limit['order']:'id';
         //若排序条件为normal，则将$oeder赋值为null，默认顺序
