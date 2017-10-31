@@ -1,0 +1,352 @@
+---------------------------------------------------------------
+[ 2017-10-30T21:33:30+08:00 ] ::1 ::1 POST /CTT-MS-server/login
+[ info ] localhost/CTT-MS-server/login [运行时间：3.056968s][吞吐率：0.33req/s] [内存消耗：3,363.85kb] [文件加载：53]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'login',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '28',
+  'accept' => '*/*',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/CTT-MS/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787',
+)
+[ info ] [ PARAM ] array (
+  'username' => '001',
+  'password' => '123456',
+)
+[ info ] [ RUN ] app\index\controller\Auth->login[ D:\wamp64\www\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.174261s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.518182s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `username` = '001' LIMIT 1 [ RunTime:0.089718s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `cookie_username`='b1257336ae29f5fc7cef4722b1650c1c'  WHERE  `username` = '001' [ RunTime:0.054922s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `last_login_time`='2017-10-30 21:33:30'  WHERE  `username` = '001' [ RunTime:0.040929s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `last_logout_time`='2017-10-30 21:33:30'  WHERE  `username` = '001' [ RunTime:0.001263s ]
+---------------------------------------------------------------
+[ 2017-10-30T21:33:32+08:00 ] ::1 ::1 POST /CTT-MS-server/checkauth
+[ info ] localhost/CTT-MS-server/checkauth [运行时间：0.272330s][吞吐率：3.67req/s] [内存消耗：3,768.65kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/CTT-MS/main.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=nf1qmv440aikh9rl41cqe513u2; username=b1257336ae29f5fc7cef4722b1650c1c',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => 'b1257336ae29f5fc7cef4722b1650c1c',
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ D:\wamp64\www\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000886s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.005776s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'b1257336ae29f5fc7cef4722b1650c1c' LIMIT 1 [ RunTime:0.000643s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.082194s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.037937s ]
+---------------------------------------------------------------
+[ 2017-10-30T21:34:02+08:00 ] ::1 ::1 GET /CTT-MS-server/stuffin/check
+[ info ] localhost/CTT-MS-server/stuffin/check [运行时间：0.351186s][吞吐率：2.85req/s] [内存消耗：3,790.44kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffIn',
+    2 => 'check',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=nf1qmv440aikh9rl41cqe513u2; username=b1257336ae29f5fc7cef4722b1650c1c',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffIn->check[ D:\wamp64\www\CTT-MS-server\application\index\controller\StuffIn.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002402s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.002911s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'b1257336ae29f5fc7cef4722b1650c1c' LIMIT 1 [ RunTime:0.001622s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.002549s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.001592s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'b1257336ae29f5fc7cef4722b1650c1c' LIMIT 1 [ RunTime:0.000516s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_in_record` [ RunTime:0.055995s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.* FROM `stuff_in_record` `a` INNER JOIN `stuff` `b` ON `a`.`stuff_id`=`b`.`id` WHERE  `operator` = '超管1' [ RunTime:0.086072s ]
+---------------------------------------------------------------
+[ 2017-10-30T21:34:03+08:00 ] ::1 ::1 GET /CTT-MS-server/stuffin/check
+[ info ] localhost/CTT-MS-server/stuffin/check [运行时间：0.044406s][吞吐率：22.52req/s] [内存消耗：3,790.83kb] [文件加载：57]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffIn',
+    2 => 'check',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=nf1qmv440aikh9rl41cqe513u2; username=b1257336ae29f5fc7cef4722b1650c1c',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffIn->check[ D:\wamp64\www\CTT-MS-server\application\index\controller\StuffIn.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000838s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001219s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'b1257336ae29f5fc7cef4722b1650c1c' LIMIT 1 [ RunTime:0.000765s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001937s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000558s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'b1257336ae29f5fc7cef4722b1650c1c' LIMIT 1 [ RunTime:0.000530s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_in_record` [ RunTime:0.000934s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.* FROM `stuff_in_record` `a` INNER JOIN `stuff` `b` ON `a`.`stuff_id`=`b`.`id` WHERE  `operator` = '超管1' [ RunTime:0.000731s ]
+---------------------------------------------------------------
+[ 2017-10-30T21:34:45+08:00 ] ::1 ::1 GET /CTT-MS-server/stuffin/check
+[ info ] localhost/CTT-MS-server/stuffin/check [运行时间：0.280797s][吞吐率：3.56req/s] [内存消耗：3,833.68kb] [文件加载：59]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffIn',
+    2 => 'check',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=nf1qmv440aikh9rl41cqe513u2; username=b1257336ae29f5fc7cef4722b1650c1c',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffIn->check[ D:\wamp64\www\CTT-MS-server\application\index\controller\StuffIn.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001499s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001299s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'b1257336ae29f5fc7cef4722b1650c1c' LIMIT 1 [ RunTime:0.000776s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001067s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000611s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'b1257336ae29f5fc7cef4722b1650c1c' LIMIT 1 [ RunTime:0.000515s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_in_record` [ RunTime:0.000918s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.* FROM `stuff_in_record` `a` INNER JOIN `stuff` `b` ON `a`.`stuff_id`=`b`.`id` WHERE  `operator` = '超管1' [ RunTime:0.000702s ]
+[ error ] [0]variable type error： array[D:\wamp64\www\CTT-MS-server\thinkphp\library\think\Response.php:318]
+---------------------------------------------------------------
+[ 2017-10-30T21:34:55+08:00 ] ::1 ::1 GET /CTT-MS-server/stuffin/check
+[ info ] localhost/CTT-MS-server/stuffin/check [运行时间：0.052341s][吞吐率：19.11req/s] [内存消耗：3,796.84kb] [文件加载：58]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffIn',
+    2 => 'check',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=nf1qmv440aikh9rl41cqe513u2; username=b1257336ae29f5fc7cef4722b1650c1c',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffIn->check[ D:\wamp64\www\CTT-MS-server\application\index\controller\StuffIn.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000985s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001144s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'b1257336ae29f5fc7cef4722b1650c1c' LIMIT 1 [ RunTime:0.000626s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000973s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000620s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'b1257336ae29f5fc7cef4722b1650c1c' LIMIT 1 [ RunTime:0.000552s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_in_record` [ RunTime:0.000902s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.* FROM `stuff_in_record` `a` INNER JOIN `stuff` `b` ON `a`.`stuff_id`=`b`.`id` WHERE  `operator` = '超管1' [ RunTime:0.000656s ]
+---------------------------------------------------------------
+[ 2017-10-30T23:29:49+08:00 ] ::1 ::1 GET /CTT-MS-server/stuffin/check
+[ info ] localhost/CTT-MS-server/stuffin/check [运行时间：0.053929s][吞吐率：18.54req/s] [内存消耗：3,795.14kb] [文件加载：58]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffIn',
+    2 => 'check',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=nf1qmv440aikh9rl41cqe513u2; username=b1257336ae29f5fc7cef4722b1650c1c',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffIn->check[ D:\wamp64\www\CTT-MS-server\application\index\controller\StuffIn.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003567s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.002802s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'b1257336ae29f5fc7cef4722b1650c1c' LIMIT 1 [ RunTime:0.000602s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001096s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000618s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'b1257336ae29f5fc7cef4722b1650c1c' LIMIT 1 [ RunTime:0.000580s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_in_record` [ RunTime:0.000963s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.* FROM `stuff_in_record` `a` INNER JOIN `stuff` `b` ON `a`.`stuff_id`=`b`.`id` WHERE  `storehouse` = '超管1' [ RunTime:0.000568s ]
+---------------------------------------------------------------
+[ 2017-10-30T23:29:49+08:00 ] ::1 ::1 GET /CTT-MS-server/stuffin/check
+[ info ] localhost/CTT-MS-server/stuffin/check [运行时间：0.042551s][吞吐率：23.50req/s] [内存消耗：3,795.14kb] [文件加载：58]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffIn',
+    2 => 'check',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=nf1qmv440aikh9rl41cqe513u2; username=b1257336ae29f5fc7cef4722b1650c1c',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffIn->check[ D:\wamp64\www\CTT-MS-server\application\index\controller\StuffIn.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001172s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001243s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'b1257336ae29f5fc7cef4722b1650c1c' LIMIT 1 [ RunTime:0.000589s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001035s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000565s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'b1257336ae29f5fc7cef4722b1650c1c' LIMIT 1 [ RunTime:0.000465s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_in_record` [ RunTime:0.000890s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.* FROM `stuff_in_record` `a` INNER JOIN `stuff` `b` ON `a`.`stuff_id`=`b`.`id` WHERE  `storehouse` = '超管1' [ RunTime:0.000773s ]
+---------------------------------------------------------------
+[ 2017-10-30T23:29:58+08:00 ] ::1 ::1 GET /CTT-MS-server/stuffin/check
+[ info ] localhost/CTT-MS-server/stuffin/check [运行时间：0.043341s][吞吐率：23.07req/s] [内存消耗：3,796.95kb] [文件加载：58]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffIn',
+    2 => 'check',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; PHPSESSID=nf1qmv440aikh9rl41cqe513u2; username=b1257336ae29f5fc7cef4722b1650c1c',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffIn->check[ D:\wamp64\www\CTT-MS-server\application\index\controller\StuffIn.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000938s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001169s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'b1257336ae29f5fc7cef4722b1650c1c' LIMIT 1 [ RunTime:0.000605s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001140s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000696s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'b1257336ae29f5fc7cef4722b1650c1c' LIMIT 1 [ RunTime:0.000512s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_in_record` [ RunTime:0.000953s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.* FROM `stuff_in_record` `a` INNER JOIN `stuff` `b` ON `a`.`stuff_id`=`b`.`id` WHERE  `storehouse` = '丹棱库' [ RunTime:0.000690s ]

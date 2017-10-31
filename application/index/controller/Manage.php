@@ -84,6 +84,53 @@ class Manage
         }
     }
 
+    public static function checkJoin(Model $model,$tab2,$tab1Colum,$tab2Colum,$field,$pageinfo,$limit=null){
+        $result = $model->alias('a');
+//            ->join($tab2.' b','a.'.$tab1Colum.'=b.'.$tab2Colum)
+//            ->field($field);
+        $result1 = $model->alias('a');
+//            ->join($tab2.' b','a.'.$tab1Colum.'=b.'.$tab2Colum)
+//            ->field($field);
+
+        if(!empty($limit)){
+            $order = isset($limit['order'])?$limit['order']:'id';
+            //若排序条件为normal，则将$oeder赋值为null，默认顺序
+            $con = explode(' ',$order);
+            if(isset($con[1]) && $con[1]=='normal') $order='id';
+            foreach ($limit['condition'] as $keyword=>$value){
+                if($keyword=='where'){
+                    if(isset($value[0])&&isset($value[1])){
+                        $result = $result->where($value[0],$value[1]);
+                        $result1 = $result1->where($value[0],$value[1]);
+                    }
+                    else{
+                        $result = $result->where(1);
+                        $result1 = $result1->where(1);
+                    }
+                }
+                else{
+                    $result = $result->where($value[0],$keyword,$value[1]);
+                    $result1 = $result1->where($value[0],$keyword,$value[1]);
+                }
+            }
+            $result = $result ->order($order)->page($pageinfo['curpage'],$pageinfo['pageinate'])->select();
+            $dataCount = count($result1->select());
+        }else{
+            $result = $model->alias('a')
+//                ->join($tab2.' b','a.'.$tab1Colum.'=b.'.$tab2Colum)
+//                ->field($field)
+                ->page($pageinfo['curpage'],$pageinfo['pageinate'])
+                ->select();
+            $result1 = $model->alias('a');
+//                ->join($tab2.' b','a.'.$tab1Colum.'=b.'.$tab2Colum)
+//                ->page($pageinfo['curpage'],$pageinfo['pageinate'])
+    //            ->field($field);
+            $dataCount = count($result1->select());
+        }
+        array_unshift($result,['datacount'=>$dataCount]);
+        return json($result);
+    }
+
     /**
      * change方法：修改数据，需要对应的Model类对象和对应的同名Validate类对象进行验证
      * @param Model $model 对应模型类对象

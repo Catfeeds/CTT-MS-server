@@ -92,6 +92,7 @@ Route::rule([
 //入库操作
 Route::rule([
     'stuffin' => 'index/StuffIn/stuffIn',
+    'stuffin/check'=>'index/StuffIn/check',
 ]);
 
 //各种选择的查询
