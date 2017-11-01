@@ -98,4 +98,18 @@ class Query extends Base
         $list = $this->arrayHandel2($stuff);
         return json($list);
     }
+
+    //查询所有的生产厂商
+    public function manufacturer(){
+        $manufacturer = db('manufacturer')->where(1)->column('manufacturer');
+        $list = $this->arrayHandel($manufacturer);
+        return json($list);
+    }
+
+    //查询当前管理员所在仓库
+    public function userStorehouse(){
+        $storehouse = getUser()['storehouse'];
+        $list = $this->arrayHandel([$storehouse]);
+        return json($list);
+    }
 }

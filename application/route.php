@@ -93,6 +93,8 @@ Route::rule([
 Route::rule([
     'stuffin' => 'index/StuffIn/stuffIn',
     'stuffin/check'=>'index/StuffIn/check',
+    'stuffin/change'=>'index/StuffIn/change',
+    'stuffin/enabled'=>'index/StuffIn/changeStuffEnabled',
 ]);
 
 //各种选择的查询
@@ -103,4 +105,6 @@ Route::rule([
     'categoryquery' => 'index/Query/category',//材料大类查询
     'stuffquery' => 'index/Query/stuff', //材料名称
     'stuffwithidquery' => 'index/Query/stuffWithId', //材料名称和id
+    'manufacturerquery' => 'index/Query/manufacturer', //所有生产商名
+    'userstorehousequery' => 'index/Query/userStorehouse', //当前管理员所在仓库
 ]);

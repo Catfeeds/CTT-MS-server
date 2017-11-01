@@ -7,7 +7,7 @@
  */
 
 namespace app\index\controller;
-
+use think\Request;
 
 class StuffIn extends Base
 {
@@ -31,9 +31,9 @@ class StuffIn extends Base
 
     //新增入库记录和库存
     public function stuffIn(){
-//        $json = input('json');
-//        $data = json_decode($json,true);
-        $data = ['stuff_id'=>1,'manufacturer'=>'咪咕','type'=>'小猫','quantity'=>200,'storehouse'=>'丹棱库','stuff_in_date'=>'2017-10-25 21:20'];
+        $json = $_POST['json'];
+        $data = json_decode($json,true);
+        //$data = ['stuff_id'=>1,'manufacturer'=>'咪咕','type'=>'小猫','quantity'=>200,'storehouse'=>'丹棱库','stuff_in_date'=>'2017-10-25 21:20'];
 
         //检测请求数据在数据库中是否真的存在
         if(!dataIsExist('manufacturer','manufacturer',$data['manufacturer']))
@@ -85,8 +85,9 @@ class StuffIn extends Base
 
     //查看入库记录
     public function check(){
-        //$json = isset(Request::instance()->post(false)['query'])?Request::instance()->post(false)['query']:null;
-        $json ='{"pageinfo":{"curpage":1,"pageinate":3},"order":"a.id desc","condition":{"like":["manufacturer","%咪咕%"],"between":["stuff_in_date",["2017-10-01","2017-10-30"]]}}';
+        $json = isset(Request::instance()->post(false)['query'])?Request::instance()->post(false)['query']:null;
+        //$json ='{"pageinfo":{"curpage":1,"pageinate":3},"order":"a.id desc","condition":{"like":["manufacturer","%咪咕%"],"between":["stuff_in_date",["2017-10-01","2017-10-30"]]}}';
+        //$json = '{"pageinfo":{"curpage":1,"pageinate":10},"condition":{}}';
         $array = json_decode($json,true);
         $pageinfo = $array['pageinfo'];
         unset($array['pageinfo']);
@@ -104,10 +105,10 @@ class StuffIn extends Base
             ->join('stuff b','a.stuff_id = b.id')
             ->field($filed)
             ->where('storehouse',$userStorehouse);
-        $order = isset($limit['order'])?$limit['order']:'id';
+        $order = isset($limit['order'])?$limit['order']:'a.id';
         //若排序条件为normal，则将$oeder赋值为null，默认顺序
         $con = explode(' ',$order);
-        if(isset($con[1]) && $con[1]=='normal') $order='id';
+        if(isset($con[1]) && $con[1]=='normal') $order='a.id';
         foreach ($limit['condition'] as $keyword=>$value){
             if($keyword=='where'){
                 if(isset($value[0])&&isset($value[1])){
@@ -128,5 +129,26 @@ class StuffIn extends Base
         $dataCount = count($result1->select());
         array_unshift($result,['datacount'=>$dataCount]);
         return json($result);
+    }
+
+    //修改材料是否可用
+    public function changeStuffEnabled($id){
+        //根据id找到入库记录表中的仓库
+        $stuffInRecord = db('stuff_in_record')->where('id',$id)->find();
+        if(empty($stuffInRecord))
+            return returnWarning('该入库记录不存在');
+        if($this->user['storehouse']!=$stuffInRecord['storehouse'])
+            return returnWarning('该管理员无权管理该仓库!');
+
+        $newEnabled = $stuffInRecord['enabled']==0?1:0;
+        $data = ['enabled'=>$newEnabled];
+
+        //修改stuff_in_record表
+        db('stuff_in_record')->where('id',$id)->setField($data);
+
+        //修改inventory表
+       db('inventory')->where('stuff_in_record_id',$id)->setField($data);
+
+       return returnSuccess($newEnabled);
     }
 }

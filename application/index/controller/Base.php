@@ -24,13 +24,15 @@ class Base extends Controller
     //cookie中的值
     protected $cookieUsername;
 
+    //当前用户的user模型对象
+    protected $user;
+
     //构造方法通过检测cookie的值，判断登录是否非法；若合法，将赋值auth对象给$authList
     public function __construct(){
         parent::__construct();
         //允许ajax跨域
         header("Access-Control-Allow-Credentials: true");
         header('Access-Control-Allow-Origin:http://10.2.130.195:8000');
-
 
         //检测cookie是否存在
         if(!cookie('?username') && (input('cookie')=='undefined'||input('cookie')==null))
@@ -41,6 +43,7 @@ class Base extends Controller
         if(!$user){
             die(json_encode(['state'=>'error','message'=>'该帐号已在其他地点登录'],JSON_UNESCAPED_UNICODE));
         }
+        $this->user = $user;
         $this->cookieUsername = cookie('?username')?cookie('username'):input('cookie');
 
         //找到该用户对应的model的Auth对象,赋值给$authList
