@@ -86,7 +86,7 @@ class Auth extends Controller
 //            return json(['state'=>'error','message'=>'该帐号已在其他地点登录']);
 
         //认证成功，返回权限json列表
-        $auth = \app\index\model\Auth::get(1);
+        $auth = \app\index\model\Auth::get($user['id']);
         return json(['state'=>'success','username'=>$user['username']]+$auth->hidden(['id'])->toArray());
     }
 }

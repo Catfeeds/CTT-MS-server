@@ -87,7 +87,8 @@ class StuffIn extends Base
     public function check(){
         $json = isset(Request::instance()->post(false)['query'])?Request::instance()->post(false)['query']:null;
         //$json ='{"pageinfo":{"curpage":1,"pageinate":3},"order":"a.id desc","condition":{"like":["manufacturer","%咪咕%"],"between":["stuff_in_date",["2017-10-01","2017-10-30"]]}}';
-        //$json = '{"pageinfo":{"curpage":1,"pageinate":10},"condition":{}}';
+        //$json = '{"pageinfo":{"curpage":1,"pageinate":10},"condition":{"where":["a.id","1"]}}';
+        if(empty($json)) return returnWarning("缺少查询json");
         $array = json_decode($json,true);
         $pageinfo = $array['pageinfo'];
         unset($array['pageinfo']);

@@ -12179,3 +12179,87 @@
 [ sql ] [ SQL ] UPDATE `stuff_in_record`  SET `enabled`=0  WHERE  `id` = 5 [ RunTime:0.000454s ]
 [ sql ] [ SQL ] SHOW COLUMNS FROM `inventory` [ RunTime:0.000762s ]
 [ sql ] [ SQL ] UPDATE `inventory`  SET `enabled`=0  WHERE  `stuff_in_record_id` = 5 [ RunTime:0.000418s ]
+---------------------------------------------------------------
+[ 2017-11-01T22:19:06+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffin/enabled?id=5
+[ info ] localhost/ctt-ms-server/stuffin/enabled?id=5 [运行时间：0.057282s][吞吐率：17.46req/s] [内存消耗：3,868.34kb] [文件加载：61]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffIn',
+    2 => 'changeStuffEnabled',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; sessionid=0txnpiuubrsbnfs3kn3pe144ce9rmw0d; PHPSESSID=77cfq50f2uhsn0vmn2tciondm5; username=483956ab60100b52657b2f8543229419; csrftoken=edXE7Ct8siOBNxXLPz6QeKfeVFVKdovcs701ipXyJEM48TopiBtFgyJKUg9NHjv1',
+)
+[ info ] [ PARAM ] array (
+  'id' => '5',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffIn->changeStuffEnabled[ D:\wamp64\www\CTT-MS-server\application\index\controller\StuffIn.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001173s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001205s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '483956ab60100b52657b2f8543229419' LIMIT 1 [ RunTime:0.000658s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000920s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000611s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_in_record` [ RunTime:0.001120s ]
+[ sql ] [ SQL ] SELECT * FROM `stuff_in_record` WHERE  `id` = 5 LIMIT 1 [ RunTime:0.000551s ]
+[ sql ] [ SQL ] UPDATE `stuff_in_record`  SET `enabled`=1  WHERE  `id` = 5 [ RunTime:0.000457s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `inventory` [ RunTime:0.000839s ]
+[ sql ] [ SQL ] UPDATE `inventory`  SET `enabled`=1  WHERE  `stuff_in_record_id` = 5 [ RunTime:0.000402s ]
+---------------------------------------------------------------
+[ 2017-11-01T22:19:08+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffin/enabled?id=5
+[ info ] localhost/ctt-ms-server/stuffin/enabled?id=5 [运行时间：0.051966s][吞吐率：19.24req/s] [内存消耗：3,868.34kb] [文件加载：61]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffIn',
+    2 => 'changeStuffEnabled',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; sessionid=0txnpiuubrsbnfs3kn3pe144ce9rmw0d; PHPSESSID=77cfq50f2uhsn0vmn2tciondm5; username=483956ab60100b52657b2f8543229419; csrftoken=edXE7Ct8siOBNxXLPz6QeKfeVFVKdovcs701ipXyJEM48TopiBtFgyJKUg9NHjv1',
+)
+[ info ] [ PARAM ] array (
+  'id' => '5',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffIn->changeStuffEnabled[ D:\wamp64\www\CTT-MS-server\application\index\controller\StuffIn.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001002s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000992s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '483956ab60100b52657b2f8543229419' LIMIT 1 [ RunTime:0.000628s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000885s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000554s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_in_record` [ RunTime:0.000718s ]
+[ sql ] [ SQL ] SELECT * FROM `stuff_in_record` WHERE  `id` = 5 LIMIT 1 [ RunTime:0.000390s ]
+[ sql ] [ SQL ] UPDATE `stuff_in_record`  SET `enabled`=0  WHERE  `id` = 5 [ RunTime:0.000422s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `inventory` [ RunTime:0.000889s ]
+[ sql ] [ SQL ] UPDATE `inventory`  SET `enabled`=0  WHERE  `stuff_in_record_id` = 5 [ RunTime:0.000416s ]
