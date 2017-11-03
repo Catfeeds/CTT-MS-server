@@ -61,26 +61,42 @@ class StuffIn extends Base
 
     //修改入库记录
     public function change(){
-        $json = input('json');
+        //$json = '{"id":10,"stuff_id":2,"manufacturer":"烽火","type":"12","quantity":44,"storehouse":"丹棱库","stuff_in_date":"2017-11-03 13:32:41","remark":"432"}';
+        $json = $_POST['json'];
         $data = json_decode($json,true);
 
+        //查询入库记录
+        $stuffInRecord = db('stuff_in_record')->where('id',$data['id'])->find();
+        $dateTime = $stuffInRecord['stuff_in_date'];
+        $opertor = $stuffInRecord['operator'];
+
         //检查是否在一小时之内
-        if(time()-strtotime($data['stuff_in_date'])>3600)
+        if((time()-strtotime($dateTime))>3600)
             return returnWarning('已经超出可修改时间范围');
-        unset($data['stuff_in_date']);
 
         //检查是否是本管理员
-        $opertor = db('stuff_in_record')->where('id',$data['id'])->value('operator');
         $userName = getUser()['name'];
-        if(!($opertor==$userName && $userName==$data['operator']))
+        if(!($opertor==$userName))
             return returnWarning('你不是该入库材料经办人，无权修改');
+
+        $data['stuff_in_date'] = $dateTime;
+        $data['operator'] = $opertor;
 
         //修改stuff_in_record表
         $res = Manage::change($this->model,$this->validate,$data);
         if($res['state']!='success') return json($res);
 
+        $data['stuff_in_record_id'] = $data['id'];
+        unset($data['stuff_in_date']);
+        unset($data['remark']);
+        unset($data['operator']);
+        unset($data['id']);
+
         //修改inventory表
-        return json(Manage::add(new \app\index\model\Inventory(),new \app\index\validate\Inventory(),$data));
+        db('inventory')
+            ->where('stuff_in_record_id',$data['stuff_in_record_id'])
+            ->update($data);
+        return returnSuccess('修改成功');
     }
 
     //查看入库记录
@@ -95,7 +111,7 @@ class StuffIn extends Base
         $limit = $array;
         $userStorehouse = getUser()['storehouse'];
         //查询登录用户所在的仓库的入库记录
-        $filed = ['a.*','b.*'];
+        $filed = ['a.*','b.stuff_name','b.unit','b.category_name'];
         $result = db('stuff_in_record')
             ->alias('a')
             ->join('stuff b','a.stuff_id = b.id')

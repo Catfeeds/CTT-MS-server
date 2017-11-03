@@ -97,6 +97,12 @@ Route::rule([
     'stuffin/enabled'=>'index/StuffIn/changeStuffEnabled',
 ]);
 
+//库存查询
+Route::rule([
+    'inventory/check'=>'index/Inventory/check'
+]);
+
+
 //各种选择的查询
 Route::rule([
     'areaquery' => 'index/Query/area',    //地区查询
