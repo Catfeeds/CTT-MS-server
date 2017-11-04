@@ -37,6 +37,7 @@ class StuffManage extends Base
         //查重
         $result = db('stuff')
             ->where('stuff_name',$data['stuff_name'])
+            ->where('category_name',$data['category_name'])
             ->find();
         if($result)
             return json(['state'=>'warning','message'=>'该材料名称已经存在']);
@@ -79,6 +80,7 @@ class StuffManage extends Base
         $result = db('stuff')
             ->where('id','neq',$data['id'])
             ->where('stuff_name',$data['stuff_name'])
+            ->where('category_name',$data['category_name'])
             ->select();
         if(count($result)>0)
             return json(['state'=>'warning','message'=>'该材料名称已经存在']);
