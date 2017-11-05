@@ -26,7 +26,7 @@ class Manage
             return ['state'=>'warning','message'=>$validate->getError()];
         }
         //添加数据
-        if($model->data($data)->allowField(true)->save()){
+        if($model->data($data,true)->allowField(true)->save()){
             return ['state'=>'success','message'=>'添加成功'];
         }else{
             return ['state'=>'warning','message'=>'添加失败'];
@@ -145,7 +145,7 @@ class Manage
         }
 
         //更新数据
-        if($model->data($data)->isUpdate(true)->allowField(true)->save()){
+        if($model->data($data,true)->isUpdate(true)->allowField(true)->save()){
             return ['state'=>'success','message'=>'修改成功'];
         }else{
             return ['state'=>'warning','message'=>'修改失败，没有任何改动或数据不存在'];

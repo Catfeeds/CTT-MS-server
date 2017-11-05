@@ -107,7 +107,7 @@ Route::rule([
     'stuffleave/query'=>'index/StuffLeave/inventoryQuery',//根据stuff_id在inventory表中查询数据
     'stuffleave/leave'=>'index/StuffLeave/stuffLeave',//调拨操作
     'stuffleave/newcount'=>'index/StuffLeave/newCount',//查看尚未处理的材料调拨记录条数
-    'stuffleave/newAplication'=>'index/StuffLeave/newApplication',//查看尚未处理的材料调拨记录条数
+    'stuffleave/newapplication'=>'index/StuffLeave/newApplication',//查看尚未处理的材料调拨记录
 ]);
 
 //各种选择的查询

@@ -29,6 +29,7 @@ class StuffLeave extends Base
         }
     }
 
+
     //根据stuff_id在inventory表中查询数据
     public function inventoryQuery($stuff_id){
         $inventory = db('inventory')
@@ -39,11 +40,8 @@ class StuffLeave extends Base
         return json($inventory);
     }
 
-    //新增库存调拨记录
-    public function stuffLeave(){
-        $json = $_POST['json'];
-        $data = json_decode($json,true);
-
+    //用于检验存入stuff_leave_record表的数据是否正确
+    private function checkData($data){
         //检测材料批次在数据库中是否真的存在
         if(!dataIsExist('inventory','id',$data['inventory_id']))
             return returnWarning('该库存材料不存在!');
@@ -69,6 +67,19 @@ class StuffLeave extends Base
         $userStorehouse = db('user')->where('cookie_username',$this->cookieUsername)->value('storehouse');
         if($userStorehouse!=$data['send_storehouse'])
             return returnWarning('该管理员无权管理该仓库!');
+
+        return $num;
+    }
+
+    //新增库存调拨记录
+    public function stuffLeave(){
+        $json = $_POST['json'];
+        $data = json_decode($json,true);
+
+        $checkRes = $this->checkData($data);
+        if(!is_numeric(json_decode($checkRes))) return $checkRes;
+
+        $num = $checkRes;
 
         //通过cookie来找到当前管理员姓名
         $operator = db('user')->where('cookie_username',$this->cookieUsername)->value('name');
@@ -210,37 +221,19 @@ class StuffLeave extends Base
         $data = json_decode($json,true);
 
         //查询调拨记录
-        $stuffInRecord = db('stuff_in_record')->where('id',$data['id'])->find();
-        $dateTime = $stuffInRecord['stuff_in_date'];
-        $opertor = $stuffInRecord['operator'];
-
-        //检查是否在一小时之内
-        if((time()-strtotime($dateTime))>3600)
-            return returnWarning('已经超出可修改时间范围');
+        $stuffLeaveRecord = db('stuff_leave_record')->where('id',$data['id'])->find();
+        $opertor = $stuffLeaveRecord['send_operator'];
 
         //检查是否是本管理员
         $userName = getUser()['name'];
         if(!($opertor==$userName))
-            return returnWarning('你不是该入库材料经办人，无权修改');
+            return returnWarning('你不是调拨经办人材料经办人，无权修改');
 
-        $data['stuff_in_date'] = $dateTime;
         $data['operator'] = $opertor;
 
         //修改stuff_in_record表
         $res = Manage::change($this->model,$this->validate,$data);
         if($res['state']!='success') return json($res);
-
-        $data['stuff_in_record_id'] = $data['id'];
-        unset($data['stuff_in_date']);
-        unset($data['remark']);
-        unset($data['operator']);
-        unset($data['id']);
-
-        //修改inventory表
-        db('inventory')
-            ->where('stuff_in_record_id',$data['stuff_in_record_id'])
-            ->update($data);
-        return returnSuccess('修改成功');
     }
 
     //取消调拨（删除调拨记录）

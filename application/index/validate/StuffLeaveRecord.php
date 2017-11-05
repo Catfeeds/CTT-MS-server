@@ -15,7 +15,7 @@ class StuffLeaveRecord extends Validate
         'inventory_id'=>['require','integer','min'=>1],
         'leave_quantity'=>['require','integer','>=:1'],
         'send_storehouse'=>['require','max'=>20],
-        'leave_storehouse'=>['require','max'=>20],
+        'receive_storehouse'=>['require','max'=>20],
         'send_operator'=>['require','max'=>20],
         'receive_operator'=>['max'=>20],
         'is_receive'=>['boolean'],
@@ -31,7 +31,7 @@ class StuffLeaveRecord extends Validate
         'inventory_id.require'=>'库存id不能为空',
         'leave_quantity.require'=>'调拨数量不能为空',
         'send_storehouse.require'=>'调离仓库名称不能为空',
-        'leave_storehouse.require'=>'接收仓库名称不能为空',
+        'receive_storehouse.require'=>'接收仓库名称不能为空',
         'send_operator.require'=>'调拨经办人不能为空',
         'send_date.require'=>'调拨日期不能为空',
 
