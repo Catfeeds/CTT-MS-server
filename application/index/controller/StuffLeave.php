@@ -29,6 +29,16 @@ class StuffLeave extends Base
         }
     }
 
+    //根据stuff_id在inventory表中查询数据
+    public function inventoryQuery($stuff_id){
+        $inventory = db('inventory')
+            ->where('stuff_id',$stuff_id)
+            ->where('storehouse',$this->user['storehouse'])
+            ->where('enabled','1')
+            ->select();
+        return json($inventory);
+    }
+
     //新增库存调拨记录
     public function stuffLeave(){
         $json = $_POST['json'];
@@ -37,6 +47,11 @@ class StuffLeave extends Base
         //检测材料批次在数据库中是否真的存在
         if(!dataIsExist('inventory','id',$data['inventory_id']))
             return returnWarning('该库存材料不存在!');
+
+        //检测这批材料是否可用
+        $enabled = db('inventory')->where('id',$data['inventory_id'])->value('enabled');
+        if($enabled!=1)
+            return returnWarning('该批库存不可用！');
 
         //检测调拨数量是否大于库存数
         $num = db('inventory')->where('id',$data['inventory_id'])->value('quantity');
@@ -69,6 +84,7 @@ class StuffLeave extends Base
         return returnSuccess('调拨成功');
     }
 
+
     private function newAplArr(){
         $res = db('stuff_leave_record')
             ->where('receive_storehouse',$this->user['storehouse'])
@@ -77,62 +93,69 @@ class StuffLeave extends Base
         return $res;
     }
 
+
     //查看尚未处理的材料调拨记录条数
     public function newCount(){
         return count($this->newAplArr());
     }
+
 
     //查看尚未处理的材料调拨记录
     public function newApplication(){
         return json($this->newAplArr());
     }
 
-    //接收挑拨材料
-    public function receive(){
 
-    }
+    //接收调拨材料，并且增加入库记录和库存记录
+    public function receive($id){
+        $stuffLeaveRecord = db('stuff_leave_record')->where('id',$id)->find();
+        if(!$stuffLeaveRecord) return returnWarning('该调拨记录不存在');
+        if($stuffLeaveRecord['receive_storehouse']!=$this->user['storehouse'])
+            return returnWarning('你无权接收该调拨材料，因为你不是接收仓库管理员');
+        if($stuffLeaveRecord['is_received']!=0)
+            return returnWarning('该材料已被确认接收！');
 
-    //修改入库记录
-    public function change(){
-        //$json = '{"id":10,"stuff_id":2,"manufacturer":"烽火","type":"12","quantity":44,"storehouse":"丹棱库","stuff_in_date":"2017-11-03 13:32:41","remark":"432"}';
-        $json = $_POST['json'];
-        $data = json_decode($json,true);
+        $inventory=db('inventory')->where('id',$stuffLeaveRecord['inventory_id'])->find();
 
-        //查询入库记录
-        $stuffInRecord = db('stuff_in_record')->where('id',$data['id'])->find();
-        $dateTime = $stuffInRecord['stuff_in_date'];
-        $opertor = $stuffInRecord['operator'];
-
-        //检查是否在一小时之内
-        if((time()-strtotime($dateTime))>3600)
-            return returnWarning('已经超出可修改时间范围');
-
-        //检查是否是本管理员
-        $userName = getUser()['name'];
-        if(!($opertor==$userName))
-            return returnWarning('你不是该入库材料经办人，无权修改');
-
-        $data['stuff_in_date'] = $dateTime;
-        $data['operator'] = $opertor;
-
-        //修改stuff_in_record表
-        $res = Manage::change($this->model,$this->validate,$data);
+        //添加入库记录
+        $stuffIndata =[
+            'stuff_id'=>$inventory['stuff_id'],
+            'manufacturer'=>$inventory['manufacturer'],
+            'type'=>$inventory['type'],
+            'quantity'=>$stuffLeaveRecord['leave_quantity'],
+            'storehouse'=>$stuffLeaveRecord['receive_storehouse'],
+            'stuff_in_date'=>date('Y-m-d H:m:s',time()),
+            'operator'=>$this->user['name'],
+        ];
+        $stuffInModel = new \app\index\model\StuffInRecord();
+        $res = Manage::add($stuffInModel,new \app\index\validate\StuffInRecord(),$stuffIndata);
         if($res['state']!='success') return json($res);
 
-        $data['stuff_in_record_id'] = $data['id'];
-        unset($data['stuff_in_date']);
-        unset($data['remark']);
-        unset($data['operator']);
-        unset($data['id']);
+        //添加库存记录
+        $inventorydata=[
+            'stuff_in_record_id'=>$stuffInModel->id,
+            'stuff_id'=>$inventory['stuff_id'],
+            'manufacturer'=>$inventory['manufacturer'],
+            'type'=>$inventory['type'],
+            'storehouse'=>$stuffLeaveRecord['receive_storehouse'],
+            'quantity'=>$stuffLeaveRecord['leave_quantity'],
+        ];
 
-        //修改inventory表
-        db('inventory')
-            ->where('stuff_in_record_id',$data['stuff_in_record_id'])
-            ->update($data);
-        return returnSuccess('修改成功');
+        $res = json(Manage::add(new \app\index\model\Inventory(),new \app\index\validate\Inventory(),$inventorydata));
+        if($res['state']!='success') return json($res);
+
+        //修改调拨材料记录
+        $res = db('stuff_leave_record')
+            ->where('id',$id)
+            ->update(['receive_operator'=>$this->user['name'],
+                      'receive_date'=>date('Y-m-d',time()),
+                      'is_received'=>1
+                ]);
+        if($res) return returnSuccess('材料接收成功');
     }
 
-    //查看入库记录
+
+    //查看调拨记录
     public function check(){
         $json = isset(Request::instance()->post(false)['query'])?Request::instance()->post(false)['query']:null;
         //$json ='{"pageinfo":{"curpage":1,"pageinate":3},"order":"a.id desc","condition":{"like":["manufacturer","%咪咕%"],"between":["stuff_in_date",["2017-10-01","2017-10-30"]]}}';
@@ -181,24 +204,47 @@ class StuffLeave extends Base
         return json($result);
     }
 
-    //修改材料是否可用
-    public function changeStuffEnabled($id){
-        //根据id找到入库记录表中的仓库
-        $stuffInRecord = db('stuff_in_record')->where('id',$id)->find();
-        if(empty($stuffInRecord))
-            return returnWarning('该入库记录不存在');
-        if($this->user['storehouse']!=$stuffInRecord['storehouse'])
-            return returnWarning('该管理员无权管理该仓库!');
+    //修改调拨记录
+    public function change(){
+        $json = $_POST['json'];
+        $data = json_decode($json,true);
 
-        $newEnabled = $stuffInRecord['enabled']==0?1:0;
-        $data = ['enabled'=>$newEnabled];
+        //查询调拨记录
+        $stuffInRecord = db('stuff_in_record')->where('id',$data['id'])->find();
+        $dateTime = $stuffInRecord['stuff_in_date'];
+        $opertor = $stuffInRecord['operator'];
+
+        //检查是否在一小时之内
+        if((time()-strtotime($dateTime))>3600)
+            return returnWarning('已经超出可修改时间范围');
+
+        //检查是否是本管理员
+        $userName = getUser()['name'];
+        if(!($opertor==$userName))
+            return returnWarning('你不是该入库材料经办人，无权修改');
+
+        $data['stuff_in_date'] = $dateTime;
+        $data['operator'] = $opertor;
 
         //修改stuff_in_record表
-        db('stuff_in_record')->where('id',$id)->setField($data);
+        $res = Manage::change($this->model,$this->validate,$data);
+        if($res['state']!='success') return json($res);
+
+        $data['stuff_in_record_id'] = $data['id'];
+        unset($data['stuff_in_date']);
+        unset($data['remark']);
+        unset($data['operator']);
+        unset($data['id']);
 
         //修改inventory表
-       db('inventory')->where('stuff_in_record_id',$id)->setField($data);
+        db('inventory')
+            ->where('stuff_in_record_id',$data['stuff_in_record_id'])
+            ->update($data);
+        return returnSuccess('修改成功');
+    }
 
-       return returnSuccess($newEnabled);
+    //取消调拨（删除调拨记录）
+    public function cancel(){
+
     }
 }

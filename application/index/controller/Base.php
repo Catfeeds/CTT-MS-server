@@ -34,6 +34,9 @@ class Base extends Controller
         header("Access-Control-Allow-Credentials: true");
         header('Access-Control-Allow-Origin:http://10.2.130.195:8000');
 
+        //将时区设置为东八区
+        date_default_timezone_set('Asia/Chongqing');
+
         //检测cookie是否存在
         if(!cookie('?username') && (input('cookie')=='undefined'||input('cookie')==null))
             die(json_encode(['state'=>'error','message'=>'请先登录'],JSON_UNESCAPED_UNICODE));
