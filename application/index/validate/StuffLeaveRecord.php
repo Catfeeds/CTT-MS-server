@@ -13,7 +13,7 @@ class StuffLeaveRecord extends Validate
 {
     protected $rule=[
         'inventory_id'=>['require','integer','min'=>1],
-        'leave_quantity'=>['require','number','min'=>1],
+        'leave_quantity'=>['require','integer','>=:1'],
         'send_storehouse'=>['require','max'=>20],
         'leave_storehouse'=>['require','max'=>20],
         'send_operator'=>['require','max'=>20],

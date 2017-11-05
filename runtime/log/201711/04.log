@@ -131,3 +131,42 @@
 [ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'e0875f77f708aa19941103bc7b4dd881' LIMIT 1 [ RunTime:0.000591s ]
 [ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.068467s ]
 [ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.039780s ]
+---------------------------------------------------------------
+[ 2017-11-04T16:42:00+08:00 ] ::1 ::1 POST /CTT-MS-server/checkauth
+[ info ] localhost/CTT-MS-server/checkauth [运行时间：0.942077s][吞吐率：1.06req/s] [内存消耗：3,775.56kb] [文件加载：55]
+[ info ] [ LANG ] D:\wamp64\www\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/main.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'Phpstorm-5547fa09=783ade7a-de49-4ae0-b7a2-0e4ea33c1bea; Phpstorm-bd2926e8=857be1c2-e28b-476d-b13e-3a6d848fae47; pgv_pvi=2761342976; _ga=GA1.1.1437015703.1490101787; sessionid=n5blxasu1fmgpxq1cen8oquywngkirea; csrftoken=3IxkO1zjTHotlxmOrMLhfxyLs3sfSF2cr38akqw5cxNU5ExFaJlOA5twEEwCjgkO; PHPSESSID=97u0sfm68316kcprebog3n6631; username=e0875f77f708aa19941103bc7b4dd881',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => 'e0875f77f708aa19941103bc7b4dd881',
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ D:\wamp64\www\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001173s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.003325s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'e0875f77f708aa19941103bc7b4dd881' LIMIT 1 [ RunTime:0.000545s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000919s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.001097s ]

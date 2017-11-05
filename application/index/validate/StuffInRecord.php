@@ -12,10 +12,10 @@ use think\Validate;
 class StuffInRecord extends Validate
 {
     protected $rule=[
-        'stuff_id'=>['require','integer','min'=>1],
+        'stuff_id'=>['require','integer','>=:1'],
         'manufacturer'=>['require','max'=>20],
         'type'=>['require','max'=>20],
-        'quantity'=>['require','number','min'=>1],
+        'quantity'=>['require','integer','>=:1'],
         'storehouse'=>['require','max'=>20],
         'stuff_in_date'=>['require','date'],
         'operator'=>['require','max'=>20],
@@ -26,6 +26,8 @@ class StuffInRecord extends Validate
         'type.max'=>'型号不能超过20个字符',
         'storehouse.max'=>'仓库名不能超过20个字符',
         'operator.max'=>'仓库名不能超过20个字符',
+        'quantity.egt:1'=>'入库数量必须大于等于1',
+        'quantity.integer'=>'入库数量必须为整数',
 
         'stuff_id.require'=>'材料名称id不能为空',
         'manufacturer.require'=>'生产商不能为空',

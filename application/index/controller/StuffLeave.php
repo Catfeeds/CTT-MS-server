@@ -39,7 +39,7 @@ class StuffLeave extends Base
             return returnWarning('该库存材料不存在!');
 
         //检测调拨数量是否大于库存数
-        $num = db('inventory')->where('id',$data['inventory_id'])->value('leave_quantity');
+        $num = db('inventory')->where('id',$data['inventory_id'])->value('quantity');
         if($num<$data['leave_quantity'])
             return returnWarning('调拨数量大于库存数量！');
 
@@ -64,7 +64,31 @@ class StuffLeave extends Base
         if($res['state']!='success') return json($res);
 
         //修改inventory表中的库存数量
-        
+        $newNum = $num - $data['leave_quantity'];
+        db('inventory')->where('id',$data['inventory_id'])->setField('quantity',$newNum);
+        return returnSuccess('调拨成功');
+    }
+
+    private function newAplArr(){
+        $res = db('stuff_leave_record')
+            ->where('receive_storehouse',$this->user['storehouse'])
+            ->where('is_received',0)
+            ->select();
+        return $res;
+    }
+
+    //查看尚未处理的材料调拨记录条数
+    public function newCount(){
+        return count($this->newAplArr());
+    }
+
+    //查看尚未处理的材料调拨记录
+    public function newApplication(){
+        return json($this->newAplArr());
+    }
+
+    //接收挑拨材料
+    public function receive(){
 
     }
 
