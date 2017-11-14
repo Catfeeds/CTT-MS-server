@@ -2554,3 +2554,642 @@
 [ sql ] [ SQL ] SHOW COLUMNS FROM `storehouse` [ RunTime:0.000678s ]
 [ sql ] [ SQL ] SELECT * FROM `storehouse` [ RunTime:0.000323s ]
 [ sql ] [ SQL ] SELECT * FROM `storehouse` ORDER BY `id` LIMIT 0,10 [ RunTime:0.000216s ]
+---------------------------------------------------------------
+[ 2017-11-14T16:06:39+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffleave/cancel?id=1
+[ info ] localhost/ctt-ms-server/stuffleave/cancel?id=1 [运行时间：0.122549s][吞吐率：8.16req/s] [内存消耗：1,949.02kb] [文件加载：40]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Stuffleave',
+    2 => 'cancle',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; pgv_pvi=4484905984; pgv_si=s8345492480; PHPSESSID=ej38i8g6jrmemacvegjesd3a06; username=fc903a76ba36ea537526f37c67873ebf',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-14T16:10:18+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffleave/cancel?id=1
+[ info ] localhost/ctt-ms-server/stuffleave/cancel?id=1 [运行时间：0.031056s][吞吐率：32.20req/s] [内存消耗：1,949.41kb] [文件加载：40]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Stuffleave',
+    2 => 'cancle',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; pgv_pvi=4484905984; pgv_si=s8345492480; PHPSESSID=ej38i8g6jrmemacvegjesd3a06; username=fc903a76ba36ea537526f37c67873ebf',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-14T16:10:19+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffleave/cancel?id=1
+[ info ] localhost/ctt-ms-server/stuffleave/cancel?id=1 [运行时间：0.024503s][吞吐率：40.81req/s] [内存消耗：1,949.41kb] [文件加载：40]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Stuffleave',
+    2 => 'cancle',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; pgv_pvi=4484905984; pgv_si=s8345492480; PHPSESSID=ej38i8g6jrmemacvegjesd3a06; username=fc903a76ba36ea537526f37c67873ebf',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-14T16:10:38+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffleave/newcount
+[ info ] localhost/ctt-ms-server/stuffleave/newcount [运行时间：0.069403s][吞吐率：14.41req/s] [内存消耗：3,842.62kb] [文件加载：57]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffLeave',
+    2 => 'newCount',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; pgv_pvi=4484905984; pgv_si=s8345492480; PHPSESSID=ej38i8g6jrmemacvegjesd3a06; username=fc903a76ba36ea537526f37c67873ebf',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffLeave->newCount[ E:\code\php\CTT-MS-server\application\index\controller\StuffLeave.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002115s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.002108s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'fc903a76ba36ea537526f37c67873ebf' LIMIT 1 [ RunTime:0.000622s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000877s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000638s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_leave_record` [ RunTime:0.000876s ]
+[ sql ] [ SQL ] SELECT * FROM `stuff_leave_record` WHERE  `receive_storehouse` = '丹棱一库'  AND `is_received` = 0 [ RunTime:0.000450s ]
+---------------------------------------------------------------
+[ 2017-11-14T16:13:01+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffleave/newcount
+[ info ] localhost/ctt-ms-server/stuffleave/newcount [运行时间：0.055857s][吞吐率：17.90req/s] [内存消耗：3,843.01kb] [文件加载：57]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffLeave',
+    2 => 'newCount',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; pgv_pvi=4484905984; pgv_si=s8345492480; PHPSESSID=ej38i8g6jrmemacvegjesd3a06; username=fc903a76ba36ea537526f37c67873ebf',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffLeave->newCount[ E:\code\php\CTT-MS-server\application\index\controller\StuffLeave.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007329s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.004751s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'fc903a76ba36ea537526f37c67873ebf' LIMIT 1 [ RunTime:0.000683s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.005636s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000687s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_leave_record` [ RunTime:0.001114s ]
+[ sql ] [ SQL ] SELECT * FROM `stuff_leave_record` WHERE  `receive_storehouse` = '丹棱一库'  AND `is_received` = 0 [ RunTime:0.000479s ]
+---------------------------------------------------------------
+[ 2017-11-14T16:13:12+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffleave/cancel
+[ info ] localhost/ctt-ms-server/stuffleave/cancel [运行时间：0.019153s][吞吐率：52.21req/s] [内存消耗：1,948.19kb] [文件加载：40]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Stuffleave',
+    2 => 'cancle',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; pgv_pvi=4484905984; pgv_si=s8345492480; PHPSESSID=ej38i8g6jrmemacvegjesd3a06; username=fc903a76ba36ea537526f37c67873ebf',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-14T16:13:16+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffleave/cancel
+[ info ] localhost/ctt-ms-server/stuffleave/cancel [运行时间：0.019323s][吞吐率：51.75req/s] [内存消耗：1,949.08kb] [文件加载：40]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Stuffleave',
+    2 => 'cancle',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; pgv_pvi=4484905984; pgv_si=s8345492480; PHPSESSID=ej38i8g6jrmemacvegjesd3a06; username=fc903a76ba36ea537526f37c67873ebf',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-14T16:13:49+08:00 ] ::1 ::1 GET /ctt-ms-server/index/Stuffleave/cancle
+[ info ] localhost/ctt-ms-server/index/Stuffleave/cancle [运行时间：0.019694s][吞吐率：50.78req/s] [内存消耗：1,944.45kb] [文件加载：40]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-14T16:14:10+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffleave/cancel
+[ info ] localhost/ctt-ms-server/stuffleave/cancel [运行时间：0.020310s][吞吐率：49.24req/s] [内存消耗：1,949.08kb] [文件加载：40]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Stuffleave',
+    2 => 'cancel',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; pgv_pvi=4484905984; pgv_si=s8345492480; PHPSESSID=ej38i8g6jrmemacvegjesd3a06; username=fc903a76ba36ea537526f37c67873ebf',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-14T16:14:12+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffleave/cancel
+[ info ] localhost/ctt-ms-server/stuffleave/cancel [运行时间：0.019260s][吞吐率：51.92req/s] [内存消耗：1,949.08kb] [文件加载：40]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Stuffleave',
+    2 => 'cancel',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; pgv_pvi=4484905984; pgv_si=s8345492480; PHPSESSID=ej38i8g6jrmemacvegjesd3a06; username=fc903a76ba36ea537526f37c67873ebf',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-14T16:14:16+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffleave/cancel
+[ info ] localhost/ctt-ms-server/stuffleave/cancel [运行时间：0.018475s][吞吐率：54.13req/s] [内存消耗：1,949.08kb] [文件加载：40]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Stuffleave',
+    2 => 'cancel',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; pgv_pvi=4484905984; pgv_si=s8345492480; PHPSESSID=ej38i8g6jrmemacvegjesd3a06; username=fc903a76ba36ea537526f37c67873ebf',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-14T16:14:21+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffleave/cancel?id=1
+[ info ] localhost/ctt-ms-server/stuffleave/cancel?id=1 [运行时间：0.018602s][吞吐率：53.76req/s] [内存消耗：1,949.02kb] [文件加载：40]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Stuffleave',
+    2 => 'cancel',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; pgv_pvi=4484905984; pgv_si=s8345492480; PHPSESSID=ej38i8g6jrmemacvegjesd3a06; username=fc903a76ba36ea537526f37c67873ebf',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-14T16:14:34+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffleave/cancel?id=1
+[ info ] localhost/ctt-ms-server/stuffleave/cancel?id=1 [运行时间：0.077732s][吞吐率：12.86req/s] [内存消耗：3,893.34kb] [文件加载：61]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffLeave',
+    2 => 'cancel',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; pgv_pvi=4484905984; pgv_si=s8345492480; PHPSESSID=ej38i8g6jrmemacvegjesd3a06; username=fc903a76ba36ea537526f37c67873ebf',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffLeave->cancel[ E:\code\php\CTT-MS-server\application\index\controller\StuffLeave.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001244s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001718s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'fc903a76ba36ea537526f37c67873ebf' LIMIT 1 [ RunTime:0.000504s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001510s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000448s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_leave_record` [ RunTime:0.000769s ]
+[ sql ] [ SQL ] SELECT * FROM `stuff_leave_record` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000480s ]
+[ error ] [8]未定义数组索引: send-operator[E:\code\php\CTT-MS-server\application\index\controller\StuffLeave.php:244]
+---------------------------------------------------------------
+[ 2017-11-14T16:14:51+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffleave/cancel?id=2
+[ info ] localhost/ctt-ms-server/stuffleave/cancel?id=2 [运行时间：0.037647s][吞吐率：26.56req/s] [内存消耗：3,847.26kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffLeave',
+    2 => 'cancel',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; pgv_pvi=4484905984; pgv_si=s8345492480; PHPSESSID=ej38i8g6jrmemacvegjesd3a06; username=fc903a76ba36ea537526f37c67873ebf',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffLeave->cancel[ E:\code\php\CTT-MS-server\application\index\controller\StuffLeave.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001170s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001074s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'fc903a76ba36ea537526f37c67873ebf' LIMIT 1 [ RunTime:0.000430s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000800s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000386s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_leave_record` [ RunTime:0.000772s ]
+[ sql ] [ SQL ] SELECT * FROM `stuff_leave_record` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000340s ]
+---------------------------------------------------------------
+[ 2017-11-14T16:14:55+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffleave/cancel?id=3
+[ info ] localhost/ctt-ms-server/stuffleave/cancel?id=3 [运行时间：0.039730s][吞吐率：25.17req/s] [内存消耗：3,847.26kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffLeave',
+    2 => 'cancel',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; pgv_pvi=4484905984; pgv_si=s8345492480; PHPSESSID=ej38i8g6jrmemacvegjesd3a06; username=fc903a76ba36ea537526f37c67873ebf',
+)
+[ info ] [ PARAM ] array (
+  'id' => '3',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffLeave->cancel[ E:\code\php\CTT-MS-server\application\index\controller\StuffLeave.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001339s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001775s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'fc903a76ba36ea537526f37c67873ebf' LIMIT 1 [ RunTime:0.000806s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001123s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000866s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_leave_record` [ RunTime:0.001022s ]
+[ sql ] [ SQL ] SELECT * FROM `stuff_leave_record` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000640s ]
+---------------------------------------------------------------
+[ 2017-11-14T16:15:02+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffleave/cancel?id=3
+[ info ] localhost/ctt-ms-server/stuffleave/cancel?id=3 [运行时间：0.055223s][吞吐率：18.11req/s] [内存消耗：3,847.65kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffLeave',
+    2 => 'cancel',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; pgv_pvi=4484905984; pgv_si=s8345492480; PHPSESSID=ej38i8g6jrmemacvegjesd3a06; username=fc903a76ba36ea537526f37c67873ebf',
+)
+[ info ] [ PARAM ] array (
+  'id' => '3',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffLeave->cancel[ E:\code\php\CTT-MS-server\application\index\controller\StuffLeave.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001154s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001407s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'fc903a76ba36ea537526f37c67873ebf' LIMIT 1 [ RunTime:0.000800s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001191s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000696s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_leave_record` [ RunTime:0.007747s ]
+[ sql ] [ SQL ] SELECT * FROM `stuff_leave_record` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000445s ]
+---------------------------------------------------------------
+[ 2017-11-14T16:15:03+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffleave/cancel?id=3
+[ info ] localhost/ctt-ms-server/stuffleave/cancel?id=3 [运行时间：0.040858s][吞吐率：24.47req/s] [内存消耗：3,847.65kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffLeave',
+    2 => 'cancel',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; pgv_pvi=4484905984; pgv_si=s8345492480; PHPSESSID=ej38i8g6jrmemacvegjesd3a06; username=fc903a76ba36ea537526f37c67873ebf',
+)
+[ info ] [ PARAM ] array (
+  'id' => '3',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffLeave->cancel[ E:\code\php\CTT-MS-server\application\index\controller\StuffLeave.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001216s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001788s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'fc903a76ba36ea537526f37c67873ebf' LIMIT 1 [ RunTime:0.000564s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000875s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000482s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_leave_record` [ RunTime:0.000922s ]
+[ sql ] [ SQL ] SELECT * FROM `stuff_leave_record` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000362s ]
+---------------------------------------------------------------
+[ 2017-11-14T16:15:05+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffleave/cancel?id=1
+[ info ] localhost/ctt-ms-server/stuffleave/cancel?id=1 [运行时间：0.044019s][吞吐率：22.72req/s] [内存消耗：3,847.66kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffLeave',
+    2 => 'cancel',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; pgv_pvi=4484905984; pgv_si=s8345492480; PHPSESSID=ej38i8g6jrmemacvegjesd3a06; username=fc903a76ba36ea537526f37c67873ebf',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffLeave->cancel[ E:\code\php\CTT-MS-server\application\index\controller\StuffLeave.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001250s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001188s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'fc903a76ba36ea537526f37c67873ebf' LIMIT 1 [ RunTime:0.000820s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000974s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000459s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_leave_record` [ RunTime:0.000855s ]
+[ sql ] [ SQL ] SELECT * FROM `stuff_leave_record` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000713s ]
+---------------------------------------------------------------
+[ 2017-11-14T16:15:13+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffleave/cancel?id=1
+[ info ] localhost/ctt-ms-server/stuffleave/cancel?id=1 [运行时间：0.050189s][吞吐率：19.92req/s] [内存消耗：3,895.77kb] [文件加载：61]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffLeave',
+    2 => 'cancel',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; pgv_pvi=4484905984; pgv_si=s8345492480; PHPSESSID=ej38i8g6jrmemacvegjesd3a06; username=fc903a76ba36ea537526f37c67873ebf',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffLeave->cancel[ E:\code\php\CTT-MS-server\application\index\controller\StuffLeave.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001109s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000987s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'fc903a76ba36ea537526f37c67873ebf' LIMIT 1 [ RunTime:0.000472s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000905s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000785s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_leave_record` [ RunTime:0.005227s ]
+[ sql ] [ SQL ] SELECT * FROM `stuff_leave_record` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000508s ]
+[ error ] [8]未定义数组索引: inventor_id[E:\code\php\CTT-MS-server\application\index\controller\StuffLeave.php:251]
+---------------------------------------------------------------
+[ 2017-11-14T16:15:23+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffleave/cancel?id=1
+[ info ] localhost/ctt-ms-server/stuffleave/cancel?id=1 [运行时间：0.049087s][吞吐率：20.37req/s] [内存消耗：3,948.80kb] [文件加载：62]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffLeave',
+    2 => 'cancel',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; pgv_pvi=4484905984; pgv_si=s8345492480; PHPSESSID=ej38i8g6jrmemacvegjesd3a06; username=fc903a76ba36ea537526f37c67873ebf',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffLeave->cancel[ E:\code\php\CTT-MS-server\application\index\controller\StuffLeave.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001102s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001084s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'fc903a76ba36ea537526f37c67873ebf' LIMIT 1 [ RunTime:0.000479s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001284s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000421s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_leave_record` [ RunTime:0.001553s ]
+[ sql ] [ SQL ] SELECT * FROM `stuff_leave_record` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000449s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `inventory` [ RunTime:0.001088s ]
+[ sql ] [ SQL ] UPDATE `inventory`  SET `quantity`=quantity+43  WHERE  `id` = 3 [ RunTime:0.000399s ]
+[ sql ] [ SQL ] SELECT * FROM `stuff_leave_record` WHERE  `id` = 1 [ RunTime:0.000396s ]
+[ sql ] [ SQL ] DELETE FROM `stuff_leave_record`    WHERE  `id` = 1 [ RunTime:0.000793s ]

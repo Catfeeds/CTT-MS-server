@@ -51,10 +51,6 @@ class StuffLeave extends Base
         if($enabled!=1)
             return returnWarning('该批库存不可用！');
 
-        //检测调拨数量是否大于库存数
-        $num = db('inventory')->where('id',$data['inventory_id'])->value('quantity');
-        if($num<$data['leave_quantity'])
-            return returnWarning('调拨数量大于库存数量！');
 
         //检测请求仓库在数据库中是否真的存在
         if(!dataIsExist('storehouse','name',$data['send_storehouse']))
@@ -68,7 +64,7 @@ class StuffLeave extends Base
         if($userStorehouse!=$data['send_storehouse'])
             return returnWarning('该管理员无权管理该仓库!');
 
-        return $num;
+        return true;
     }
 
     //新增库存调拨记录
@@ -77,9 +73,12 @@ class StuffLeave extends Base
         $data = json_decode($json,true);
 
         $checkRes = $this->checkData($data);
-        if(!is_numeric(json_decode($checkRes))) return $checkRes;
+        if($checkRes!==true) return $checkRes;
 
-        $num = $checkRes;
+        //检测调拨数量是否大于库存数
+        $num = db('inventory')->where('id',$data['inventory_id'])->value('quantity');
+        if($num<$data['leave_quantity'])
+            return returnWarning('调拨数量大于库存数量！');
 
         //通过cookie来找到当前管理员姓名
         $operator = db('user')->where('cookie_username',$this->cookieUsername)->value('name');
@@ -238,7 +237,21 @@ class StuffLeave extends Base
     }
 
     //取消调拨（删除调拨记录）
-    public function cancel(){
+    public function cancel($id){
+        $stuff_leave_record = db('stuff_leave_record')->where('id',$id)->find();
+        if(empty($stuff_leave_record))
+            return returnWarning('调拨记录不存在');
+        if($stuff_leave_record['send_operator']!=$this->user['name'])
+            return returnWarning('你不是该申请经办人，无权取消');
+        if($stuff_leave_record['is_received']!=0)
+            return returnWarning('该批材料调拨已被接收，无法取消');
 
+        //在对应库存表中将调拨走的材料加回去
+        db('inventory')
+            ->where('id',$stuff_leave_record['inventory_id'])
+            ->setInc('quantity',$stuff_leave_record['leave_quantity']);
+
+        //删除材料调拨记录
+        return json(Manage::delete($this->model,$id));
     }
 }
