@@ -152,7 +152,7 @@ class StuffLeave extends Base
             'quantity'=>$stuffLeaveRecord['leave_quantity'],
         ];
 
-        $res = json(Manage::add(new \app\index\model\Inventory(),new \app\index\validate\Inventory(),$inventorydata));
+        $res = Manage::add(new \app\index\model\Inventory(),new \app\index\validate\Inventory(),$inventorydata);
         if($res['state']!='success') return json($res);
 
         //修改调拨材料记录
@@ -165,6 +165,39 @@ class StuffLeave extends Base
         if($res) return returnSuccess('材料接收成功');
     }
 
+    //修改调拨记录
+    public function change(){
+        $json = $_POST['json'];
+        $data = json_decode($json,true);
+
+        $checkRes = $this->checkData($data);
+        if($checkRes!==true) return $checkRes;
+
+        //检测调拨记录
+        $stuff_leave_record = db('stuff_leave_record')->where('id',$data['id'])->find();
+        if(empty($stuff_leave_record)) return returnWarning('该调拨记录不存在');
+        if($stuff_leave_record['is_received']!=0)
+            return returnWarning('该调拨已被接收，不能再修改');
+        if($stuff_leave_record['send_storehouse']!=$this->user['storehouse'])
+            return returnWarning('无权修改该仓库的调拨记录');
+        if($stuff_leave_record['send_operater']!=$this->user['name'])
+            return returnWarning('只有经办人本人才能修改调拨记录');
+
+        //检测调拨数量是否大于库存数
+        $num = db('inventory')->where('id',$data['inventory_id'])->value('quantity');
+        $num+=$stuff_leave_record['leave_quantity'];
+        if($num<$data['leave_quantity'])
+            return returnWarning('调拨数量大于库存数量！');
+
+        //修改记录StuffLeaveRecord模型
+        $res = Manage::change($this->model,$this->validate,$data);
+        if($res['state']!='success') return json($res);
+
+        //修改inventory表中的库存数量
+        $newNum = $num - $data['leave_quantity'];
+        db('inventory')->where('id',$data['inventory_id'])->setField('quantity',$newNum);
+        return returnSuccess('修改调拨申请成功');
+    }
 
     //查看调拨记录
     public function check(){
@@ -213,27 +246,6 @@ class StuffLeave extends Base
         $dataCount = count($result1->select());
         array_unshift($result,['datacount'=>$dataCount]);
         return json($result);
-    }
-
-    //修改调拨记录
-    public function change(){
-        $json = $_POST['json'];
-        $data = json_decode($json,true);
-
-        //查询调拨记录
-        $stuffLeaveRecord = db('stuff_leave_record')->where('id',$data['id'])->find();
-        $opertor = $stuffLeaveRecord['send_operator'];
-
-        //检查是否是本管理员
-        $userName = getUser()['name'];
-        if(!($opertor==$userName))
-            return returnWarning('你不是调拨经办人材料经办人，无权修改');
-
-        $data['operator'] = $opertor;
-
-        //修改stuff_in_record表
-        $res = Manage::change($this->model,$this->validate,$data);
-        if($res['state']!='success') return json($res);
     }
 
     //取消调拨（删除调拨记录）
