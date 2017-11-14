@@ -104,7 +104,7 @@ CREATE TABLE `inventory` (
 
 /*Data for the table `inventory` */
 
-insert  into `inventory`(`id`,`stuff_in_record_id`,`stuff_id`,`manufacturer`,`type`,`storehouse`,`quantity`,`enabled`) values (1,1,1,'咪咕','小猫','丹棱库',200,1),(2,2,1,'咪咕','小猫','丹棱库',200,1),(3,3,1,'咪咕','小猫','丹棱库',200,1),(4,4,1,'咪咕','小猫','丹棱库',200,1),(5,5,1,'咪咕','小猫','丹棱库',200,1),(6,6,1,'咪咕','小猫','丹棱库',200,1),(7,7,1,'烽火','44324','丹棱库',43,1),(8,8,1,'烽火','543','丹棱库',543,1),(9,9,2,'烽火','543543','丹棱库',54,1),(10,10,2,'烽火','111354354','丹棱库',44,1),(11,11,1,'烽火','7765','丹棱库',77,1),(12,12,3,'烽火','5435543','丹棱库',33,1),(13,13,3,'烽火','543','丹棱库',55,1);
+insert  into `inventory`(`id`,`stuff_in_record_id`,`stuff_id`,`manufacturer`,`type`,`storehouse`,`quantity`,`enabled`) values (1,1,1,'咪咕','小猫','丹棱一库',200,1),(2,2,1,'咪咕','小猫','丹棱一库',200,1),(3,3,1,'咪咕','小猫','丹棱一库',157,1),(4,4,1,'咪咕','小猫','丹棱一库',200,1),(5,5,1,'咪咕','小猫','丹棱一库',200,1),(6,6,1,'咪咕','小猫','丹棱一库',200,1),(7,7,1,'烽火','44324','丹棱一库',43,1),(8,8,1,'烽火','543','丹棱一库',543,1),(9,9,2,'烽火','543543','丹棱一库',54,1),(10,10,2,'烽火','111354354','丹棱一库',44,1),(11,11,1,'烽火','7765','丹棱一库',77,1),(12,12,3,'烽火','5435543','丹棱一库',33,1),(13,13,3,'烽火','543','丹棱一库',55,1);
 
 /*Table structure for table `manufacturer` */
 
@@ -169,7 +169,7 @@ CREATE TABLE `storehouse` (
 
 /*Data for the table `storehouse` */
 
-insert  into `storehouse`(`id`,`name`,`supervisor`,`store_address`,`area`) values (1,'丹棱库','徐志雷','丹棱','四川^眉山^丹棱'),(3,'眉山库','超管1','123123','四川^眉山');
+insert  into `storehouse`(`id`,`name`,`supervisor`,`store_address`,`area`) values (1,'丹棱一库','徐志雷','丹棱','四川^眉山^丹棱'),(3,'眉山库','超管1','123123','四川^眉山');
 
 /*Table structure for table `stuff` */
 
@@ -207,7 +207,7 @@ CREATE TABLE `stuff_in_record` (
 
 /*Data for the table `stuff_in_record` */
 
-insert  into `stuff_in_record`(`id`,`stuff_id`,`manufacturer`,`type`,`quantity`,`storehouse`,`stuff_in_date`,`operator`,`remark`,`enabled`) values (1,1,'咪咕','小猫',200,'丹棱库','2017-10-25 21:20:00','超管1',NULL,1),(2,1,'咪咕','小猫',200,'丹棱库','2017-10-25 21:20:00','超管1',NULL,1),(3,1,'咪咕','小猫',200,'丹棱库','2017-10-25 21:20:00','超管1',NULL,1),(4,1,'咪咕','小猫',200,'丹棱库','2017-10-25 21:20:00','超管2',NULL,1),(5,1,'咪咕','小猫',200,'丹棱库','2017-10-25 21:20:00','超管2',NULL,1),(6,1,'咪咕','小猫',200,'丹棱库','2017-10-25 21:20:00','超管1',NULL,1),(7,1,'烽火','44324',43,'丹棱库','2017-11-01 21:22:00','超管2','434',1),(8,1,'烽火','543',543,'丹棱库','2017-11-01 21:29:04','超管2','543',1),(9,2,'烽火','543543',54,'丹棱库','2017-11-02 14:47:03','超管1','09809',1),(10,2,'烽火','111354354',44,'丹棱库','2017-11-03 13:32:41','超管2','00',1),(11,1,'烽火','7765',77,'丹棱库','2017-11-03 16:56:19','超管2','6576',1),(12,3,'烽火','5435543',33,'丹棱库','2017-11-03 21:34:57','超管2','543543756',1),(13,3,'烽火','543',55,'丹棱库','2017-11-03 21:35:25','超管2','54343',1);
+insert  into `stuff_in_record`(`id`,`stuff_id`,`manufacturer`,`type`,`quantity`,`storehouse`,`stuff_in_date`,`operator`,`remark`,`enabled`) values (1,1,'咪咕','小猫',200,'丹棱一库','2017-10-25 21:20:00','超管1',NULL,1),(2,1,'咪咕','小猫',200,'丹棱一库','2017-10-25 21:20:00','超管1',NULL,1),(3,1,'咪咕','小猫',200,'丹棱一库','2017-10-25 21:20:00','超管1',NULL,1),(4,1,'咪咕','小猫',200,'丹棱一库','2017-10-25 21:20:00','超管2',NULL,1),(5,1,'咪咕','小猫',200,'丹棱一库','2017-10-25 21:20:00','超管2',NULL,1),(6,1,'咪咕','小猫',200,'丹棱一库','2017-10-25 21:20:00','超管1',NULL,1),(7,1,'烽火','44324',43,'丹棱一库','2017-11-01 21:22:00','超管2','434',1),(8,1,'烽火','543',543,'丹棱一库','2017-11-01 21:29:04','超管2','543',1),(9,2,'烽火','543543',54,'丹棱一库','2017-11-02 14:47:03','超管1','09809',1),(10,2,'烽火','111354354',44,'丹棱一库','2017-11-03 13:32:41','超管2','00',1),(11,1,'烽火','7765',77,'丹棱一库','2017-11-03 16:56:19','超管2','6576',1),(12,3,'烽火','5435543',33,'丹棱一库','2017-11-03 21:34:57','超管2','543543756',1),(13,3,'烽火','543',55,'丹棱一库','2017-11-03 21:35:25','超管2','54343',1);
 
 /*Table structure for table `stuff_leave_record` */
 
@@ -221,13 +221,15 @@ CREATE TABLE `stuff_leave_record` (
   `leave_quantity` int(11) NOT NULL COMMENT '调拨数量',
   `send_operator` varchar(20) NOT NULL COMMENT '调拨经办人姓名',
   `receive_operator` varchar(20) DEFAULT NULL COMMENT '接收经办人姓名',
-  `is_recived` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否已经确认接收',
+  `is_received` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否已经确认接收',
   `send_date` date NOT NULL COMMENT '调拨日期',
   `receive_date` date DEFAULT NULL COMMENT '确认接受日期',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `stuff_leave_record` */
+
+insert  into `stuff_leave_record`(`id`,`inventory_id`,`send_storehouse`,`receive_storehouse`,`leave_quantity`,`send_operator`,`receive_operator`,`is_received`,`send_date`,`receive_date`) values (1,3,'丹棱一库','丹棱一库',43,'超管2',NULL,0,'2017-11-09',NULL);
 
 /*Table structure for table `team` */
 
@@ -269,7 +271,7 @@ CREATE TABLE `user` (
 
 /*Data for the table `user` */
 
-insert  into `user`(`id`,`username`,`password`,`area`,`storehouse`,`name`,`sex`,`phone`,`qq`,`email`,`address`,`idcard`,`cookie_username`,`last_login_time`,`last_logout_time`) values (1,'001','10470c3b4b1fed12c3baac014be15fac67c6e815','四川^眉山^丹棱','丹棱库','超管1','男',NULL,NULL,NULL,NULL,'00001','e0875f77f708aa19941103bc7b4dd881','2017-11-04 08:52:08','2017-11-04 08:52:08'),(2,'002','10470c3b4b1fed12c3baac014be15fac67c6e815','四川^眉山^丹棱','丹棱库','超管2','男',NULL,NULL,NULL,NULL,'00001','832a5bc59f2087c9adc51e333d774642','2017-11-03 21:35:03','2017-11-03 21:35:03'),(4,'003','67a74306b06d0c01624fe0d0249a570f4d093747','四川^眉山','眉山库','徐志雷','男','1133213123','','','','123123123123',NULL,'2017-11-03 21:33:49','2017-11-03 21:34:56');
+insert  into `user`(`id`,`username`,`password`,`area`,`storehouse`,`name`,`sex`,`phone`,`qq`,`email`,`address`,`idcard`,`cookie_username`,`last_login_time`,`last_logout_time`) values (1,'001','10470c3b4b1fed12c3baac014be15fac67c6e815','四川^眉山^丹棱','丹棱一库','超管1','男',NULL,NULL,NULL,NULL,'00001','fc903a76ba36ea537526f37c67873ebf','2017-11-14 14:08:21','2017-11-14 14:08:21'),(2,'002','10470c3b4b1fed12c3baac014be15fac67c6e815','四川^眉山^丹棱','丹棱一库','超管2','男',NULL,NULL,NULL,NULL,'00001','9385f7a795a7fb7d146bba4d285324a2','2017-11-14 13:20:10','2017-11-14 13:20:10'),(4,'003','67a74306b06d0c01624fe0d0249a570f4d093747','四川^眉山','眉山库','徐志雷','男','1133213123','','','','123123123123',NULL,'2017-11-03 21:33:49','2017-11-03 21:34:56');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

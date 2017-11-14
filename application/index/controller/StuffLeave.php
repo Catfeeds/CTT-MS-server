@@ -92,10 +92,11 @@ class StuffLeave extends Base
         //修改inventory表中的库存数量
         $newNum = $num - $data['leave_quantity'];
         db('inventory')->where('id',$data['inventory_id'])->setField('quantity',$newNum);
-        return returnSuccess('调拨成功');
+        return returnSuccess('调拨申请成功');
     }
 
 
+    //返回未处理调拨记录
     private function newAplArr(){
         $res = db('stuff_leave_record')
             ->where('receive_storehouse',$this->user['storehouse'])

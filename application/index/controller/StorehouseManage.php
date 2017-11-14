@@ -96,6 +96,9 @@ class StorehouseManage extends Base
         foreach ($tableList as $table){
             db($table)->where('storehouse',$preStorehouse['name'])->setField('storehouse',$data['name']);
         }
+        db('stuff_leave_record')->where('send_storehouse',$preStorehouse['name'])->setField('send_storehouse',$data['name']);
+        db('stuff_leave_record')->where('receive_storehouse',$preStorehouse['name'])->setField('receive_storehouse',$data['name']);
+
         //修改user表中的地址
         db('user')->where('storehouse',$preStorehouse['name'])->setField('area',$data['area']);
 
@@ -110,9 +113,12 @@ class StorehouseManage extends Base
         $storehouse = db('storehouse')->where('id',$id)->find();
         $tableList = ['user','inventory','stuff_in_record'];
         foreach ($tableList as $table){
-            $res = db($table)->where('storehouse',$storehouse['name'])->find();
+            $res = db($table)->where('storehouse',$storehouse['name'])
+                ->find();
             if($res) return json(['state'=>'warning','message'=>'该仓库不能删除，因为在其它表中还存在该仓库']);
         }
+        $res = db('stuff_leave_record')->where('send_storehouse',$storehouse['name'])->whereor('receive_storehouse',$storehouse['name'])->find();
+        if($res) return json(['state'=>'warning','message'=>'该仓库不能删除，因为在其它表中还存在该仓库']);
         return json(Manage::delete($this->model,$id));
     }
 }
