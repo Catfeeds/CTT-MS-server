@@ -109,6 +109,7 @@ Route::rule([
     'stuffleave/newcount'=>'index/StuffLeave/newCount',//查看尚未处理的材料调拨记录条数
     'stuffleave/newapplication'=>'index/StuffLeave/newApplication',//查看尚未处理的材料调拨记录
     'stuffleave/check'=>'index/StuffLeave/check',//查看本仓库的调拨记录
+    'stuffleave/change'=>'index/StuffLeave/change',//修改调拨记录
     'stuffleave/receive'=>'index/StuffLeave/receive',//确认接收调拨
     'stuffleave/cancel'=>'index/StuffLeave/cancel'//取消调拨（删除调拨记录）
 ]);

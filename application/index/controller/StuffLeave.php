@@ -97,10 +97,15 @@ class StuffLeave extends Base
 
     //返回未处理调拨记录
     private function newAplArr(){
+        $filed = ['a.*','b.manufacturer','b.type','storehouse','c.stuff_name','c.unit','c.category_name'];
         $res = db('stuff_leave_record')
-            ->where('receive_storehouse',$this->user['storehouse'])
-            ->where('is_received',0)
-            ->select();
+                ->alias('a')
+                ->join('inventory b','a.inventory_id = b.id')
+                ->join('stuff c','b.stuff_id = c.id')
+                ->field($filed)
+                ->where('receive_storehouse',$this->user['storehouse'])
+                ->where('is_received',0)
+                ->select();
         return $res;
     }
 
@@ -168,6 +173,7 @@ class StuffLeave extends Base
     //修改调拨记录
     public function change(){
         $json = $_POST['json'];
+        //$json = '{"id":1,"inventory_id":1,"send_storehouse":"丹棱一库","receive_storehouse":"丹棱一库","leave_quantity":50,"send_date":"2017-11-15"}';
         $data = json_decode($json,true);
 
         $checkRes = $this->checkData($data);
@@ -180,7 +186,7 @@ class StuffLeave extends Base
             return returnWarning('该调拨已被接收，不能再修改');
         if($stuff_leave_record['send_storehouse']!=$this->user['storehouse'])
             return returnWarning('无权修改该仓库的调拨记录');
-        if($stuff_leave_record['send_operater']!=$this->user['name'])
+        if($stuff_leave_record['send_operator']!=$this->user['name'])
             return returnWarning('只有经办人本人才能修改调拨记录');
 
         //检测调拨数量是否大于库存数
@@ -188,6 +194,8 @@ class StuffLeave extends Base
         $num+=$stuff_leave_record['leave_quantity'];
         if($num<$data['leave_quantity'])
             return returnWarning('调拨数量大于库存数量！');
+
+        $data['send_operator'] = $this->user['name'];
 
         //修改记录StuffLeaveRecord模型
         $res = Manage::change($this->model,$this->validate,$data);
@@ -201,9 +209,7 @@ class StuffLeave extends Base
 
     //查看调拨记录
     public function check(){
-        //$json = isset(Request::instance()->post(false)['query'])?Request::instance()->post(false)['query']:null;
-        //$json ='{"pageinfo":{"curpage":1,"pageinate":3},"order":"a.id desc","condition":{"like":["manufacturer","%咪咕%"],"between":["stuff_in_date",["2017-10-01","2017-10-30"]]}}';
-        $json = '{"pageinfo":{"curpage":1,"pageinate":10},"condition":{"where":["a.id","1"]}}';
+        $json = isset(Request::instance()->post(false)['query'])?Request::instance()->post(false)['query']:null;
         if(empty($json)) return returnWarning("缺少查询json");
         $array = json_decode($json,true);
         $pageinfo = $array['pageinfo'];
@@ -211,7 +217,7 @@ class StuffLeave extends Base
         $limit = $array;
         $userStorehouse = getUser()['storehouse'];
         //查询登录用户所在的仓库的入库记录
-        $filed = ['a.*','b.manufacturer','b.type','storehouse','c.stuff_name','c.unit','c.category_name'];
+        $filed = ['a.*','b.manufacturer','b.type','b.stuff_id','storehouse','c.stuff_name','c.unit','c.category_name'];
         $result = db('stuff_leave_record')
             ->alias('a')
             ->join('inventory b','a.inventory_id = b.id')
