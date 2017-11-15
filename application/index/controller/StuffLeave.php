@@ -201,9 +201,9 @@ class StuffLeave extends Base
 
     //查看调拨记录
     public function check(){
-        $json = isset(Request::instance()->post(false)['query'])?Request::instance()->post(false)['query']:null;
+        //$json = isset(Request::instance()->post(false)['query'])?Request::instance()->post(false)['query']:null;
         //$json ='{"pageinfo":{"curpage":1,"pageinate":3},"order":"a.id desc","condition":{"like":["manufacturer","%咪咕%"],"between":["stuff_in_date",["2017-10-01","2017-10-30"]]}}';
-        //$json = '{"pageinfo":{"curpage":1,"pageinate":10},"condition":{"where":["a.id","1"]}}';
+        $json = '{"pageinfo":{"curpage":1,"pageinate":10},"condition":{"where":["a.id","1"]}}';
         if(empty($json)) return returnWarning("缺少查询json");
         $array = json_decode($json,true);
         $pageinfo = $array['pageinfo'];
@@ -211,21 +211,23 @@ class StuffLeave extends Base
         $limit = $array;
         $userStorehouse = getUser()['storehouse'];
         //查询登录用户所在的仓库的入库记录
-        $filed = ['a.*','b.stuff_name','b.unit','b.category_name'];
-        $result = db('stuff_in_record')
+        $filed = ['a.*','b.manufacturer','b.type','storehouse','c.stuff_name','c.unit','c.category_name'];
+        $result = db('stuff_leave_record')
             ->alias('a')
-            ->join('stuff b','a.stuff_id = b.id')
+            ->join('inventory b','a.inventory_id = b.id')
+            ->join('stuff c','b.stuff_id = c.id')
             ->field($filed)
             ->where('storehouse',$userStorehouse);
-        $result1 = db('stuff_in_record')
+        $result1 = db('stuff_leave_record')
             ->alias('a')
-            ->join('stuff b','a.stuff_id = b.id')
+            ->join('inventory b','a.inventory_id = b.id')
+            ->join('stuff c','b.stuff_id = c.id')
             ->field($filed)
             ->where('storehouse',$userStorehouse);
-        $order = isset($limit['order'])?$limit['order']:'a.id';
-        //若排序条件为normal，则将$oeder赋值为null，默认顺序
+        $order = isset($limit['order'])?$limit['order']:'a.send_date desc';
+        //若排序条件为normal，则将$oeder赋值为null，时间逆序
         $con = explode(' ',$order);
-        if(isset($con[1]) && $con[1]=='normal') $order='a.id';
+        if(isset($con[1]) && $con[1]=='normal') $order='a.send_date desc';
         foreach ($limit['condition'] as $keyword=>$value){
             if($keyword=='where'){
                 if(isset($value[0])&&isset($value[1])){
