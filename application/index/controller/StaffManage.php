@@ -176,6 +176,16 @@ class StaffManage extends Base
         //通过cookie来找到当前管理员姓名
         $operator = db('user')->where('cookie_username',$this->cookieUsername)->value('name');
         $data['operator'] = $operator;
+
+        //修改其他表中存放的装维姓名
+        $tableList = ['stuff_out_record'];
+        $preUser = db('staff')->where('id',$data['id'])->find();
+        foreach ($tableList as $table){
+            db($table)
+                ->where('staff',$preUser['name'])
+                ->setField('staff',$data['name']);
+        }
+
         //使用Manage类的change静态方法验证、修改数据
         return json(Manage::change($this->model,$this->validate,$data));
     }
@@ -183,6 +193,13 @@ class StaffManage extends Base
     //删除装维人员
     public function delete(){
         $id = input('id');
+        //查找其他表中是否有该装维人员，若有则不能删除
+        $user = db('staff')->where('id',$id)->find();
+        $tableList = ['stuff_out_record'];
+        foreach ($tableList as $table){
+            $res = db($table)->where('staff',$user['name'])->find();
+            if($res) return json(['state'=>'warning','message'=>'该装维人员不能删除，因为在其它表中还存在该装维姓名']);
+        }
         return json(Manage::delete($this->model,$id));
     }
 }

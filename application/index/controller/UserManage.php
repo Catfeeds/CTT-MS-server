@@ -148,6 +148,13 @@ class UserManage extends Base
         db('stuff_leave_record')
             ->where('receive_operator',$preUser['name'])
             ->setField('receive_operator',$data[0]['name']);
+        db('stuff_out_record')
+            ->where('operator1',$preUser['name'])
+            ->setField('operator1',$data[0]['name']);
+        db('stuff_out_record')
+            ->where('operator2',$preUser['name'])
+            ->setField('operator2',$data[0]['name']);
+
         //修改权限
         $result1 = Manage::change(new \app\index\model\Auth(),new \app\index\validate\Auth(),$data[1]);
 
@@ -171,6 +178,8 @@ class UserManage extends Base
             if($res) return json(['state'=>'warning','message'=>'该管理员不能删除，因为在其它表中还存在该管理员']);
         }
         $res = db('stuff_leave_record')->where('recrive_operator',$user['name'])->whereOr('send_operator',$user['name'])->find();
+        if($res) return json(['state'=>'warning','message'=>'该管理员不能删除，因为在其它表中还存在该管理员']);
+        $res = db('stuff_out_record')->where('operator1',$user['name'])->whereOr('operator2',$user['name'])->find();
         if($res) return json(['state'=>'warning','message'=>'该管理员不能删除，因为在其它表中还存在该管理员']);
 
         //删除Auth表中的数据
