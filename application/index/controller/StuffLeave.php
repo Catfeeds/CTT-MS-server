@@ -17,7 +17,7 @@ class StuffLeave extends Base
         parent::__construct();
         //查询$authList中是否有该操作的权限
         if($this->authList->stuff_leave == 0){
-            die(json_encode(['state'=>'warning','message'=>'没有材料入库权限管理权限'],JSON_UNESCAPED_UNICODE));
+            die(json_encode(['state'=>'warning','message'=>'没有材料调拨权限管理权限'],JSON_UNESCAPED_UNICODE));
         }
         //尝试实例化StuffLeaveRecord的模型类和验证器类，并且赋值给$model和$validate
         //若这两个类不存在，则抛出异常，返回错误信息
