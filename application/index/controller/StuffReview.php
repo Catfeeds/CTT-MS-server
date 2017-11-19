@@ -31,14 +31,14 @@ class StuffReview extends Base
 
     //返回未处理申请记录
     private function newAplArr(){
-        $filed = ['a.*','b.manufacturer','b.type','storehouse','c.stuff_name','c.unit','c.category_name'];
+        $filed = ['a.*','b.manufacturer','b.type','c.stuff_name','c.unit','c.category_name'];
         $res = db('stuff_out_record')
             ->alias('a')
             ->join('inventory b','a.inventory_id = b.id')
             ->join('stuff c','b.stuff_id = c.id')
             ->field($filed)
-            ->where('storehouse',$this->user['storehouse'])
-            ->where('is_out',0)
+            ->where('a.storehouse',$this->user['storehouse'])
+            ->where('a.is_out',0)
             ->select();
         return $res;
     }
@@ -58,13 +58,13 @@ class StuffReview extends Base
     //检查提交的操作
     private function checkHandel($id){
         $app = Db::table('stuff_out_record')
-            ->where('id'.$id)
+            ->where('id',$id)
             ->find();
         if(empty($app))
             return returnWarning('该申请不存在');
         if($app['storehouse']!==$this->user['storehouse'])
             return returnWarning('仓库不对应，无法操作该申请');
-        if($app['is_out']!=1)
+        if($app['is_out']!=0)
             return returnWarning('该申请不是等待管理员审核状态');
         return $app;
     }
@@ -72,9 +72,9 @@ class StuffReview extends Base
     //同意申请
     public function agree($id){
         $res = $this->checkHandel($id);
-        if(!is_null(json_decode($res)))
+        if(!is_array($res))
             return $res;
-        Db::table('stuff_out_app')
+        Db::table('stuff_out_record')
             ->where('id',$id)
             ->setField('is_out',1);
         return returnSuccess('申请已同意');
@@ -84,9 +84,9 @@ class StuffReview extends Base
     public function refuse($id){
         $reason = input('?reason')?input('reason'):null;
         $res = $this->checkHandel($id);
-        if(!is_null(json_decode($res)))
-            return $res;;
-        Db::table('stuff_out_app')
+        if(!is_array($res))
+            return $res;
+        Db::table('stuff_out_record')
             ->where('id',$id)
             ->update(['is_out'=>2,'remark'=>$reason]);
         return returnSuccess('申请已驳回');
@@ -97,7 +97,7 @@ class StuffReview extends Base
         $json = $_POST['json'];
         $data = json_decode($json,true);
         $res = $this->checkHandel($data['id']);
-        if(!is_null(json_decode($res)))
+        if(!is_array($res))
             return $res;
 
         return Manage::change($this->model,$this->validate,$data);

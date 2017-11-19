@@ -114,6 +114,21 @@ Route::rule([
     'stuffleave/cancel'=>'index/StuffLeave/cancel'//取消调拨（删除调拨记录）
 ]);
 
+//材料审核、发放
+Route::rule([
+    'stuffreview/newcount' => 'index/StuffReview/newCount',//待审批的申请数量
+    'stuffreview/newapplication' => 'index/StuffReview/newApplication',//待审批的申请详情
+    'stuffreview/agree' => 'index/StuffReview/agree', //同意申请
+    'stuffreview/refuse' => 'index/StuffReview/refuse', //拒绝申请
+    'stuffreview/change' => 'index/StuffReview/change', //修改申请
+
+    'stuffout/newcount' => 'index/StuffOut/newCount',//待审批的申请数量
+    'stuffout/newapplication' => 'index/StuffOut/newApplication',//待审批的申请详情
+    'stuffout/agree' => 'index/StuffOut/agree', //同意申请
+    'stuffout/refuse' => 'index/StuffOut/refuse', //拒绝申请
+    'stuffout/change' => 'index/StuffOut/change', //修改申请
+]);
+
 //各种选择的查询
 Route::rule([
     'areaquery' => 'index/Query/area',    //地区查询

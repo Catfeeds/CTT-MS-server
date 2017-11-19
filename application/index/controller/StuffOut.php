@@ -31,13 +31,13 @@ class StuffOut extends Base
 
     //返回管理员审核通过的申请记录
     private function newAplArr(){
-        $filed = ['a.*','b.manufacturer','b.type','storehouse','c.stuff_name','c.unit','c.category_name'];
+        $filed = ['a.*','b.manufacturer','b.type','c.stuff_name','c.unit','c.category_name'];
         $res = db('stuff_out_record')
             ->alias('a')
             ->join('inventory b','a.inventory_id = b.id')
             ->join('stuff c','b.stuff_id = c.id')
             ->field($filed)
-            ->where('storehouse',$this->user['storehouse'])
+            ->where('a.storehouse',$this->user['storehouse'])
             ->where('is_out',1)
             ->select();
         return $res;
@@ -72,7 +72,7 @@ class StuffOut extends Base
     //同意申请
     public function agree($id){
         $res = $this->checkHandel($id);
-        if(!is_null(json_decode($res)))
+        if(!is_array($res))
             return $res;
         Db::table('stuff_out_app')
             ->where('id',$id)
@@ -84,7 +84,7 @@ class StuffOut extends Base
     public function refuse($id){
         $reason = input('?reason')?input('reason'):null;
         $res = $this->checkHandel($id);
-        if(!is_null(json_decode($res)))
+        if(!is_array($res))
             return $res;;
         Db::table('stuff_out_app')
             ->where('id',$id)
@@ -97,7 +97,7 @@ class StuffOut extends Base
         $json = $_POST['json'];
         $data = json_decode($json,true);
         $res = $this->checkHandel($data['id']);
-        if(!is_null(json_decode($res)))
+        if(!is_array($res))
             return $res;
 
         return Manage::change($this->model,$this->validate,$data);
