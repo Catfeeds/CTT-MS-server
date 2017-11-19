@@ -39,6 +39,7 @@ DROP TABLE IF EXISTS `auth`;
 CREATE TABLE `auth` (
   `uid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'userid',
   `stuff_in` tinyint(1) NOT NULL DEFAULT '0' COMMENT '材料入库',
+  `stuff_review` tinyint(1) NOT NULL DEFAULT '0' COMMENT '材料管理审核',
   `stuff_out` tinyint(1) DEFAULT '0' COMMENT '材料出库',
   `stuff_leave` tinyint(1) NOT NULL DEFAULT '0' COMMENT '材料调库',
   `stuff_use` tinyint(1) NOT NULL DEFAULT '0' COMMENT '材料消耗',
@@ -69,7 +70,7 @@ CREATE TABLE `auth` (
 
 /*Data for the table `auth` */
 
-insert  into `auth`(`uid`,`stuff_in`,`stuff_out`,`stuff_leave`,`stuff_use`,`stuff_count`,`stuff_inventory`,`tool_in`,`tool_out`,`tool_back`,`tool_leave`,`tool_count`,`tool_infoconsummate`,`safty_in`,`safty_out`,`safty_back`,`safty_count`,`safty_infoconsummate`,`staff_manage`,`user_manage`,`area_manage`,`storehouse_manage`,`team_manage`,`category_manage`,`stuff_manage`,`manufacturer_manage`) values (1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,'1'),(2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,'1'),(4,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'0');
+insert  into `auth`(`uid`,`stuff_in`,`stuff_review`,`stuff_out`,`stuff_leave`,`stuff_use`,`stuff_count`,`stuff_inventory`,`tool_in`,`tool_out`,`tool_back`,`tool_leave`,`tool_count`,`tool_infoconsummate`,`safty_in`,`safty_out`,`safty_back`,`safty_count`,`safty_infoconsummate`,`staff_manage`,`user_manage`,`area_manage`,`storehouse_manage`,`team_manage`,`category_manage`,`stuff_manage`,`manufacturer_manage`) values (1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,'1'),(2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,'1'),(4,1,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'0');
 
 /*Table structure for table `category` */
 
@@ -152,7 +153,7 @@ CREATE TABLE `staff` (
 
 /*Data for the table `staff` */
 
-insert  into `staff`(`id`,`name`,`sex`,`on_guard`,`idcard`,`area`,`team`,`phone`,`qq`,`sec_linkman`,`sec_phone`,`address`,`education`,`school`,`operator`,`employment_date`,`per_pic`,`idcard_front_pic`,`idcard_back_pic`,`remark`,`password`,`cookie_name`) values (1,'张三','男','是','123123','四川^眉山^丹棱','','123123','','','','','','','超管2','2017-10-23','/CTT-MS-server\\public\\staff\\per_pic\\20171023\\8648f347dd357eb91c8c320d07e03332.jpg','/CTT-MS-server\\public\\staff\\idcard_front_pic\\20171023\\78daff7d7e8f9ac74c0fa97c5207906b.jpg','/CTT-MS-server\\public\\staff\\idcard_back_pic\\20171023\\6551b5baa846207a829a6eeb7cde55f2.jpg','备注','040bd08a4290267535cd247b8ba2eca129d9fe9f','7be9c3075361d5104aa9e153b5d1c004'),(2,'李四','男','是','123123','四川^眉山','眉山班','12345678','','','','','','','徐志雷','2017-10-23','/CTT-MS-server\\public\\staff\\per_pic\\20171023\\cec518d5d0dcc11039c22a0e59b1280e.jpg','/CTT-MS-server\\public\\staff\\idcard_front_pic\\20171023\\33ae3bc3cccc1e86ac23a64ed38986ed.jpg','/CTT-MS-server\\public\\staff\\idcard_back_pic\\20171023\\8680d5fb32aad5101385601998aa721a.jpg','','1f82ea75c5cc526729e2d581aeb3aeccfef4407e',NULL);
+insert  into `staff`(`id`,`name`,`sex`,`on_guard`,`idcard`,`area`,`team`,`phone`,`qq`,`sec_linkman`,`sec_phone`,`address`,`education`,`school`,`operator`,`employment_date`,`per_pic`,`idcard_front_pic`,`idcard_back_pic`,`remark`,`password`,`cookie_name`) values (1,'张三','男','是','123123','四川^眉山^丹棱','','123123','','','','','','','超管2','2017-10-23','/CTT-MS-server\\public\\staff\\per_pic\\20171023\\8648f347dd357eb91c8c320d07e03332.jpg','/CTT-MS-server\\public\\staff\\idcard_front_pic\\20171023\\78daff7d7e8f9ac74c0fa97c5207906b.jpg','/CTT-MS-server\\public\\staff\\idcard_back_pic\\20171023\\6551b5baa846207a829a6eeb7cde55f2.jpg','备注','040bd08a4290267535cd247b8ba2eca129d9fe9f','c8434d3aef65d320ecc0f9ef1c4ff01b'),(2,'李四','男','是','123123','四川^眉山','眉山班','12345678','','','','','','','徐志雷','2017-10-23','/CTT-MS-server\\public\\staff\\per_pic\\20171023\\cec518d5d0dcc11039c22a0e59b1280e.jpg','/CTT-MS-server\\public\\staff\\idcard_front_pic\\20171023\\33ae3bc3cccc1e86ac23a64ed38986ed.jpg','/CTT-MS-server\\public\\staff\\idcard_back_pic\\20171023\\8680d5fb32aad5101385601998aa721a.jpg','','1f82ea75c5cc526729e2d581aeb3aeccfef4407e',NULL);
 
 /*Table structure for table `storehouse` */
 
@@ -248,9 +249,11 @@ CREATE TABLE `stuff_out_record` (
   `is_out` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0未审核，1管理员通过，2管理员驳回，3材料员通过，4材料员驳回，5装维确认接收',
   `remark` text COMMENT '退回原因等',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `stuff_out_record` */
+
+insert  into `stuff_out_record`(`id`,`inventory_id`,`storehouse`,`out_quantity`,`staff`,`operator1`,`operator2`,`apply_date`,`out_date`,`is_out`,`remark`) values (1,1,'丹棱一库',33,'张三','超管2','超管2','2017-11-17',NULL,4,'');
 
 /*Table structure for table `team` */
 
@@ -292,7 +295,7 @@ CREATE TABLE `user` (
 
 /*Data for the table `user` */
 
-insert  into `user`(`id`,`username`,`password`,`area`,`storehouse`,`name`,`sex`,`phone`,`qq`,`email`,`address`,`idcard`,`cookie_username`,`last_login_time`,`last_logout_time`) values (1,'001','10470c3b4b1fed12c3baac014be15fac67c6e815','四川^眉山^丹棱','丹棱一库','超管1','男',NULL,NULL,NULL,NULL,'00001',NULL,'2017-11-17 20:12:53','2017-11-17 20:13:03'),(2,'002','10470c3b4b1fed12c3baac014be15fac67c6e815','四川^眉山^丹棱','丹棱一库','超管2','男',NULL,NULL,NULL,NULL,'00001','f24b4de5f21402ef4792822168606918','2017-11-15 20:27:07','2017-11-15 20:27:07'),(4,'003','67a74306b06d0c01624fe0d0249a570f4d093747','四川^眉山','眉山库','徐志雷','男','1133213123','','','','123123123123',NULL,'2017-11-03 21:33:49','2017-11-03 21:34:56');
+insert  into `user`(`id`,`username`,`password`,`area`,`storehouse`,`name`,`sex`,`phone`,`qq`,`email`,`address`,`idcard`,`cookie_username`,`last_login_time`,`last_logout_time`) values (1,'001','10470c3b4b1fed12c3baac014be15fac67c6e815','四川^眉山^丹棱','丹棱一库','超管1','男',NULL,NULL,NULL,NULL,'00001','4bc5c8eee1ecc31e97edd24596b2b220','2017-11-19 20:11:26','2017-11-19 20:11:26'),(2,'002','10470c3b4b1fed12c3baac014be15fac67c6e815','四川^眉山^丹棱','丹棱一库','超管2','男',NULL,NULL,NULL,NULL,'00001','f5042c0ec89a7e4dc63072569fcdb28e','2017-11-19 19:35:10','2017-11-19 19:35:10'),(4,'003','67a74306b06d0c01624fe0d0249a570f4d093747','四川^眉山','眉山库','徐志雷','男','1133213123','','','','123123123123',NULL,'2017-11-03 21:33:49','2017-11-03 21:34:56');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

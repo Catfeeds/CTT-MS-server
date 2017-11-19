@@ -58,7 +58,7 @@ class StuffOut extends Base
     //检查提交的操作
     private function checkHandel($id){
         $app = Db::table('stuff_out_record')
-            ->where('id'.$id)
+            ->where('id',$id)
             ->find();
         if(empty($app))
             return returnWarning('该申请不存在');
@@ -76,7 +76,7 @@ class StuffOut extends Base
             return $res;
         Db::table('stuff_out_record')
             ->where('id',$id)
-            ->update(['is_out'=>4,'operator2'=>$this->user['name']]);
+            ->update(['is_out'=>3,'operator2'=>$this->user['name']]);
         return returnSuccess('申请已同意');
     }
 
@@ -102,29 +102,25 @@ class StuffOut extends Base
         $enabled = db('inventory')->where('id',$data['inventory_id'])->value('enabled');
         if($enabled!=1)
             return returnWarning('该批库存不可用！');
-
-        //检测仓库在数据库中是否真的存在
-        if(!dataIsExist('storehouse','name',$data['storehouse']))
-            return returnWarning('申请仓库不存在!');
-
-        //检测选择的仓库与装维是否在同一地区
-        $storehouseArea = db('storehouse')->where('name',$data['storehouse'])->value('area');
-        if($storehouseArea!=$this->user['area'])
-            return returnWarning('只能向你所在的地区仓库申请材料');
-
         return true;
     }
 
     //修改申请
     public function change(){
         $json = $_POST['json'];
+        //$json ='{"id":1,"inventory_id":1,"out_quantity":20}';
         $data = json_decode($json,true);
         $res = $this->checkHandel($data['id']);
         if(!is_array($res))
             return $res;
         $checkRes = $this->checkData($data);
         if($checkRes!==true) return $checkRes;
-        return Manage::change($this->model,$this->validate,$data);
+        //检测调拨数量是否大于库存数
+        $num = db('inventory')->where('id',$data['inventory_id'])->value('quantity');
+        if($num<$data['out_quantity'])
+            return returnWarning('申请数量大于库存数量！');
+        if(Db::table('stuff_out_record')->update($data))
+            return returnSuccess('修改成功');
+        else return returnWarning('没有任何修改或数据不存在');
     }
-
 }
