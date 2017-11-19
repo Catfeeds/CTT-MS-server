@@ -9,15 +9,15 @@
 namespace app\index\controller;
 use think\Db;
 
-class StuffOut extends Base
+class StuffReview extends Base
 {
-    //检测该用户是否有材料发放权限
+    //检测该用户是否有材料审批权限
     public function __construct()
     {
         parent::__construct();
         //查询$authList中是否有该操作的权限
-        if($this->authList->stuff_out == 0){
-            die(json_encode(['state'=>'warning','message'=>'没有材料发放权限'],JSON_UNESCAPED_UNICODE));
+        if($this->authList->stuff_review == 0){
+            die(json_encode(['state'=>'warning','message'=>'没有材料审批权限'],JSON_UNESCAPED_UNICODE));
         }
         //尝试实例化StuffOutRecord的模型类和验证器类，并且赋值给$model和$validate
         //若这两个类不存在，则抛出异常，返回错误信息
@@ -29,7 +29,7 @@ class StuffOut extends Base
         }
     }
 
-    //返回管理员审核通过的申请记录
+    //返回未处理申请记录
     private function newAplArr(){
         $filed = ['a.*','b.manufacturer','b.type','storehouse','c.stuff_name','c.unit','c.category_name'];
         $res = db('stuff_out_record')
@@ -38,19 +38,19 @@ class StuffOut extends Base
             ->join('stuff c','b.stuff_id = c.id')
             ->field($filed)
             ->where('storehouse',$this->user['storehouse'])
-            ->where('is_out',1)
+            ->where('is_out',0)
             ->select();
         return $res;
     }
 
 
-    //查看管理员审核通过的申请记录条数
+    //查看尚未处理的材料申请记录条数
     public function newCount(){
         return count($this->newAplArr());
     }
 
 
-    //查看管理员审核通过的申请记录
+    //查看尚未处理的材料申请记录
     public function newApplication(){
         return json($this->newAplArr());
     }
@@ -65,7 +65,7 @@ class StuffOut extends Base
         if($app['storehouse']!==$this->user['storehouse'])
             return returnWarning('仓库不对应，无法操作该申请');
         if($app['is_out']!=1)
-            return returnWarning('该申请不是等待材料员审核状态');
+            return returnWarning('该申请不是等待管理员审核状态');
         return $app;
     }
 
@@ -76,7 +76,7 @@ class StuffOut extends Base
             return $res;
         Db::table('stuff_out_app')
             ->where('id',$id)
-            ->setField('is_out',3);
+            ->setField('is_out',1);
         return returnSuccess('申请已同意');
     }
 
@@ -88,7 +88,7 @@ class StuffOut extends Base
             return $res;;
         Db::table('stuff_out_app')
             ->where('id',$id)
-            ->update(['is_out'=>4,'remark'=>$reason]);
+            ->update(['is_out'=>2,'remark'=>$reason]);
         return returnSuccess('申请已驳回');
     }
 
