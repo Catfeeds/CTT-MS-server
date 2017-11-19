@@ -76,7 +76,7 @@ class StuffReview extends Base
             return $res;
         Db::table('stuff_out_record')
             ->where('id',$id)
-            ->setField('is_out',1);
+            ->update(['is_out'=>1,'operator1'=>$this->user['name']]);
         return returnSuccess('申请已同意');
     }
 
@@ -92,6 +92,29 @@ class StuffReview extends Base
         return returnSuccess('申请已驳回');
     }
 
+    //用于检验存入stuff_out_record表的数据是否正确
+    private function checkData($data){
+        //检测材料批次在数据库中是否真的存在
+        if(!dataIsExist('inventory','id',$data['inventory_id']))
+            return returnWarning('该库存材料不存在!');
+
+        //检测这批材料是否可用
+        $enabled = db('inventory')->where('id',$data['inventory_id'])->value('enabled');
+        if($enabled!=1)
+            return returnWarning('该批库存不可用！');
+
+        //检测仓库在数据库中是否真的存在
+        if(!dataIsExist('storehouse','name',$data['storehouse']))
+            return returnWarning('申请仓库不存在!');
+
+        //检测选择的仓库与装维是否在同一地区
+        $storehouseArea = db('storehouse')->where('name',$data['storehouse'])->value('area');
+        if($storehouseArea!=$this->user['area'])
+            return returnWarning('只能向你所在的地区仓库申请材料');
+
+        return true;
+    }
+
     //修改申请
     public function change(){
         $json = $_POST['json'];
@@ -99,7 +122,8 @@ class StuffReview extends Base
         $res = $this->checkHandel($data['id']);
         if(!is_array($res))
             return $res;
-
+        $checkRes = $this->checkData($data);
+        if($checkRes!==true) return $checkRes;
         return Manage::change($this->model,$this->validate,$data);
     }
 
