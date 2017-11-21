@@ -127,6 +127,9 @@ Route::rule([
     'stuffout/agree' => 'index/StuffOut/agree', //同意申请
     'stuffout/refuse' => 'index/StuffOut/refuse', //拒绝申请
     'stuffout/change' => 'index/StuffOut/change', //修改申请
+
+    //查询已发放的材料
+    'stuffoutrecord/check' => 'index/StuffOutRecord/check',
 ]);
 
 //各种选择的查询
