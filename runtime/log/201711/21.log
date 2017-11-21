@@ -1,0 +1,172 @@
+---------------------------------------------------------------
+[ 2017-11-21T10:52:48+08:00 ] ::1 ::1 POST /CTT-MS-server/login
+[ info ] localhost/CTT-MS-server/login [运行时间：0.896881s][吞吐率：1.11req/s] [内存消耗：3,441.23kb] [文件加载：53]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'login',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '28',
+  'accept' => '*/*',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; pgv_pvi=4484905984; _ga=GA1.1.203632370.1510848144; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw',
+)
+[ info ] [ PARAM ] array (
+  'username' => '001',
+  'password' => '123456',
+)
+[ info ] [ RUN ] app\index\controller\Auth->login[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001969s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.013123s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `username` = '001' LIMIT 1 [ RunTime:0.000585s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `cookie_username`='731f798d86013b13c4ef782dacf9cf16'  WHERE  `username` = '001' [ RunTime:0.001410s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `last_login_time`='2017-11-21 10:52:47'  WHERE  `username` = '001' [ RunTime:0.000350s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `last_logout_time`='2017-11-21 10:52:47'  WHERE  `username` = '001' [ RunTime:0.000234s ]
+---------------------------------------------------------------
+[ 2017-11-21T10:52:48+08:00 ] ::1 ::1 POST /CTT-MS-server/checkauth
+[ info ] localhost/CTT-MS-server/checkauth [运行时间：0.077432s][吞吐率：12.91req/s] [内存消耗：3,846.50kb] [文件加载：55]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/main.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; pgv_pvi=4484905984; _ga=GA1.1.203632370.1510848144; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; PHPSESSID=rm2jebguq3fd1pged52ifgnth1; username=731f798d86013b13c4ef782dacf9cf16',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '731f798d86013b13c4ef782dacf9cf16',
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001173s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.008950s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '731f798d86013b13c4ef782dacf9cf16' LIMIT 1 [ RunTime:0.000493s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.009441s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000611s ]
+---------------------------------------------------------------
+[ 2017-11-21T10:53:52+08:00 ] ::1 ::1 POST /CTT-MS-server/login
+[ info ] localhost/CTT-MS-server/login [运行时间：0.041369s][吞吐率：24.17req/s] [内存消耗：3,442.45kb] [文件加载：53]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'login',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '28',
+  'accept' => '*/*',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; pgv_pvi=4484905984; _ga=GA1.1.203632370.1510848144; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; PHPSESSID=rm2jebguq3fd1pged52ifgnth1; username=731f798d86013b13c4ef782dacf9cf16',
+)
+[ info ] [ PARAM ] array (
+  'username' => '001',
+  'password' => '123456',
+)
+[ info ] [ RUN ] app\index\controller\Auth->login[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001085s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001898s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `username` = '001' LIMIT 1 [ RunTime:0.001502s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `cookie_username`='1edb8ede854fdb569abbfa3c599a4ae2'  WHERE  `username` = '001' [ RunTime:0.000376s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `last_login_time`='2017-11-21 10:53:52'  WHERE  `username` = '001' [ RunTime:0.000315s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `last_logout_time`='2017-11-21 10:53:52'  WHERE  `username` = '001' [ RunTime:0.000375s ]
+---------------------------------------------------------------
+[ 2017-11-21T10:53:52+08:00 ] ::1 ::1 POST /CTT-MS-server/checkauth
+[ info ] localhost/CTT-MS-server/checkauth [运行时间：0.044478s][吞吐率：22.48req/s] [内存消耗：3,847.01kb] [文件加载：55]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/main.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; pgv_pvi=4484905984; _ga=GA1.1.203632370.1510848144; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; PHPSESSID=rm2jebguq3fd1pged52ifgnth1; username=1edb8ede854fdb569abbfa3c599a4ae2',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '1edb8ede854fdb569abbfa3c599a4ae2',
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000992s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.007795s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '1edb8ede854fdb569abbfa3c599a4ae2' LIMIT 1 [ RunTime:0.000485s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000925s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000442s ]

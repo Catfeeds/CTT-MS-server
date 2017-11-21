@@ -19,6 +19,8 @@ class Auth extends Controller
         //允许ajax跨域
         header("Access-Control-Allow-Credentials: true");
         header('Access-Control-Allow-Origin:http://10.2.130.195:8000');
+        //将时区设置为东八区
+        date_default_timezone_set('Asia/Chongqing');
     }
 
     //登录，只允许post请求
