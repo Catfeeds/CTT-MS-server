@@ -33,7 +33,7 @@ class StuffOutRecord extends Base
     //查询已经发放的材料记录
     public function check(){
         $json = isset(Request::instance()->post(false)['query'])?Request::instance()->post(false)['query']:null;
-        $json = '{"pageinfo":{"curpage":1,"pageinate":10},"condition":{}}';
+        //$json = '{"pageinfo":{"curpage":1,"pageinate":10},"condition":{"where":["a.storehouse","丹棱一库"],"like":["manufacturer|a.storehouse|category_name|stuff_name|staff|operator1|operator2","%网%"]}}';
         if(empty($json)) return returnWarning("缺少查询json");
         $array = json_decode($json,true);
         $pageinfo = $array['pageinfo'];
