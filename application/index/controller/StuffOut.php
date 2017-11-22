@@ -74,6 +74,10 @@ class StuffOut extends Base
         $res = $this->checkHandel($id);
         if(!is_array($res))
             return $res;
+        //检测调拨数量是否大于库存数
+        $num = db('inventory')->where('id',$res['inventory_id'])->value('quantity');
+        if($num<$res['out_quantity'])
+            return returnWarning('申请数量大于库存数量！');
         Db::table('stuff_out_record')
             ->where('id',$id)
             ->update(['is_out'=>3,'operator2'=>$this->user['name']]);

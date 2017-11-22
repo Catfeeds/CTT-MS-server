@@ -10,14 +10,14 @@ namespace app\index\controller;
 use think\Request;
 use think\Db;
 
-class StuffOutRecord extends base
+class StuffOutRecord extends Base
 {
     //检测该用户是否有材料发放查看权限
     public function __construct()
     {
         parent::__construct();
         //查询$authList中是否有该操作的权限
-        if($this->authList->stuff_review == 0 && $this->authList->stuff_out==0){
+        if($this->authList->stuff_review == 0 && $this->authList->stuff_out == 0){
             die(json_encode(['state'=>'warning','message'=>'没有查看材料发放记录权限'],JSON_UNESCAPED_UNICODE));
         }
         //尝试实例化StuffOutRecord的模型类和验证器类，并且赋值给$model和$validate
@@ -33,6 +33,7 @@ class StuffOutRecord extends base
     //查询已经发放的材料记录
     public function check(){
         $json = isset(Request::instance()->post(false)['query'])?Request::instance()->post(false)['query']:null;
+        $json = '{"pageinfo":{"curpage":1,"pageinate":10},"condition":{}}';
         if(empty($json)) return returnWarning("缺少查询json");
         $array = json_decode($json,true);
         $pageinfo = $array['pageinfo'];

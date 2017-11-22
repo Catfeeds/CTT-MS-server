@@ -129,7 +129,7 @@ Route::rule([
     'stuffout/change' => 'index/StuffOut/change', //修改申请
 
     //查询已发放的材料
-    'stuffoutrecord/check' => 'index/StuffOutRecord/check',
+    'stuffoutrecord' => 'index/StuffOutRecord/check',
 ]);
 
 //各种选择的查询
