@@ -80,5 +80,4 @@ class StuffOutRecord extends base
         array_unshift($result,['datacount'=>$dataCount]);
         return json($result);
     }
-
 }

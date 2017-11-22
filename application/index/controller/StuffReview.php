@@ -108,7 +108,7 @@ class StuffReview extends Base
     //修改申请
     public function change(){
         $json = $_POST['json'];
-        //$json ='{"id":1,"inventory_id":1,"out_quantity":20}';
+        //$json ='{"id":1,"inventory_id":1,"out_quantity":20,"odd_quantity":7}';
         $data = json_decode($json,true);
         $res = $this->checkHandel($data['id']);
         if(!is_array($res))

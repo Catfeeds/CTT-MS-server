@@ -14,6 +14,7 @@ class StuffOutRecord extends Validate
     protected $rule=[
         'inventory_id'=>['require','integer','min'=>1],
         'out_quantity'=>['require','integer','>=:1'],
+        'odd_quantity'=>['require','integer','>=:0'],
         'storehouse'=>['require','max'=>20],
         'staff'=>['require','max'=>20],
         'operator1'=>['max'=>20],
@@ -30,6 +31,7 @@ class StuffOutRecord extends Validate
 
         'inventory_id.require'=>'库存id不能为空',
         'out_quantity.require'=>'材料数量不能为空',
+        'odd_quantity.require'=>'剩余数量不能为空',
         'storehouse.require'=>'材料仓库名称不能为空',
         'staff.require'=>'申请人不能为空',
         'apply_date.require'=>'申请日期不能为空',
