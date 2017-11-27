@@ -1,0 +1,581 @@
+---------------------------------------------------------------
+[ 2017-11-26T17:56:33+08:00 ] ::1 ::1 POST /CTT-MS-server/login
+[ info ] localhost/CTT-MS-server/login [运行时间：0.999643s][吞吐率：1.00req/s] [内存消耗：3,443.16kb] [文件加载：53]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'login',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '28',
+  'accept' => '*/*',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144',
+)
+[ info ] [ PARAM ] array (
+  'username' => '001',
+  'password' => '123456',
+)
+[ info ] [ RUN ] app\index\controller\Auth->login[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002950s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.011047s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `username` = '001' LIMIT 1 [ RunTime:0.000921s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `cookie_username`='e09c36ee42fb8cfa2260199fd8d6a24a'  WHERE  `username` = '001' [ RunTime:0.003628s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `last_login_time`='2017-11-26 17:56:33'  WHERE  `username` = '001' [ RunTime:0.000254s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `last_logout_time`='2017-11-26 17:56:33'  WHERE  `username` = '001' [ RunTime:0.000172s ]
+---------------------------------------------------------------
+[ 2017-11-26T17:56:33+08:00 ] ::1 ::1 POST /CTT-MS-server/checkauth
+[ info ] localhost/CTT-MS-server/checkauth [运行时间：0.088344s][吞吐率：11.32req/s] [内存消耗：3,848.43kb] [文件加载：55]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/main.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=tfj4t4dgkav6fcs4fhk0knihq2; username=e09c36ee42fb8cfa2260199fd8d6a24a',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => 'e09c36ee42fb8cfa2260199fd8d6a24a',
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000984s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.008302s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'e09c36ee42fb8cfa2260199fd8d6a24a' LIMIT 1 [ RunTime:0.000563s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.008150s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.001569s ]
+---------------------------------------------------------------
+[ 2017-11-26T17:57:12+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffinventory
+[ info ] localhost/ctt-ms-server/stuffinventory [运行时间：0.170103s][吞吐率：5.88req/s] [内存消耗：3,902.78kb] [文件加载：59]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffInventory',
+    2 => 'check',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=tfj4t4dgkav6fcs4fhk0knihq2; username=e09c36ee42fb8cfa2260199fd8d6a24a',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001037s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001132s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'e09c36ee42fb8cfa2260199fd8d6a24a' LIMIT 1 [ RunTime:0.000451s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000900s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000511s ]
+[ error ] [0]方法参数错误:startDate[E:\code\php\CTT-MS-server\thinkphp\library\think\App.php:281]
+---------------------------------------------------------------
+[ 2017-11-26T17:57:26+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffinventory
+[ info ] localhost/ctt-ms-server/stuffinventory [运行时间：0.040888s][吞吐率：24.46req/s] [内存消耗：3,839.69kb] [文件加载：57]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffInventory',
+    2 => 'check',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=tfj4t4dgkav6fcs4fhk0knihq2; username=e09c36ee42fb8cfa2260199fd8d6a24a',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffInventory->check[ E:\code\php\CTT-MS-server\application\index\controller\StuffInventory.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000853s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000946s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'e09c36ee42fb8cfa2260199fd8d6a24a' LIMIT 1 [ RunTime:0.000427s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000892s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000459s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `inventory` [ RunTime:0.000737s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `stuff_id` FROM `inventory` WHERE  `storehouse` IS NULL [ RunTime:0.000353s ]
+---------------------------------------------------------------
+[ 2017-11-26T17:57:43+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffinventory
+[ info ] localhost/ctt-ms-server/stuffinventory [运行时间：0.044021s][吞吐率：22.72req/s] [内存消耗：3,839.77kb] [文件加载：57]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffInventory',
+    2 => 'check',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=tfj4t4dgkav6fcs4fhk0knihq2; username=e09c36ee42fb8cfa2260199fd8d6a24a',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffInventory->check[ E:\code\php\CTT-MS-server\application\index\controller\StuffInventory.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000786s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001033s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'e09c36ee42fb8cfa2260199fd8d6a24a' LIMIT 1 [ RunTime:0.000472s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000862s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000457s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `inventory` [ RunTime:0.000604s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `stuff_id` FROM `inventory` WHERE  `storehouse` IS NULL [ RunTime:0.000314s ]
+---------------------------------------------------------------
+[ 2017-11-26T17:57:43+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffinventory
+[ info ] localhost/ctt-ms-server/stuffinventory [运行时间：0.041607s][吞吐率：24.03req/s] [内存消耗：3,839.77kb] [文件加载：57]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffInventory',
+    2 => 'check',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=tfj4t4dgkav6fcs4fhk0knihq2; username=e09c36ee42fb8cfa2260199fd8d6a24a',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffInventory->check[ E:\code\php\CTT-MS-server\application\index\controller\StuffInventory.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001177s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001100s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'e09c36ee42fb8cfa2260199fd8d6a24a' LIMIT 1 [ RunTime:0.000557s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001017s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000563s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `inventory` [ RunTime:0.000804s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `stuff_id` FROM `inventory` WHERE  `storehouse` IS NULL [ RunTime:0.000335s ]
+---------------------------------------------------------------
+[ 2017-11-26T17:57:44+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffinventory
+[ info ] localhost/ctt-ms-server/stuffinventory [运行时间：0.042033s][吞吐率：23.79req/s] [内存消耗：3,839.77kb] [文件加载：57]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffInventory',
+    2 => 'check',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=tfj4t4dgkav6fcs4fhk0knihq2; username=e09c36ee42fb8cfa2260199fd8d6a24a',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffInventory->check[ E:\code\php\CTT-MS-server\application\index\controller\StuffInventory.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001091s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001386s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'e09c36ee42fb8cfa2260199fd8d6a24a' LIMIT 1 [ RunTime:0.000518s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000865s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000431s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `inventory` [ RunTime:0.000767s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `stuff_id` FROM `inventory` WHERE  `storehouse` IS NULL [ RunTime:0.000249s ]
+---------------------------------------------------------------
+[ 2017-11-26T17:57:45+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffinventory
+[ info ] localhost/ctt-ms-server/stuffinventory [运行时间：0.042459s][吞吐率：23.55req/s] [内存消耗：3,839.77kb] [文件加载：57]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffInventory',
+    2 => 'check',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=tfj4t4dgkav6fcs4fhk0knihq2; username=e09c36ee42fb8cfa2260199fd8d6a24a',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffInventory->check[ E:\code\php\CTT-MS-server\application\index\controller\StuffInventory.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001532s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001981s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'e09c36ee42fb8cfa2260199fd8d6a24a' LIMIT 1 [ RunTime:0.000519s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000886s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000473s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `inventory` [ RunTime:0.000817s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `stuff_id` FROM `inventory` WHERE  `storehouse` IS NULL [ RunTime:0.000240s ]
+---------------------------------------------------------------
+[ 2017-11-26T17:57:58+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffinventory
+[ info ] localhost/ctt-ms-server/stuffinventory [运行时间：0.046751s][吞吐率：21.39req/s] [内存消耗：3,847.36kb] [文件加载：57]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffInventory',
+    2 => 'check',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=tfj4t4dgkav6fcs4fhk0knihq2; username=e09c36ee42fb8cfa2260199fd8d6a24a',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffInventory->check[ E:\code\php\CTT-MS-server\application\index\controller\StuffInventory.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001174s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001033s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'e09c36ee42fb8cfa2260199fd8d6a24a' LIMIT 1 [ RunTime:0.000496s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000954s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000473s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `inventory` [ RunTime:0.000597s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `stuff_id` FROM `inventory` [ RunTime:0.000329s ]
+[ sql ] [ SQL ] SELECT COUNT(quantity) AS tp_count FROM `inventory` WHERE  `stuff_id` = 3 LIMIT 1 [ RunTime:0.000326s ]
+[ sql ] [ SQL ] SELECT COUNT(quantity) AS tp_count FROM `inventory` WHERE  `stuff_id` = 1 LIMIT 1 [ RunTime:0.000309s ]
+---------------------------------------------------------------
+[ 2017-11-26T17:57:59+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffinventory
+[ info ] localhost/ctt-ms-server/stuffinventory [运行时间：0.040986s][吞吐率：24.40req/s] [内存消耗：3,847.36kb] [文件加载：57]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffInventory',
+    2 => 'check',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=tfj4t4dgkav6fcs4fhk0knihq2; username=e09c36ee42fb8cfa2260199fd8d6a24a',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffInventory->check[ E:\code\php\CTT-MS-server\application\index\controller\StuffInventory.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001191s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001882s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'e09c36ee42fb8cfa2260199fd8d6a24a' LIMIT 1 [ RunTime:0.000729s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000865s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000453s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `inventory` [ RunTime:0.000740s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `stuff_id` FROM `inventory` [ RunTime:0.000369s ]
+[ sql ] [ SQL ] SELECT COUNT(quantity) AS tp_count FROM `inventory` WHERE  `stuff_id` = 3 LIMIT 1 [ RunTime:0.000312s ]
+[ sql ] [ SQL ] SELECT COUNT(quantity) AS tp_count FROM `inventory` WHERE  `stuff_id` = 1 LIMIT 1 [ RunTime:0.000303s ]
+---------------------------------------------------------------
+[ 2017-11-26T17:58:23+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffinventory
+[ info ] localhost/ctt-ms-server/stuffinventory [运行时间：0.045061s][吞吐率：22.19req/s] [内存消耗：3,847.36kb] [文件加载：57]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffInventory',
+    2 => 'check',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=tfj4t4dgkav6fcs4fhk0knihq2; username=e09c36ee42fb8cfa2260199fd8d6a24a',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffInventory->check[ E:\code\php\CTT-MS-server\application\index\controller\StuffInventory.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001065s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001753s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'e09c36ee42fb8cfa2260199fd8d6a24a' LIMIT 1 [ RunTime:0.000482s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000787s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000438s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `inventory` [ RunTime:0.000736s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `stuff_id` FROM `inventory` [ RunTime:0.000375s ]
+[ sql ] [ SQL ] SELECT SUM(quantity) AS tp_sum FROM `inventory` WHERE  `stuff_id` = 3 LIMIT 1 [ RunTime:0.001322s ]
+[ sql ] [ SQL ] SELECT SUM(quantity) AS tp_sum FROM `inventory` WHERE  `stuff_id` = 1 LIMIT 1 [ RunTime:0.000836s ]
+---------------------------------------------------------------
+[ 2017-11-26T17:58:23+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffinventory
+[ info ] localhost/ctt-ms-server/stuffinventory [运行时间：0.042747s][吞吐率：23.39req/s] [内存消耗：3,847.36kb] [文件加载：57]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffInventory',
+    2 => 'check',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=tfj4t4dgkav6fcs4fhk0knihq2; username=e09c36ee42fb8cfa2260199fd8d6a24a',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffInventory->check[ E:\code\php\CTT-MS-server\application\index\controller\StuffInventory.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000991s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001110s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'e09c36ee42fb8cfa2260199fd8d6a24a' LIMIT 1 [ RunTime:0.000581s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000785s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000432s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `inventory` [ RunTime:0.001625s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `stuff_id` FROM `inventory` [ RunTime:0.000410s ]
+[ sql ] [ SQL ] SELECT SUM(quantity) AS tp_sum FROM `inventory` WHERE  `stuff_id` = 3 LIMIT 1 [ RunTime:0.000473s ]
+[ sql ] [ SQL ] SELECT SUM(quantity) AS tp_sum FROM `inventory` WHERE  `stuff_id` = 1 LIMIT 1 [ RunTime:0.000270s ]
+---------------------------------------------------------------
+[ 2017-11-26T17:58:24+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffinventory
+[ info ] localhost/ctt-ms-server/stuffinventory [运行时间：0.041762s][吞吐率：23.95req/s] [内存消耗：3,847.36kb] [文件加载：57]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffInventory',
+    2 => 'check',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=tfj4t4dgkav6fcs4fhk0knihq2; username=e09c36ee42fb8cfa2260199fd8d6a24a',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffInventory->check[ E:\code\php\CTT-MS-server\application\index\controller\StuffInventory.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000766s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001005s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'e09c36ee42fb8cfa2260199fd8d6a24a' LIMIT 1 [ RunTime:0.000479s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000853s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000440s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `inventory` [ RunTime:0.000904s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `stuff_id` FROM `inventory` [ RunTime:0.000360s ]
+[ sql ] [ SQL ] SELECT SUM(quantity) AS tp_sum FROM `inventory` WHERE  `stuff_id` = 3 LIMIT 1 [ RunTime:0.000320s ]
+[ sql ] [ SQL ] SELECT SUM(quantity) AS tp_sum FROM `inventory` WHERE  `stuff_id` = 1 LIMIT 1 [ RunTime:0.000297s ]
+---------------------------------------------------------------
+[ 2017-11-26T17:59:12+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffinventory
+[ info ] localhost/ctt-ms-server/stuffinventory [运行时间：0.050857s][吞吐率：19.66req/s] [内存消耗：3,846.65kb] [文件加载：57]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffInventory',
+    2 => 'check',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=tfj4t4dgkav6fcs4fhk0knihq2; username=e09c36ee42fb8cfa2260199fd8d6a24a',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffInventory->check[ E:\code\php\CTT-MS-server\application\index\controller\StuffInventory.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001283s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001184s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'e09c36ee42fb8cfa2260199fd8d6a24a' LIMIT 1 [ RunTime:0.000948s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001108s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000510s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `inventory` [ RunTime:0.001169s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `stuff_id` FROM `inventory` [ RunTime:0.000501s ]
+[ sql ] [ SQL ] SELECT SUM(quantity) AS tp_sum FROM `inventory` WHERE  `stuff_id` = 3 LIMIT 1 [ RunTime:0.000448s ]
+[ sql ] [ SQL ] SELECT SUM(quantity) AS tp_sum FROM `inventory` WHERE  `stuff_id` = 1 LIMIT 1 [ RunTime:0.000397s ]
+---------------------------------------------------------------
+[ 2017-11-26T20:23:28+08:00 ] ::1 ::1 GET /ctt-ms-server/stuffinventory
+[ info ] localhost/ctt-ms-server/stuffinventory [运行时间：1.612705s][吞吐率：0.62req/s] [内存消耗：3,858.30kb] [文件加载：57]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffInventory',
+    2 => 'check',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'sessionid=ju6w82dp7v5kfniqmkqyz8oyr95hoi84; pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=tfj4t4dgkav6fcs4fhk0knihq2; username=e09c36ee42fb8cfa2260199fd8d6a24a',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffInventory->check[ E:\code\php\CTT-MS-server\application\index\controller\StuffInventory.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.027422s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.028744s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'e09c36ee42fb8cfa2260199fd8d6a24a' LIMIT 1 [ RunTime:0.005237s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001109s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.001320s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `inventory` [ RunTime:0.007097s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `stuff_id` FROM `inventory` WHERE  `storehouse` = '丹棱一库' [ RunTime:0.000881s ]
+[ sql ] [ SQL ] SELECT SUM(quantity) AS tp_sum FROM `inventory` WHERE  `stuff_id` = 3 LIMIT 1 [ RunTime:0.001689s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff` [ RunTime:0.011877s ]
+[ sql ] [ SQL ] SELECT * FROM `stuff` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000529s ]
+[ sql ] [ SQL ] SELECT SUM(quantity) AS tp_sum FROM `inventory` WHERE  `stuff_id` = 1 LIMIT 1 [ RunTime:0.000259s ]
+[ sql ] [ SQL ] SELECT * FROM `stuff` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000262s ]

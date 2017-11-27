@@ -132,6 +132,11 @@ Route::rule([
     'stuffoutrecord' => 'index/StuffOutRecord/check',
 ]);
 
+//盘存
+Route::rule([
+    'stuffinventory' => 'index/StuffInventory/check',
+]);
+
 //各种选择的查询
 Route::rule([
     'areaquery' => 'index/Query/area',    //地区查询
