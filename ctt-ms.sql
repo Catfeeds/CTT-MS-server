@@ -101,11 +101,11 @@ CREATE TABLE `inventory` (
   `quantity` int(11) NOT NULL COMMENT '当前数量',
   `enabled` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否可用，默认1',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `inventory` */
 
-insert  into `inventory`(`id`,`stuff_in_record_id`,`stuff_id`,`manufacturer`,`type`,`storehouse`,`quantity`,`enabled`) values (1,1,2,'咪咕','爱是大海阿萨德','丹棱一库',70,1),(2,2,2,'咪咕','型号','丹棱一库',72,1);
+insert  into `inventory`(`id`,`stuff_in_record_id`,`stuff_id`,`manufacturer`,`type`,`storehouse`,`quantity`,`enabled`) values (1,1,3,'烽火','测试库存调拨','丹棱一库',50,1),(2,2,3,'烽火','测试库存调拨','丹棱一库',50,1),(3,3,1,'咪咕','qwe','丹棱一库',20,1);
 
 /*Table structure for table `manufacturer` */
 
@@ -153,7 +153,7 @@ CREATE TABLE `staff` (
 
 /*Data for the table `staff` */
 
-insert  into `staff`(`id`,`name`,`sex`,`on_guard`,`idcard`,`area`,`team`,`phone`,`qq`,`sec_linkman`,`sec_phone`,`address`,`education`,`school`,`operator`,`employment_date`,`per_pic`,`idcard_front_pic`,`idcard_back_pic`,`remark`,`password`,`cookie_name`) values (1,'张眼镜','男','是','123123','四川^眉山^丹棱','','123123','','','','','','','超管1','2017-10-23','/CTT-MS-server\\public\\staff\\per_pic\\20171023\\8648f347dd357eb91c8c320d07e03332.jpg','/CTT-MS-server\\public\\staff\\idcard_front_pic\\20171023\\78daff7d7e8f9ac74c0fa97c5207906b.jpg','/CTT-MS-server\\public\\staff\\idcard_back_pic\\20171023\\6551b5baa846207a829a6eeb7cde55f2.jpg','备注','040bd08a4290267535cd247b8ba2eca129d9fe9f','fd7bd2da5e67b81fa504e33888f39084'),(2,'李四','男','是','123123','四川^眉山','眉山班','12345678','','','','','','','徐志雷','2017-10-23','/CTT-MS-server\\public\\staff\\per_pic\\20171023\\cec518d5d0dcc11039c22a0e59b1280e.jpg','/CTT-MS-server\\public\\staff\\idcard_front_pic\\20171023\\33ae3bc3cccc1e86ac23a64ed38986ed.jpg','/CTT-MS-server\\public\\staff\\idcard_back_pic\\20171023\\8680d5fb32aad5101385601998aa721a.jpg','','1f82ea75c5cc526729e2d581aeb3aeccfef4407e',NULL);
+insert  into `staff`(`id`,`name`,`sex`,`on_guard`,`idcard`,`area`,`team`,`phone`,`qq`,`sec_linkman`,`sec_phone`,`address`,`education`,`school`,`operator`,`employment_date`,`per_pic`,`idcard_front_pic`,`idcard_back_pic`,`remark`,`password`,`cookie_name`) values (1,'张眼镜','男','是','123123','四川^眉山^丹棱','','123123','','','','','','','超管1','2017-10-23','/CTT-MS-server\\public\\staff\\per_pic\\20171023\\8648f347dd357eb91c8c320d07e03332.jpg','/CTT-MS-server\\public\\staff\\idcard_front_pic\\20171023\\78daff7d7e8f9ac74c0fa97c5207906b.jpg','/CTT-MS-server\\public\\staff\\idcard_back_pic\\20171023\\6551b5baa846207a829a6eeb7cde55f2.jpg','备注','040bd08a4290267535cd247b8ba2eca129d9fe9f','1652f22fafb5d271df43e8adbdce5f36'),(2,'李四','男','是','123123','四川^眉山','眉山班','12345678','','','','','','','徐志雷','2017-10-23','/CTT-MS-server\\public\\staff\\per_pic\\20171023\\cec518d5d0dcc11039c22a0e59b1280e.jpg','/CTT-MS-server\\public\\staff\\idcard_front_pic\\20171023\\33ae3bc3cccc1e86ac23a64ed38986ed.jpg','/CTT-MS-server\\public\\staff\\idcard_back_pic\\20171023\\8680d5fb32aad5101385601998aa721a.jpg','','1f82ea75c5cc526729e2d581aeb3aeccfef4407e',NULL);
 
 /*Table structure for table `storehouse` */
 
@@ -204,11 +204,11 @@ CREATE TABLE `stuff_in_record` (
   `remark` text COMMENT '备注',
   `enabled` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否可用，默认为1',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `stuff_in_record` */
 
-insert  into `stuff_in_record`(`id`,`stuff_id`,`manufacturer`,`type`,`quantity`,`storehouse`,`stuff_in_date`,`operator`,`remark`,`enabled`) values (1,2,'咪咕','爱是大海阿萨德',100,'丹棱一库','2017-11-15 18:42:31','超管1','',1),(2,2,'咪咕','型号',200,'丹棱一库','2017-11-15 18:56:54','超管1','',1);
+insert  into `stuff_in_record`(`id`,`stuff_id`,`manufacturer`,`type`,`quantity`,`storehouse`,`stuff_in_date`,`operator`,`remark`,`enabled`) values (1,3,'烽火','测试库存调拨',100,'丹棱一库','2017-11-23 12:13:31','超管1','',1),(2,3,'烽火','测试库存调拨',50,'丹棱一库','2017-11-23 12:11:20','超管1',NULL,1),(3,1,'咪咕','qwe',20,'丹棱一库','2017-11-25 12:57:44','超管1','',1);
 
 /*Table structure for table `stuff_leave_record` */
 
@@ -226,11 +226,11 @@ CREATE TABLE `stuff_leave_record` (
   `send_date` date NOT NULL COMMENT '调拨日期',
   `receive_date` date DEFAULT NULL COMMENT '确认接受日期',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `stuff_leave_record` */
 
-insert  into `stuff_leave_record`(`id`,`inventory_id`,`send_storehouse`,`receive_storehouse`,`leave_quantity`,`send_operator`,`receive_operator`,`is_received`,`send_date`,`receive_date`) values (1,1,'丹棱一库','丹棱一库',50,'超管1',NULL,0,'2017-11-15',NULL),(3,2,'丹棱一库','丹棱一库',100,'超管2',NULL,0,'2017-11-07',NULL),(4,2,'丹棱一库','丹棱一库',8,'超管1',NULL,0,'2017-11-15',NULL);
+insert  into `stuff_leave_record`(`id`,`inventory_id`,`send_storehouse`,`receive_storehouse`,`leave_quantity`,`send_operator`,`receive_operator`,`is_received`,`send_date`,`receive_date`) values (1,1,'丹棱一库','丹棱一库',50,'超管1','超管1',1,'2017-11-23','2017-11-23');
 
 /*Table structure for table `stuff_out_record` */
 
@@ -250,11 +250,11 @@ CREATE TABLE `stuff_out_record` (
   `is_out` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0未审核，1管理员通过，2管理员驳回，3材料员通过，4材料员驳回，5装维确认接收',
   `remark` text COMMENT '退回原因等',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `stuff_out_record` */
 
-insert  into `stuff_out_record`(`id`,`inventory_id`,`storehouse`,`out_quantity`,`odd_quantity`,`staff`,`operator1`,`operator2`,`apply_date`,`out_date`,`is_out`,`remark`) values (1,2,'丹棱一库',20,23,'张眼镜','超管2','超管2','2017-11-17','2017-11-22',5,'');
+insert  into `stuff_out_record`(`id`,`inventory_id`,`storehouse`,`out_quantity`,`odd_quantity`,`staff`,`operator1`,`operator2`,`apply_date`,`out_date`,`is_out`,`remark`) values (1,1,'丹棱一库',20,7,'张眼镜',NULL,NULL,'2017-11-28',NULL,0,NULL),(2,1,'丹棱一库',20,7,'张眼镜',NULL,NULL,'2017-11-28',NULL,0,NULL),(3,1,'丹棱一库',20,7,'张眼镜',NULL,NULL,'2017-11-28',NULL,0,NULL),(4,1,'丹棱一库',20,7,'张眼镜',NULL,NULL,'2017-11-28',NULL,0,NULL),(5,1,'丹棱一库',20,7,'张眼镜',NULL,NULL,'2017-11-28',NULL,0,NULL),(6,1,'丹棱一库',20,7,'张眼镜',NULL,NULL,'2017-11-28',NULL,0,NULL);
 
 /*Table structure for table `team` */
 
@@ -296,7 +296,7 @@ CREATE TABLE `user` (
 
 /*Data for the table `user` */
 
-insert  into `user`(`id`,`username`,`password`,`area`,`storehouse`,`name`,`sex`,`phone`,`qq`,`email`,`address`,`idcard`,`cookie_username`,`last_login_time`,`last_logout_time`) values (1,'001','10470c3b4b1fed12c3baac014be15fac67c6e815','四川^眉山^丹棱','丹棱一库','超管1','男',NULL,NULL,NULL,NULL,'00001','678275e71c77d54c4a19c5bea822c0dd','2017-11-22 21:01:12','2017-11-22 21:01:12'),(2,'002','10470c3b4b1fed12c3baac014be15fac67c6e815','四川^眉山^丹棱','丹棱一库','超管2','男',NULL,NULL,NULL,NULL,'00001','5581b63bf36645ff9229c37350b937db','2017-11-22 20:40:13','2017-11-22 20:40:13'),(4,'003','67a74306b06d0c01624fe0d0249a570f4d093747','四川^眉山','眉山库','徐志雷','男','1133213123','','','','123123123123',NULL,'2017-11-03 21:33:49','2017-11-03 21:34:56');
+insert  into `user`(`id`,`username`,`password`,`area`,`storehouse`,`name`,`sex`,`phone`,`qq`,`email`,`address`,`idcard`,`cookie_username`,`last_login_time`,`last_logout_time`) values (1,'001','10470c3b4b1fed12c3baac014be15fac67c6e815','四川^眉山^丹棱','丹棱一库','超管1','男',NULL,NULL,NULL,NULL,'00001','dc60972d72192490e5594093ddc22da3','2017-12-02 16:30:54','2017-12-02 16:30:54'),(2,'002','10470c3b4b1fed12c3baac014be15fac67c6e815','四川^眉山^丹棱','丹棱一库','超管2','男',NULL,NULL,NULL,NULL,'00001','50c368f533867ac318421b07c386477c','2017-12-02 16:07:18','2017-12-02 16:07:18'),(4,'003','67a74306b06d0c01624fe0d0249a570f4d093747','四川^眉山','眉山库','徐志雷','男','1133213123','','','','123123123123',NULL,'2017-11-03 21:33:49','2017-11-03 21:34:56');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
