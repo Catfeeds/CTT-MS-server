@@ -46,7 +46,7 @@ class StuffInventory extends Base
 
 
     //材料盘存
-    public function check($storehouse='丹棱一库',$startDate='2017-01-01',$endDate='2017-12-31',$query=null){
+    public function check($storehouse,$startDate='2017-01-01',$endDate='2017-12-31',$query=null){
         if(empty($storehouse))
             $storehouse = $this->user['storehouse'];
         $res = Db::table('inventory')
@@ -71,6 +71,7 @@ class StuffInventory extends Base
             //查询当前存量
             $nowQuantity = Db::table('inventory')
                 ->where('stuff_id',$stuffId)
+                ->where('storehouse',$storehouse)
                 ->sum('quantity');
             $li['now_quantity'] = $nowQuantity;
 
@@ -84,6 +85,7 @@ class StuffInventory extends Base
                     Db::table('stuff_in_record')
                     ->where('id',$id)
                     ->where('stuff_in_date','between',[$startDate,$endDate])
+                    ->where('storehouse',$storehouse)
                     ->value('quantity');
             }
             $li['in_quantity'] = $inQuantity;
@@ -98,12 +100,14 @@ class StuffInventory extends Base
                     Db::table('stuff_out_record')
                     ->where('inventory_id',$id)
                     ->where('out_date','between',[$startDate,$endDate])
+                    ->where('storehouse',$storehouse)
                     ->where('is_out',5)
                     ->sum('out_quantity');
                 $outQuantity +=
                     Db::table('stuff_leave_record')
                     ->where('inventory_id',$id)
                     ->where('send_date','between',[$startDate,$endDate])
+                    ->where('send_storehouse',$storehouse)
                     ->where('is_received',1)
                     ->sum('leave_quantity');
             }
