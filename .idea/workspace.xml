@@ -4,7 +4,7 @@
     <list default="true" id="0add28d0-23dd-477a-bee5-db4714e99d5e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/index/controller/StuffInventory.php" afterPath="$PROJECT_DIR$/application/index/controller/StuffInventory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/runtime/log/201712/02.log" afterPath="$PROJECT_DIR$/runtime/log/201712/02.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/runtime/log/201712/04.log" afterPath="$PROJECT_DIR$/runtime/log/201712/04.log" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,8 +39,8 @@
       <file leaf-file-name="StuffInventory.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/index/controller/StuffInventory.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="462">
+              <caret line="35" column="37" lean-forward="true" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
               <folding>
                 <element signature="e#120#138#0#PHP" expanded="true" />
               </folding>
@@ -193,12 +193,12 @@
       <workItem from="1512202829052" duration="6209000" />
       <workItem from="1512364867349" duration="101000" />
       <workItem from="1512385572660" duration="382000" />
-      <workItem from="1512386905199" duration="3850000" />
+      <workItem from="1512386905199" duration="4442000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59769000" />
+    <option name="totallyTimeSpent" value="60361000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1911" y="-9" width="1938" height="1098" extended-state="6" />
@@ -653,8 +653,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/index/controller/StuffInventory.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state relative-caret-position="462">
+          <caret line="35" column="37" lean-forward="true" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
           <folding>
             <element signature="e#120#138#0#PHP" expanded="true" />
           </folding>

@@ -29,22 +29,6 @@ class StuffInventory extends Base
         }
     }
 
-    //根据inventory表的信息，查询stuff_in
-    private function stuffIn(){
-
-    }
-
-    //根据inventory表的信息，查询stuff_out
-    private function stuffOut(){
-
-    }
-
-    //根据inventory表的信息，查询stuff_leave
-    private function stuffLeave(){
-
-    }
-
-
     //材料盘存
     public function check($storehouse,$startDate='2017-01-01',$endDate='2017-12-31',$query=null){
         if(empty($storehouse))
