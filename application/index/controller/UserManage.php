@@ -177,7 +177,7 @@ class UserManage extends Base
             $res = db($table)->where('operator',$user['name'])->find();
             if($res) return json(['state'=>'warning','message'=>'该管理员不能删除，因为在其它表中还存在该管理员']);
         }
-        $res = db('stuff_leave_record')->where('recrive_operator',$user['name'])->whereOr('send_operator',$user['name'])->find();
+        $res = db('stuff_leave_record')->where('receive_operator',$user['name'])->whereOr('send_operator',$user['name'])->find();
         if($res) return json(['state'=>'warning','message'=>'该管理员不能删除，因为在其它表中还存在该管理员']);
         $res = db('stuff_out_record')->where('operator1',$user['name'])->whereOr('operator2',$user['name'])->find();
         if($res) return json(['state'=>'warning','message'=>'该管理员不能删除，因为在其它表中还存在该管理员']);
