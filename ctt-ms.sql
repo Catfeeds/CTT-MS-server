@@ -26,11 +26,9 @@ CREATE TABLE `area` (
   `city` varchar(20) NOT NULL COMMENT '市',
   `district` varchar(20) NOT NULL COMMENT '区县',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `area` */
-
-insert  into `area`(`id`,`province`,`city`,`district`) values (1,'四川','眉山','丹棱');
 
 /*Table structure for table `auth` */
 
@@ -101,11 +99,9 @@ CREATE TABLE `inventory` (
   `quantity` int(11) NOT NULL COMMENT '当前数量',
   `enabled` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否可用，默认1',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `inventory` */
-
-insert  into `inventory`(`id`,`stuff_in_record_id`,`stuff_id`,`manufacturer`,`type`,`storehouse`,`quantity`,`enabled`) values (1,1,3,'烽火','测试库存调拨','丹棱一库',50,1),(2,2,3,'烽火','测试库存调拨','丹棱一库',50,1),(3,3,1,'咪咕','qwe','丹棱一库',10,1),(4,4,1,'咪咕','qwe','眉山库',10,1);
 
 /*Table structure for table `manufacturer` */
 
@@ -115,11 +111,9 @@ CREATE TABLE `manufacturer` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `manufacturer` varchar(20) NOT NULL COMMENT '厂商名称',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `manufacturer` */
-
-insert  into `manufacturer`(`id`,`manufacturer`) values (1,'烽火'),(2,'咪咕');
 
 /*Table structure for table `staff` */
 
@@ -166,11 +160,9 @@ CREATE TABLE `storehouse` (
   `store_address` varchar(50) DEFAULT NULL COMMENT '仓库地址',
   `area` varchar(50) NOT NULL COMMENT '所属市、区县',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `storehouse` */
-
-insert  into `storehouse`(`id`,`name`,`supervisor`,`store_address`,`area`) values (1,'丹棱一库','徐志雷','丹棱','四川^眉山^丹棱'),(3,'眉山库','超管1','123123','四川^眉山');
 
 /*Table structure for table `stuff` */
 
@@ -182,11 +174,9 @@ CREATE TABLE `stuff` (
   `unit` varchar(20) NOT NULL COMMENT '材料单位',
   `category_name` varchar(50) NOT NULL COMMENT '材料大类',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `stuff` */
-
-insert  into `stuff`(`id`,`stuff_name`,`unit`,`category_name`) values (1,'光猫','个','移动材料'),(2,'网线','根','移动材料'),(3,'热缩管','根','铁通材料'),(4,'光猫','个','铁通材料');
 
 /*Table structure for table `stuff_in_record` */
 
@@ -204,11 +194,9 @@ CREATE TABLE `stuff_in_record` (
   `remark` text COMMENT '备注',
   `enabled` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否可用，默认为1',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `stuff_in_record` */
-
-insert  into `stuff_in_record`(`id`,`stuff_id`,`manufacturer`,`type`,`quantity`,`storehouse`,`stuff_in_date`,`operator`,`remark`,`enabled`) values (1,3,'烽火','测试库存调拨',100,'丹棱一库','2017-11-23 12:13:31','超管1','',1),(2,3,'烽火','测试库存调拨',50,'丹棱一库','2017-11-23 12:11:20','超管1',NULL,1),(3,1,'咪咕','qwe',20,'丹棱一库','2017-11-25 12:57:44','超管1','',1),(4,1,'咪咕','qwe',10,'眉山库','2017-12-04 20:12:43','徐志雷',NULL,1);
 
 /*Table structure for table `stuff_leave_record` */
 
@@ -226,11 +214,9 @@ CREATE TABLE `stuff_leave_record` (
   `send_date` date NOT NULL COMMENT '调拨日期',
   `receive_date` date DEFAULT NULL COMMENT '确认接受日期',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `stuff_leave_record` */
-
-insert  into `stuff_leave_record`(`id`,`inventory_id`,`send_storehouse`,`receive_storehouse`,`leave_quantity`,`send_operator`,`receive_operator`,`is_received`,`send_date`,`receive_date`) values (1,1,'丹棱一库','丹棱一库',50,'超管1','超管1',1,'2017-11-23','2017-11-23'),(2,3,'丹棱一库','眉山库',10,'超管1','徐志雷',1,'2017-12-04','2017-12-04');
 
 /*Table structure for table `stuff_out_record` */
 
@@ -250,11 +236,9 @@ CREATE TABLE `stuff_out_record` (
   `is_out` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0未审核，1管理员通过，2管理员驳回，3材料员通过，4材料员驳回，5装维确认接收',
   `remark` text COMMENT '退回原因等',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `stuff_out_record` */
-
-insert  into `stuff_out_record`(`id`,`inventory_id`,`storehouse`,`out_quantity`,`odd_quantity`,`staff`,`operator1`,`operator2`,`apply_date`,`out_date`,`is_out`,`remark`) values (1,1,'丹棱一库',20,7,'张眼镜','超管2','超管2','2017-11-28',NULL,5,NULL),(2,1,'丹棱一库',20,7,'张眼镜','超管2','超管2','2017-11-28',NULL,5,NULL),(3,1,'丹棱一库',20,7,'张眼镜',NULL,NULL,'2017-11-28',NULL,0,NULL),(4,1,'丹棱一库',20,7,'张眼镜',NULL,NULL,'2017-11-28',NULL,0,NULL),(5,1,'丹棱一库',20,7,'张眼镜',NULL,NULL,'2017-11-28',NULL,0,NULL),(6,1,'丹棱一库',20,7,'张眼镜',NULL,NULL,'2017-11-28',NULL,0,NULL);
 
 /*Table structure for table `team` */
 
@@ -265,11 +249,9 @@ CREATE TABLE `team` (
   `name` varchar(20) NOT NULL COMMENT '班组名称',
   `area` varchar(50) NOT NULL COMMENT '所属地区',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `team` */
-
-insert  into `team`(`id`,`name`,`area`) values (1,'丹棱1班','四川^眉山^丹棱'),(2,'眉山班','四川^眉山');
 
 /*Table structure for table `user` */
 
@@ -296,7 +278,7 @@ CREATE TABLE `user` (
 
 /*Data for the table `user` */
 
-insert  into `user`(`id`,`username`,`password`,`area`,`storehouse`,`name`,`sex`,`phone`,`qq`,`email`,`address`,`idcard`,`cookie_username`,`last_login_time`,`last_logout_time`) values (1,'001','10470c3b4b1fed12c3baac014be15fac67c6e815','四川^眉山','眉山库','超管1','男',NULL,NULL,NULL,NULL,'00001','964eb4545a7ea47370b12bca9460c6f9','2017-12-05 12:06:01','2017-12-05 12:06:01'),(2,'002','10470c3b4b1fed12c3baac014be15fac67c6e815','四川^眉山^丹棱','丹棱一库','超管2','男',NULL,NULL,NULL,NULL,'00001','c5f5d9dd920d422671c989ce61bf2100','2017-12-05 09:44:13','2017-12-05 09:44:13'),(4,'003','10470c3b4b1fed12c3baac014be15fac67c6e815','四川^眉山','','徐志雷','男','1133213123','','','','123123123123',NULL,'2017-12-04 20:03:31','2017-12-04 20:03:51');
+insert  into `user`(`id`,`username`,`password`,`area`,`storehouse`,`name`,`sex`,`phone`,`qq`,`email`,`address`,`idcard`,`cookie_username`,`last_login_time`,`last_logout_time`) values (1,'001','10470c3b4b1fed12c3baac014be15fac67c6e815','四川^眉山','眉山库','超管1','男',NULL,NULL,NULL,NULL,'00001','1e81fff5a6c940abd0bdad0659ac407c','2017-12-05 13:58:58','2017-12-05 13:58:58'),(2,'002','10470c3b4b1fed12c3baac014be15fac67c6e815','四川^眉山^丹棱','丹棱一库','超管2','男',NULL,NULL,NULL,NULL,'00001','c5f5d9dd920d422671c989ce61bf2100','2017-12-05 09:44:13','2017-12-05 09:44:13'),(4,'003','10470c3b4b1fed12c3baac014be15fac67c6e815','四川^眉山','','徐志雷','男','1133213123','','','','123123123123',NULL,'2017-12-04 20:03:31','2017-12-04 20:03:51');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

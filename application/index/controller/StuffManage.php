@@ -96,6 +96,14 @@ class StuffManage extends Base
     //删除物资名称
     public function delete(){
         $id = input('id');
+
+        //查找其他表中是否有stuff_id，若有则不能删除
+        $tableList = ['inventory','stuff_in_record'];
+        foreach ($tableList as $table){
+            $res = db($table)->where('stuff_id',$id)->find();
+            if($res) return json(['state'=>'warning','message'=>'该材料不能删除，因为在其它表中还存在该材料信息']);
+        }
+
         return json(Manage::delete($this->model,$id));
     }
 }
