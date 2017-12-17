@@ -92,7 +92,6 @@ class StuffInventory extends Base
                     ->where('inventory_id',$id)
                     ->where('send_date','between',[$startDate,$endDate])
                     ->where('send_storehouse',$storehouse)
-                    ->where('is_received',1)
                     ->sum('leave_quantity');
             }
             $li['out_quantity'] = $outQuantity;

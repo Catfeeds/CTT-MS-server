@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0add28d0-23dd-477a-bee5-db4714e99d5e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/application/index/controller/StuffOutRecord.php" afterPath="$PROJECT_DIR$/application/index/controller/StuffOutRecord.php" />
-      <change beforePath="$PROJECT_DIR$/application/route.php" afterPath="$PROJECT_DIR$/application/route.php" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/application/index/controller/StuffInventory.php" afterPath="$PROJECT_DIR$/application/index/controller/StuffInventory.php" />
       <change beforePath="$PROJECT_DIR$/runtime/log/201712/17.log" afterPath="$PROJECT_DIR$/runtime/log/201712/17.log" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,21 +36,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StuffOutRecord.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/index/controller/StuffOutRecord.php">
+      <file leaf-file-name="StuffInventory.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/index/controller/StuffInventory.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1593">
-              <caret line="107" column="27" lean-forward="true" selection-start-line="107" selection-start-column="27" selection-end-line="107" selection-end-column="27" />
+            <state relative-caret-position="701">
+              <caret line="104" column="34" lean-forward="true" selection-start-line="104" selection-start-column="34" selection-end-line="104" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="route.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="route.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/route.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="128" column="56" lean-forward="true" selection-start-line="128" selection-start-column="56" selection-end-line="128" selection-end-column="56" />
+            <state relative-caret-position="509">
+              <caret line="131" column="49" lean-forward="false" selection-start-line="131" selection-start-column="49" selection-end-line="131" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -76,13 +76,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/application/index/controller/Auth.php" />
-        <option value="$PROJECT_DIR$/application/index/controller/StuffInventory.php" />
         <option value="$PROJECT_DIR$/application/index/controller/UserManage.php" />
         <option value="$PROJECT_DIR$/application/index/controller/StuffManage.php" />
         <option value="$PROJECT_DIR$/application/index/controller/StuffReview.php" />
         <option value="$PROJECT_DIR$/application/index/controller/StuffOut.php" />
         <option value="$PROJECT_DIR$/application/index/controller/StuffOutRecord.php" />
         <option value="$PROJECT_DIR$/application/route.php" />
+        <option value="$PROJECT_DIR$/application/index/controller/StuffInventory.php" />
       </list>
     </option>
   </component>
@@ -203,12 +203,12 @@
       <workItem from="1512452177586" duration="224000" />
       <workItem from="1512452489958" duration="2052000" />
       <workItem from="1512882026602" duration="27000" />
-      <workItem from="1513476369989" duration="5007000" />
+      <workItem from="1513476369989" duration="10950000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70894000" />
+    <option name="totallyTimeSpent" value="76837000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1911" y="-9" width="1938" height="1098" extended-state="6" />
@@ -542,20 +542,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/index/controller/StuffInventory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="35" column="37" lean-forward="false" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/index/controller/StorehouseManage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/index/controller/StuffIn.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -610,6 +596,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/route.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="509">
+          <caret line="131" column="49" lean-forward="false" selection-start-line="131" selection-start-column="49" selection-end-line="131" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/StuffOutRecord.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1593">
+          <caret line="107" column="27" lean-forward="false" selection-start-line="107" selection-start-column="27" selection-end-line="107" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/StorehouseManage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="101" column="21" lean-forward="true" selection-start-line="101" selection-start-column="21" selection-end-line="101" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/index/controller/Auth.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1181">
@@ -618,18 +628,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/index/controller/StuffOutRecord.php">
+    <entry file="file://$PROJECT_DIR$/application/index/controller/StuffInventory.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1593">
-          <caret line="107" column="27" lean-forward="true" selection-start-line="107" selection-start-column="27" selection-end-line="107" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/route.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="128" column="56" lean-forward="true" selection-start-line="128" selection-start-column="56" selection-end-line="128" selection-end-column="56" />
+        <state relative-caret-position="701">
+          <caret line="104" column="34" lean-forward="true" selection-start-line="104" selection-start-column="34" selection-end-line="104" selection-end-column="34" />
           <folding />
         </state>
       </provider>
