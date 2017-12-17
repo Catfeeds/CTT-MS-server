@@ -31,7 +31,7 @@ class StuffReview extends Base
 
     //返回未处理申请记录
     private function newAplArr(){
-        $filed = ['a.*','b.manufacturer','b.type','c.stuff_name','c.unit','c.category_name'];
+        $filed = ['a.*','b.quantity','b.manufacturer','b.type','c.stuff_name','c.unit','c.category_name'];
         $res = db('stuff_out_record')
             ->alias('a')
             ->join('inventory b','a.inventory_id = b.id')
