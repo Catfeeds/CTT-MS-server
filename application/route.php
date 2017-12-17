@@ -128,8 +128,11 @@ Route::rule([
     'stuffout/refuse' => 'index/StuffOut/refuse', //拒绝申请
     'stuffout/change' => 'index/StuffOut/change', //修改申请
 
-    //查询已发放的材料
+    //查询已发放的材料（已接收）
     'stuffoutrecord' => 'index/StuffOutRecord/check',
+
+    //查询已发放的材料（尚未接收）
+    'stuffoutrecord2' => 'index/StuffOutRecord/check2',
 ]);
 
 //盘存

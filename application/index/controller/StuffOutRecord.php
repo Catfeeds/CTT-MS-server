@@ -30,7 +30,7 @@ class StuffOutRecord extends Base
         }
     }
 
-    //查询已经发放的材料记录
+    //查询已经发放的材料记录（已经接收）
     public function check(){
         $json = isset(Request::instance()->post(false)['query'])?Request::instance()->post(false)['query']:null;
         //$json = '{"pageinfo":{"curpage":1,"pageinate":10},"condition":{"where":["a.storehouse","丹棱一库"],"like":["manufacturer|a.storehouse|category_name|stuff_name|staff|operator1|operator2","%网%"]}}';
@@ -55,6 +55,58 @@ class StuffOutRecord extends Base
             ->join('stuff c','b.stuff_id = c.id')
             ->field($filed)
             ->where('a.is_out',5)
+            ->where('a.storehouse',$userStorehouse);
+        $order = isset($limit['order'])?$limit['order']:'a.out_date desc';
+        //若排序条件为normal，则将$oeder赋值为null，时间逆序
+        $con = explode(' ',$order);
+        if(isset($con[1]) && $con[1]=='normal') $order='a.out_date desc';
+        foreach ($limit['condition'] as $keyword=>$value){
+            if($keyword=='where'){
+                if(isset($value[0])&&isset($value[1])){
+                    $result = $result->where($value[0],$value[1]);
+                    $result1 = $result1->where($value[0],$value[1]);
+                }
+                else{
+                    $result = $result->where(1);
+                    $result1 = $result1->where(1);
+                }
+            }
+            else{
+                $result = $result->where($value[0],$keyword,$value[1]);
+                $result1 = $result1->where($value[0],$keyword,$value[1]);
+            }
+        }
+        $result = $result ->order($order)->page($pageinfo['curpage'],$pageinfo['pageinate'])->select();
+        $dataCount = count($result1->select());
+        array_unshift($result,['datacount'=>$dataCount]);
+        return json($result);
+    }
+
+    //查询已经发放的材料记录（尚未接收）
+    public function check2(){
+        $json = isset(Request::instance()->post(false)['query'])?Request::instance()->post(false)['query']:null;
+        //$json = '{"pageinfo":{"curpage":1,"pageinate":10},"condition":{"where":["a.storehouse","丹棱一库"],"like":["manufacturer|a.storehouse|category_name|stuff_name|staff|operator1|operator2","%网%"]}}';
+        if(empty($json)) return returnWarning("缺少查询json");
+        $array = json_decode($json,true);
+        $pageinfo = $array['pageinfo'];
+        unset($array['pageinfo']);
+        $limit = $array;
+        $userStorehouse = $this->user['storehouse'];
+        //查询登录用户所在的仓库的入库记录
+        $filed = ['a.*','b.manufacturer','b.type','b.stuff_id','c.stuff_name','c.unit','c.category_name'];
+        $result = db('stuff_out_record')
+            ->alias('a')
+            ->join('inventory b','a.inventory_id = b.id')
+            ->join('stuff c','b.stuff_id = c.id')
+            ->field($filed)
+            ->where('a.is_out',3)
+            ->where('a.storehouse',$userStorehouse);
+        $result1 = db('stuff_out_record')
+            ->alias('a')
+            ->join('inventory b','a.inventory_id = b.id')
+            ->join('stuff c','b.stuff_id = c.id')
+            ->field($filed)
+            ->where('a.is_out',3)
             ->where('a.storehouse',$userStorehouse);
         $order = isset($limit['order'])?$limit['order']:'a.out_date desc';
         //若排序条件为normal，则将$oeder赋值为null，时间逆序
