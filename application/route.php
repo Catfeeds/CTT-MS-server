@@ -118,13 +118,17 @@ Route::rule([
 Route::rule([
     'stuffreview/newcount' => 'index/StuffReview/newCount',//待审批的申请数量
     'stuffreview/newapplication' => 'index/StuffReview/newApplication',//待审批的申请详情
+    'stuffreview/newappbyname' => 'index/StuffReview/newAppByName',//按装维姓名查询待审批的申请
     'stuffreview/agree' => 'index/StuffReview/agree', //同意申请
+    'stuffreview/agreeall' => 'index/StuffReview/agreeAll', //批量同意
     'stuffreview/refuse' => 'index/StuffReview/refuse', //拒绝申请
     'stuffreview/change' => 'index/StuffReview/change', //修改申请
 
     'stuffout/newcount' => 'index/StuffOut/newCount',//待审批的申请数量
-    'stuffout/newapplication' => 'index/StuffOut/newApplication',//待审批的申请详情
+    'stuffout/newapplication' => 'index/StuffOut/newApplication',//待发放的申请详情
+    'stuffout/newappbyname' => 'index/StuffOut/newAppByName',//待发放的申请详情
     'stuffout/agree' => 'index/StuffOut/agree', //同意申请
+    'stuffout/agreeall' => 'index/StuffOut/agreeAll', //批量同意
     'stuffout/refuse' => 'index/StuffOut/refuse', //拒绝申请
     'stuffout/change' => 'index/StuffOut/change', //修改申请
 

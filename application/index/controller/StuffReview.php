@@ -55,6 +55,22 @@ class StuffReview extends Base
         return json($this->newAplArr());
     }
 
+    //根据装维姓名来查询
+    public function newAppByName(){
+        $staff = input('staff');
+        $filed = ['a.*','b.quantity','b.manufacturer','b.type','c.stuff_name','c.unit','c.category_name'];
+        $res = db('stuff_out_record')
+            ->alias('a')
+            ->join('inventory b','a.inventory_id = b.id')
+            ->join('stuff c','b.stuff_id = c.id')
+            ->field($filed)
+            ->where('a.storehouse',$this->user['storehouse'])
+            ->where('a.is_out',0)
+            ->where('a.staff',$staff)
+            ->select();
+        return json($res);
+    }
+
     //检查提交的操作
     private function checkHandel($id){
         $app = Db::table('stuff_out_record')
@@ -81,6 +97,26 @@ class StuffReview extends Base
         Db::table('stuff_out_record')
             ->where('id',$id)
             ->update(['is_out'=>1,'operator1'=>$this->user['name']]);
+        return returnSuccess('申请已同意');
+    }
+
+    //批量同意
+    public function agreeAll($idList){
+        $idArr = json_decode($idList, true);
+        foreach($idArr as $id){
+            $res = $this->checkHandel($id);
+            if(!is_array($res))
+                return $res;
+            //检测调拨数量是否大于库存数
+            $num = db('inventory')->where('id',$res['inventory_id'])->value('quantity');
+            if($num<$res['out_quantity'])
+                return returnWarning('申请数量大于库存数量！');
+        }
+        foreach ($idArr as $id){
+            Db::table('stuff_out_record')
+                ->where('id',$id)
+                ->update(['is_out'=>1,'operator1'=>$this->user['name']]);
+        }
         return returnSuccess('申请已同意');
     }
 
