@@ -55,6 +55,17 @@ class StuffReview extends Base
         return json($this->newAplArr());
     }
 
+    //查询申请的所有装维姓名
+    public function staffs(){
+        $res = db('stuff_out_record')
+            ->where('a.storehouse',$this->user['storehouse'])
+            ->where('a.is_out',0)
+            ->distinct(true)
+            ->field('staff')
+            ->select();
+        return json($res);
+    }
+
     //根据装维姓名来查询
     public function newAppByName(){
         $staff = input('staff');
