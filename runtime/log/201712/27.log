@@ -5230,3 +5230,3243 @@
 [ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000665s ]
 [ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000546s ]
 [ sql ] [ SQL ] SELECT `a`.*,`b`.`quantity`,`b`.`manufacturer`,`b`.`type`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`storehouse` = '丹棱库'  AND `a`.`is_out` = 0 [ RunTime:0.000820s ]
+---------------------------------------------------------------
+[ 2017-12-27T16:56:58+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/checkauth
+[ info ] 10.0.53.230/CTT-MS-server/checkauth [运行时间：0.036237s][吞吐率：27.60req/s] [内存消耗：3,856.37kb] [文件加载：55]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/main.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '9c6f308a757a33718f71a6a4611730e7',
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001187s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000845s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '9c6f308a757a33718f71a6a4611730e7' LIMIT 1 [ RunTime:0.000446s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000647s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000365s ]
+---------------------------------------------------------------
+[ 2017-12-27T16:56:58+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/stuffreview/staffs
+[ info ] 10.0.53.230/CTT-MS-server/stuffreview/staffs [运行时间：0.044089s][吞吐率：22.68req/s] [内存消耗：3,892.64kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffReview',
+    2 => 'staffs',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_review.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '9c6f308a757a33718f71a6a4611730e7',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffReview->staffs[ E:\code\php\CTT-MS-server\application\index\controller\StuffReview.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010852s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000797s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '9c6f308a757a33718f71a6a4611730e7' LIMIT 1 [ RunTime:0.000478s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000807s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000475s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000730s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `staff` FROM `stuff_out_record` WHERE  `storehouse` = '丹棱库'  AND `is_out` = 0 [ RunTime:0.000536s ]
+---------------------------------------------------------------
+[ 2017-12-27T16:56:58+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/stuffreview/newcount
+[ info ] 10.0.53.230/CTT-MS-server/stuffreview/newcount [运行时间：0.041767s][吞吐率：23.94req/s] [内存消耗：3,899.55kb] [文件加载：57]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffReview',
+    2 => 'newCount',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_review.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '9c6f308a757a33718f71a6a4611730e7',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffReview->newCount[ E:\code\php\CTT-MS-server\application\index\controller\StuffReview.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000867s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000812s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '9c6f308a757a33718f71a6a4611730e7' LIMIT 1 [ RunTime:0.000485s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000820s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000447s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000999s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`quantity`,`b`.`manufacturer`,`b`.`type`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`storehouse` = '丹棱库'  AND `a`.`is_out` = 0 [ RunTime:0.001030s ]
+---------------------------------------------------------------
+[ 2017-12-27T16:56:58+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/categoryquery
+[ info ] 10.0.53.230/CTT-MS-server/categoryquery [运行时间：0.036838s][吞吐率：27.15req/s] [内存消耗：3,847.57kb] [文件加载：56]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Query',
+    2 => 'category',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => '*/*',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_review.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '9c6f308a757a33718f71a6a4611730e7',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Query->category[ E:\code\php\CTT-MS-server\application\index\controller\Query.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001076s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001199s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '9c6f308a757a33718f71a6a4611730e7' LIMIT 1 [ RunTime:0.000601s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000686s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000401s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `category` [ RunTime:0.000794s ]
+[ sql ] [ SQL ] SELECT `category_name` FROM `category` [ RunTime:0.000303s ]
+---------------------------------------------------------------
+[ 2017-12-27T16:56:58+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/stuffreview/newapplication
+[ info ] 10.0.53.230/CTT-MS-server/stuffreview/newapplication [运行时间：0.037472s][吞吐率：26.69req/s] [内存消耗：3,905.18kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffReview',
+    2 => 'newApplication',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_review.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '9c6f308a757a33718f71a6a4611730e7',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffReview->newApplication[ E:\code\php\CTT-MS-server\application\index\controller\StuffReview.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000764s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000843s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '9c6f308a757a33718f71a6a4611730e7' LIMIT 1 [ RunTime:0.000510s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000790s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000460s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000824s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`quantity`,`b`.`manufacturer`,`b`.`type`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`storehouse` = '丹棱库'  AND `a`.`is_out` = 0 [ RunTime:0.001136s ]
+---------------------------------------------------------------
+[ 2017-12-27T16:59:40+08:00 ] ::1 ::1 POST /CTT-MS-server/login
+[ info ] localhost/CTT-MS-server/login [运行时间：0.040681s][吞吐率：24.58req/s] [内存消耗：3,452.23kb] [文件加载：53]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'login',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '28',
+  'accept' => '*/*',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144',
+)
+[ info ] [ PARAM ] array (
+  'username' => '001',
+  'password' => '123456',
+)
+[ info ] [ RUN ] app\index\controller\Auth->login[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001589s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000889s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `username` = '001' LIMIT 1 [ RunTime:0.000461s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `cookie_username`='992ab33587c9e45634d357be5413dce5'  WHERE  `username` = '001' [ RunTime:0.000429s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `last_login_time`='2017-12-27 16:59:40'  WHERE  `username` = '001' [ RunTime:0.000400s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `last_logout_time`='2017-12-27 16:59:40'  WHERE  `username` = '001' [ RunTime:0.000371s ]
+---------------------------------------------------------------
+[ 2017-12-27T16:59:40+08:00 ] ::1 ::1 POST /CTT-MS-server/checkauth
+[ info ] localhost/CTT-MS-server/checkauth [运行时间：0.042813s][吞吐率：23.36req/s] [内存消耗：3,857.22kb] [文件加载：55]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/main.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=992ab33587c9e45634d357be5413dce5',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '992ab33587c9e45634d357be5413dce5',
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000954s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000972s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '992ab33587c9e45634d357be5413dce5' LIMIT 1 [ RunTime:0.000494s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000830s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 1 LIMIT 1 [ RunTime:0.000466s ]
+---------------------------------------------------------------
+[ 2017-12-27T16:59:44+08:00 ] ::1 ::1 POST /CTT-MS-server/login
+[ info ] localhost/CTT-MS-server/login [运行时间：0.040047s][吞吐率：24.97req/s] [内存消耗：3,452.34kb] [文件加载：53]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'login',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '28',
+  'accept' => '*/*',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=992ab33587c9e45634d357be5413dce5',
+)
+[ info ] [ PARAM ] array (
+  'username' => '005',
+  'password' => '123456',
+)
+[ info ] [ RUN ] app\index\controller\Auth->login[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001068s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000985s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `username` = '005' LIMIT 1 [ RunTime:0.000507s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `cookie_username`='e97b8018263c0c0d69b01a551263c3c5'  WHERE  `username` = '005' [ RunTime:0.000465s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `last_login_time`='2017-12-27 16:59:44'  WHERE  `username` = '005' [ RunTime:0.000430s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `last_logout_time`='2017-12-27 16:59:44'  WHERE  `username` = '005' [ RunTime:0.001405s ]
+---------------------------------------------------------------
+[ 2017-12-27T16:59:44+08:00 ] ::1 ::1 POST /CTT-MS-server/checkauth
+[ info ] localhost/CTT-MS-server/checkauth [运行时间：0.034769s][吞吐率：28.76req/s] [内存消耗：3,857.22kb] [文件加载：55]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/main.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=e97b8018263c0c0d69b01a551263c3c5',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => 'e97b8018263c0c0d69b01a551263c3c5',
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001023s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000742s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'e97b8018263c0c0d69b01a551263c3c5' LIMIT 1 [ RunTime:0.000416s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000805s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000377s ]
+---------------------------------------------------------------
+[ 2017-12-27T16:59:50+08:00 ] ::1 ::1 GET /CTT-MS-server/stuffreview/staffs
+[ info ] localhost/CTT-MS-server/stuffreview/staffs [运行时间：0.044292s][吞吐率：22.58req/s] [内存消耗：3,893.91kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffReview',
+    2 => 'staffs',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=e97b8018263c0c0d69b01a551263c3c5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffReview->staffs[ E:\code\php\CTT-MS-server\application\index\controller\StuffReview.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000997s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000869s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'e97b8018263c0c0d69b01a551263c3c5' LIMIT 1 [ RunTime:0.000380s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000937s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000609s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000784s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `staff` FROM `stuff_out_record` WHERE  `storehouse` = '丹棱库'  AND `is_out` = 0 [ RunTime:0.000440s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:00:09+08:00 ] ::1 ::1 GET /CTT-MS-server/stuffout/staffs
+[ info ] localhost/CTT-MS-server/stuffout/staffs [运行时间：0.045184s][吞吐率：22.13req/s] [内存消耗：3,893.87kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffOut',
+    2 => 'staffs',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=e97b8018263c0c0d69b01a551263c3c5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffOut->staffs[ E:\code\php\CTT-MS-server\application\index\controller\StuffOut.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001278s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000747s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'e97b8018263c0c0d69b01a551263c3c5' LIMIT 1 [ RunTime:0.000393s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001074s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000401s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000829s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `staff` FROM `stuff_out_record` WHERE  `storehouse` = '丹棱库'  AND `is_out` = 1 [ RunTime:0.000383s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:22:15+08:00 ] ::1 ::1 GET /CTT-MS-server/stuffout/staffs
+[ info ] localhost/CTT-MS-server/stuffout/staffs [运行时间：0.041236s][吞吐率：24.25req/s] [内存消耗：3,894.30kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffOut',
+    2 => 'staffs',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=e97b8018263c0c0d69b01a551263c3c5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffOut->staffs[ E:\code\php\CTT-MS-server\application\index\controller\StuffOut.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001353s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000885s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'e97b8018263c0c0d69b01a551263c3c5' LIMIT 1 [ RunTime:0.000420s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000629s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000416s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000562s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `staff` FROM `stuff_out_record` WHERE  `storehouse` = '丹棱库'  AND `is_out` = 1 [ RunTime:0.000355s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:22:17+08:00 ] ::1 ::1 GET /CTT-MS-server/stuffout/staffs
+[ info ] localhost/CTT-MS-server/stuffout/staffs [运行时间：0.038182s][吞吐率：26.19req/s] [内存消耗：3,894.30kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffOut',
+    2 => 'staffs',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=e97b8018263c0c0d69b01a551263c3c5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffOut->staffs[ E:\code\php\CTT-MS-server\application\index\controller\StuffOut.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001013s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000805s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'e97b8018263c0c0d69b01a551263c3c5' LIMIT 1 [ RunTime:0.000520s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000846s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000635s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000743s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `staff` FROM `stuff_out_record` WHERE  `storehouse` = '丹棱库'  AND `is_out` = 1 [ RunTime:0.000398s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:23:01+08:00 ] ::1 ::1 GET /CTT-MS-server/stuffout/staffs
+[ info ] localhost/CTT-MS-server/stuffout/staffs [运行时间：0.041551s][吞吐率：24.07req/s] [内存消耗：3,894.95kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffOut',
+    2 => 'staffs',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=e97b8018263c0c0d69b01a551263c3c5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffOut->staffs[ E:\code\php\CTT-MS-server\application\index\controller\StuffOut.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001126s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000732s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'e97b8018263c0c0d69b01a551263c3c5' LIMIT 1 [ RunTime:0.000390s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000673s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000381s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000554s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `staff` FROM `stuff_out_record` WHERE  `storehouse` = '丹棱库'  AND `is_out` = 1 [ RunTime:0.000382s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:23:01+08:00 ] ::1 ::1 GET /CTT-MS-server/stuffout/staffs
+[ info ] localhost/CTT-MS-server/stuffout/staffs [运行时间：0.043904s][吞吐率：22.78req/s] [内存消耗：3,894.95kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffOut',
+    2 => 'staffs',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=e97b8018263c0c0d69b01a551263c3c5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffOut->staffs[ E:\code\php\CTT-MS-server\application\index\controller\StuffOut.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001044s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.008582s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'e97b8018263c0c0d69b01a551263c3c5' LIMIT 1 [ RunTime:0.000404s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000918s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000453s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000823s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `staff` FROM `stuff_out_record` WHERE  `storehouse` = '丹棱库'  AND `is_out` = 1 [ RunTime:0.000366s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:23:08+08:00 ] ::1 ::1 GET /CTT-MS-server/stuffreview/staffs
+[ info ] localhost/CTT-MS-server/stuffreview/staffs [运行时间：0.047671s][吞吐率：20.98req/s] [内存消耗：3,894.60kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffReview',
+    2 => 'staffs',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=e97b8018263c0c0d69b01a551263c3c5',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffReview->staffs[ E:\code\php\CTT-MS-server\application\index\controller\StuffReview.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000928s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000816s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'e97b8018263c0c0d69b01a551263c3c5' LIMIT 1 [ RunTime:0.000568s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001135s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000474s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000912s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `staff` FROM `stuff_out_record` WHERE  `storehouse` = '丹棱库'  AND `is_out` = 0 [ RunTime:0.000463s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:45:18+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/checkauth
+[ info ] 10.0.53.230/CTT-MS-server/checkauth [运行时间：0.061851s][吞吐率：16.17req/s] [内存消耗：3,483.55kb] [文件加载：53]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/main.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '9c6f308a757a33718f71a6a4611730e7',
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011983s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.004511s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '9c6f308a757a33718f71a6a4611730e7' LIMIT 1 [ RunTime:0.000527s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:45:25+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/login
+[ info ] 10.0.53.230/CTT-MS-server/login [运行时间：0.052461s][吞吐率：19.06req/s] [内存消耗：3,451.95kb] [文件加载：53]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'login',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '28',
+  'accept' => '*/*',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/login.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'username' => '005',
+  'password' => '123456',
+)
+[ info ] [ RUN ] app\index\controller\Auth->login[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001206s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000836s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `username` = '005' LIMIT 1 [ RunTime:0.000414s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `cookie_username`='3f01b5036cdbf5bbfde6e461de152548'  WHERE  `username` = '005' [ RunTime:0.001013s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `last_login_time`='2017-12-27 17:45:25'  WHERE  `username` = '005' [ RunTime:0.002591s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `last_logout_time`='2017-12-27 17:45:25'  WHERE  `username` = '005' [ RunTime:0.000694s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:45:26+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/checkauth
+[ info ] 10.0.53.230/CTT-MS-server/checkauth [运行时间：0.040887s][吞吐率：24.46req/s] [内存消耗：3,856.37kb] [文件加载：55]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/main.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001271s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000859s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000440s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000904s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000485s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:45:28+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/checkauth
+[ info ] 10.0.53.230/CTT-MS-server/checkauth [运行时间：0.069527s][吞吐率：14.38req/s] [内存消耗：3,856.37kb] [文件加载：55]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/main.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003642s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.002393s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000425s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.002730s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000656s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:45:29+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/stuffreview/staffs
+[ info ] 10.0.53.230/CTT-MS-server/stuffreview/staffs [运行时间：0.050346s][吞吐率：19.86req/s] [内存消耗：3,894.23kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffReview',
+    2 => 'staffs',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_review.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffReview->staffs[ E:\code\php\CTT-MS-server\application\index\controller\StuffReview.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000928s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000567s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001886s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000725s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.001841s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `staff` FROM `stuff_out_record` WHERE  `storehouse` = '丹棱库'  AND `is_out` = 0 [ RunTime:0.000898s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:45:29+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/stuffreview/newcount
+[ info ] 10.0.53.230/CTT-MS-server/stuffreview/newcount [运行时间：0.077606s][吞吐率：12.89req/s] [内存消耗：3,901.14kb] [文件加载：57]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffReview',
+    2 => 'newCount',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_review.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffReview->newCount[ E:\code\php\CTT-MS-server\application\index\controller\StuffReview.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001039s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001290s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000498s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000958s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000959s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.001567s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`quantity`,`b`.`manufacturer`,`b`.`type`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`storehouse` = '丹棱库'  AND `a`.`is_out` = 0 [ RunTime:0.005654s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:45:29+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/categoryquery
+[ info ] 10.0.53.230/CTT-MS-server/categoryquery [运行时间：0.091689s][吞吐率：10.91req/s] [内存消耗：3,847.57kb] [文件加载：56]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Query',
+    2 => 'category',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => '*/*',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_review.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Query->category[ E:\code\php\CTT-MS-server\application\index\controller\Query.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001126s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000765s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000279s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000636s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000410s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `category` [ RunTime:0.005442s ]
+[ sql ] [ SQL ] SELECT `category_name` FROM `category` [ RunTime:0.000359s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:45:29+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/stuffreview/newapplication
+[ info ] 10.0.53.230/CTT-MS-server/stuffreview/newapplication [运行时间：0.081967s][吞吐率：12.20req/s] [内存消耗：3,906.77kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffReview',
+    2 => 'newApplication',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_review.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffReview->newApplication[ E:\code\php\CTT-MS-server\application\index\controller\StuffReview.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000807s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001146s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000447s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000696s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000872s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.001733s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`quantity`,`b`.`manufacturer`,`b`.`type`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`storehouse` = '丹棱库'  AND `a`.`is_out` = 0 [ RunTime:0.002109s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:45:33+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/stuffreview/newappbyname
+[ info ] 10.0.53.230/CTT-MS-server/stuffreview/newappbyname [运行时间：0.061235s][吞吐率：16.33req/s] [内存消耗：3,907.01kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffReview',
+    2 => 'newAppByName',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '52',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_review.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+  'staff' => '苏涛',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffReview->newAppByName[ E:\code\php\CTT-MS-server\application\index\controller\StuffReview.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001633s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.002661s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000643s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000957s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000556s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000945s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`quantity`,`b`.`manufacturer`,`b`.`type`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`storehouse` = '丹棱库'  AND `a`.`is_out` = 0  AND `a`.`staff` = '苏涛' [ RunTime:0.001418s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:47:27+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/checkauth
+[ info ] 10.0.53.230/CTT-MS-server/checkauth [运行时间：0.063008s][吞吐率：15.87req/s] [内存消耗：3,856.37kb] [文件加载：55]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/main.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001136s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001566s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.001137s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000751s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000441s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:47:27+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/stuffout/staffs
+[ info ] 10.0.53.230/CTT-MS-server/stuffout/staffs [运行时间：0.064040s][吞吐率：15.62req/s] [内存消耗：3,894.20kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffOut',
+    2 => 'staffs',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffOut->staffs[ E:\code\php\CTT-MS-server\application\index\controller\StuffOut.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011228s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.002461s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.001241s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000825s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000446s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000776s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `staff` FROM `stuff_out_record` WHERE  `storehouse` = '丹棱库'  AND `is_out` = 1 [ RunTime:0.000527s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:47:27+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/stuffout/newcount
+[ info ] 10.0.53.230/CTT-MS-server/stuffout/newcount [运行时间：0.050200s][吞吐率：19.92req/s] [内存消耗：3,901.21kb] [文件加载：57]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffOut',
+    2 => 'newCount',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffOut->newCount[ E:\code\php\CTT-MS-server\application\index\controller\StuffOut.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000773s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000825s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000483s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000805s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000550s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000823s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`quantity`,`b`.`manufacturer`,`b`.`type`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`storehouse` = '丹棱库'  AND `a`.`is_out` = 1 [ RunTime:0.000903s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:47:27+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/categoryquery
+[ info ] 10.0.53.230/CTT-MS-server/categoryquery [运行时间：0.053795s][吞吐率：18.59req/s] [内存消耗：3,847.57kb] [文件加载：56]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Query',
+    2 => 'category',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => '*/*',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Query->category[ E:\code\php\CTT-MS-server\application\index\controller\Query.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001347s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001149s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000691s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000841s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000539s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `category` [ RunTime:0.001058s ]
+[ sql ] [ SQL ] SELECT `category_name` FROM `category` [ RunTime:0.000378s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:47:28+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/stuffout/newapplication
+[ info ] 10.0.53.230/CTT-MS-server/stuffout/newapplication [运行时间：0.047433s][吞吐率：21.08req/s] [内存消耗：3,906.84kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffOut',
+    2 => 'newApplication',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffOut->newApplication[ E:\code\php\CTT-MS-server\application\index\controller\StuffOut.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000958s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000882s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000452s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000648s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000439s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000726s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`quantity`,`b`.`manufacturer`,`b`.`type`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`storehouse` = '丹棱库'  AND `a`.`is_out` = 1 [ RunTime:0.000624s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:47:36+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/checkauth
+[ info ] 10.0.53.230/CTT-MS-server/checkauth [运行时间：0.042226s][吞吐率：23.68req/s] [内存消耗：3,856.37kb] [文件加载：55]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/main.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001111s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000879s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000401s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000821s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000522s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:47:36+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/stuffout/staffs
+[ info ] 10.0.53.230/CTT-MS-server/stuffout/staffs [运行时间：0.046160s][吞吐率：21.66req/s] [内存消耗：3,894.20kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffOut',
+    2 => 'staffs',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffOut->staffs[ E:\code\php\CTT-MS-server\application\index\controller\StuffOut.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001073s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000846s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000455s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000702s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000630s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000793s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `staff` FROM `stuff_out_record` WHERE  `storehouse` = '丹棱库'  AND `is_out` = 1 [ RunTime:0.000445s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:47:36+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/stuffout/newcount
+[ info ] 10.0.53.230/CTT-MS-server/stuffout/newcount [运行时间：0.063518s][吞吐率：15.74req/s] [内存消耗：3,901.21kb] [文件加载：57]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffOut',
+    2 => 'newCount',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffOut->newCount[ E:\code\php\CTT-MS-server\application\index\controller\StuffOut.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000969s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000812s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000470s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000772s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000506s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000631s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`quantity`,`b`.`manufacturer`,`b`.`type`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`storehouse` = '丹棱库'  AND `a`.`is_out` = 1 [ RunTime:0.001020s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:47:36+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/categoryquery
+[ info ] 10.0.53.230/CTT-MS-server/categoryquery [运行时间：0.059965s][吞吐率：16.68req/s] [内存消耗：3,847.57kb] [文件加载：56]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Query',
+    2 => 'category',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => '*/*',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Query->category[ E:\code\php\CTT-MS-server\application\index\controller\Query.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000799s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000998s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000607s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001191s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000463s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `category` [ RunTime:0.002524s ]
+[ sql ] [ SQL ] SELECT `category_name` FROM `category` [ RunTime:0.000624s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:47:37+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/stuffout/newapplication
+[ info ] 10.0.53.230/CTT-MS-server/stuffout/newapplication [运行时间：0.065351s][吞吐率：15.30req/s] [内存消耗：3,906.84kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffOut',
+    2 => 'newApplication',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffOut->newApplication[ E:\code\php\CTT-MS-server\application\index\controller\StuffOut.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001400s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.002638s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000379s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000734s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000630s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.002698s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`quantity`,`b`.`manufacturer`,`b`.`type`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`storehouse` = '丹棱库'  AND `a`.`is_out` = 1 [ RunTime:0.000668s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:47:38+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/checkauth
+[ info ] 10.0.53.230/CTT-MS-server/checkauth [运行时间：0.044389s][吞吐率：22.53req/s] [内存消耗：3,856.37kb] [文件加载：55]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/main.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001060s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000873s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.001329s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001254s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.001513s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:47:38+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/stuffout/staffs
+[ info ] 10.0.53.230/CTT-MS-server/stuffout/staffs [运行时间：0.058902s][吞吐率：16.98req/s] [内存消耗：3,894.20kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffOut',
+    2 => 'staffs',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffOut->staffs[ E:\code\php\CTT-MS-server\application\index\controller\StuffOut.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011041s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000653s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000357s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000697s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000498s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.001675s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `staff` FROM `stuff_out_record` WHERE  `storehouse` = '丹棱库'  AND `is_out` = 1 [ RunTime:0.001203s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:47:38+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/stuffout/newcount
+[ info ] 10.0.53.230/CTT-MS-server/stuffout/newcount [运行时间：0.051549s][吞吐率：19.40req/s] [内存消耗：3,901.21kb] [文件加载：57]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffOut',
+    2 => 'newCount',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffOut->newCount[ E:\code\php\CTT-MS-server\application\index\controller\StuffOut.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000853s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000837s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000989s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000886s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000635s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.001330s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`quantity`,`b`.`manufacturer`,`b`.`type`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`storehouse` = '丹棱库'  AND `a`.`is_out` = 1 [ RunTime:0.000623s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:47:38+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/categoryquery
+[ info ] 10.0.53.230/CTT-MS-server/categoryquery [运行时间：0.046128s][吞吐率：21.68req/s] [内存消耗：3,847.57kb] [文件加载：56]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Query',
+    2 => 'category',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => '*/*',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Query->category[ E:\code\php\CTT-MS-server\application\index\controller\Query.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000754s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000987s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000445s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000712s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000421s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `category` [ RunTime:0.000856s ]
+[ sql ] [ SQL ] SELECT `category_name` FROM `category` [ RunTime:0.000357s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:47:38+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/stuffout/newapplication
+[ info ] 10.0.53.230/CTT-MS-server/stuffout/newapplication [运行时间：0.056156s][吞吐率：17.81req/s] [内存消耗：3,906.84kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffOut',
+    2 => 'newApplication',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffOut->newApplication[ E:\code\php\CTT-MS-server\application\index\controller\StuffOut.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001882s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001350s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000836s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.003602s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000443s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000760s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`quantity`,`b`.`manufacturer`,`b`.`type`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`storehouse` = '丹棱库'  AND `a`.`is_out` = 1 [ RunTime:0.000639s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:47:55+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/checkauth
+[ info ] 10.0.53.230/CTT-MS-server/checkauth [运行时间：0.042810s][吞吐率：23.36req/s] [内存消耗：3,856.37kb] [文件加载：55]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/main.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002969s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001114s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000446s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000740s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000517s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:47:55+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/stuffout/staffs
+[ info ] 10.0.53.230/CTT-MS-server/stuffout/staffs [运行时间：0.055161s][吞吐率：18.13req/s] [内存消耗：3,894.20kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffOut',
+    2 => 'staffs',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffOut->staffs[ E:\code\php\CTT-MS-server\application\index\controller\StuffOut.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000922s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000844s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000479s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000823s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000508s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000752s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `staff` FROM `stuff_out_record` WHERE  `storehouse` = '丹棱库'  AND `is_out` = 1 [ RunTime:0.000459s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:47:55+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/stuffout/newcount
+[ info ] 10.0.53.230/CTT-MS-server/stuffout/newcount [运行时间：0.047071s][吞吐率：21.24req/s] [内存消耗：3,901.21kb] [文件加载：57]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffOut',
+    2 => 'newCount',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffOut->newCount[ E:\code\php\CTT-MS-server\application\index\controller\StuffOut.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001001s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000984s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000452s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000641s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000348s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000598s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`quantity`,`b`.`manufacturer`,`b`.`type`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`storehouse` = '丹棱库'  AND `a`.`is_out` = 1 [ RunTime:0.001034s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:47:55+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/categoryquery
+[ info ] 10.0.53.230/CTT-MS-server/categoryquery [运行时间：0.068931s][吞吐率：14.51req/s] [内存消耗：3,847.57kb] [文件加载：56]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Query',
+    2 => 'category',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => '*/*',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Query->category[ E:\code\php\CTT-MS-server\application\index\controller\Query.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000783s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.002136s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000718s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001820s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000493s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `category` [ RunTime:0.001137s ]
+[ sql ] [ SQL ] SELECT `category_name` FROM `category` [ RunTime:0.000265s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:47:55+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/stuffout/newapplication
+[ info ] 10.0.53.230/CTT-MS-server/stuffout/newapplication [运行时间：0.050915s][吞吐率：19.64req/s] [内存消耗：3,906.84kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffOut',
+    2 => 'newApplication',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffOut->newApplication[ E:\code\php\CTT-MS-server\application\index\controller\StuffOut.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000817s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000859s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000330s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000721s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000415s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000789s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`quantity`,`b`.`manufacturer`,`b`.`type`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`storehouse` = '丹棱库'  AND `a`.`is_out` = 1 [ RunTime:0.000479s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:47:57+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/checkauth
+[ info ] 10.0.53.230/CTT-MS-server/checkauth [运行时间：0.040142s][吞吐率：24.91req/s] [内存消耗：3,856.37kb] [文件加载：55]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/main.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001000s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000963s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000409s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000806s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000421s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:47:57+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/stuffout/staffs
+[ info ] 10.0.53.230/CTT-MS-server/stuffout/staffs [运行时间：0.058506s][吞吐率：17.09req/s] [内存消耗：3,894.20kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffOut',
+    2 => 'staffs',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffOut->staffs[ E:\code\php\CTT-MS-server\application\index\controller\StuffOut.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001028s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000775s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000478s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000774s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000467s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000680s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `staff` FROM `stuff_out_record` WHERE  `storehouse` = '丹棱库'  AND `is_out` = 1 [ RunTime:0.000979s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:47:57+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/stuffout/newcount
+[ info ] 10.0.53.230/CTT-MS-server/stuffout/newcount [运行时间：0.060186s][吞吐率：16.62req/s] [内存消耗：3,901.21kb] [文件加载：57]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffOut',
+    2 => 'newCount',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffOut->newCount[ E:\code\php\CTT-MS-server\application\index\controller\StuffOut.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001525s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.002580s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000605s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000837s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000564s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000800s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`quantity`,`b`.`manufacturer`,`b`.`type`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`storehouse` = '丹棱库'  AND `a`.`is_out` = 1 [ RunTime:0.000797s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:47:57+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/categoryquery
+[ info ] 10.0.53.230/CTT-MS-server/categoryquery [运行时间：0.061820s][吞吐率：16.18req/s] [内存消耗：3,847.57kb] [文件加载：56]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Query',
+    2 => 'category',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => '*/*',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Query->category[ E:\code\php\CTT-MS-server\application\index\controller\Query.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003131s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001147s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000584s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000761s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000397s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `category` [ RunTime:0.000776s ]
+[ sql ] [ SQL ] SELECT `category_name` FROM `category` [ RunTime:0.000316s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:47:57+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/stuffout/newapplication
+[ info ] 10.0.53.230/CTT-MS-server/stuffout/newapplication [运行时间：0.064033s][吞吐率：15.62req/s] [内存消耗：3,906.84kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffOut',
+    2 => 'newApplication',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffOut->newApplication[ E:\code\php\CTT-MS-server\application\index\controller\StuffOut.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000823s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000714s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000432s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000779s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000378s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000629s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`quantity`,`b`.`manufacturer`,`b`.`type`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`storehouse` = '丹棱库'  AND `a`.`is_out` = 1 [ RunTime:0.001093s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:48:31+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/checkauth
+[ info ] 10.0.53.230/CTT-MS-server/checkauth [运行时间：0.058240s][吞吐率：17.17req/s] [内存消耗：3,856.37kb] [文件加载：55]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/main.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001102s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001020s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000519s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000872s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000471s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:48:32+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/stuffout/staffs
+[ info ] 10.0.53.230/CTT-MS-server/stuffout/staffs [运行时间：0.050423s][吞吐率：19.83req/s] [内存消耗：3,894.20kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffOut',
+    2 => 'staffs',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffOut->staffs[ E:\code\php\CTT-MS-server\application\index\controller\StuffOut.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000992s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000897s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000807s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001027s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000468s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000778s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `staff` FROM `stuff_out_record` WHERE  `storehouse` = '丹棱库'  AND `is_out` = 1 [ RunTime:0.000511s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:48:32+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/stuffout/newcount
+[ info ] 10.0.53.230/CTT-MS-server/stuffout/newcount [运行时间：0.060542s][吞吐率：16.52req/s] [内存消耗：3,901.21kb] [文件加载：57]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffOut',
+    2 => 'newCount',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffOut->newCount[ E:\code\php\CTT-MS-server\application\index\controller\StuffOut.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011812s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001251s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000540s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000776s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000495s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000741s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`quantity`,`b`.`manufacturer`,`b`.`type`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`storehouse` = '丹棱库'  AND `a`.`is_out` = 1 [ RunTime:0.000672s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:48:32+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/categoryquery
+[ info ] 10.0.53.230/CTT-MS-server/categoryquery [运行时间：0.057699s][吞吐率：17.33req/s] [内存消耗：3,847.57kb] [文件加载：56]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Query',
+    2 => 'category',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => '*/*',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Query->category[ E:\code\php\CTT-MS-server\application\index\controller\Query.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000811s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000890s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.001361s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001710s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000951s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `category` [ RunTime:0.002838s ]
+[ sql ] [ SQL ] SELECT `category_name` FROM `category` [ RunTime:0.000504s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:48:32+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/stuffout/newapplication
+[ info ] 10.0.53.230/CTT-MS-server/stuffout/newapplication [运行时间：0.062724s][吞吐率：15.94req/s] [内存消耗：3,906.84kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffOut',
+    2 => 'newApplication',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffOut->newApplication[ E:\code\php\CTT-MS-server\application\index\controller\StuffOut.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001077s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001860s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000445s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.002074s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.001119s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.001348s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`quantity`,`b`.`manufacturer`,`b`.`type`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`storehouse` = '丹棱库'  AND `a`.`is_out` = 1 [ RunTime:0.002827s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:48:35+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/stuffout/newappbyname
+[ info ] 10.0.53.230/CTT-MS-server/stuffout/newappbyname [运行时间：0.053361s][吞吐率：18.74req/s] [内存消耗：3,907.07kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffOut',
+    2 => 'newAppByName',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '52',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_out.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+  'staff' => '苏涛',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffOut->newAppByName[ E:\code\php\CTT-MS-server\application\index\controller\StuffOut.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001758s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.002060s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000869s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000906s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000454s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000731s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`quantity`,`b`.`manufacturer`,`b`.`type`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`storehouse` = '丹棱库'  AND `a`.`is_out` = 1  AND `a`.`staff` = '苏涛' [ RunTime:0.000525s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:50:53+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/checkauth
+[ info ] 10.0.53.230/CTT-MS-server/checkauth [运行时间：0.055716s][吞吐率：17.95req/s] [内存消耗：3,856.37kb] [文件加载：55]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/main.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001512s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001389s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000613s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000694s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000340s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:50:58+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/checkauth
+[ info ] 10.0.53.230/CTT-MS-server/checkauth [运行时间：0.052000s][吞吐率：19.23req/s] [内存消耗：3,856.37kb] [文件加载：55]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/main.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000976s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000791s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000522s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.002068s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000748s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:50:58+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/stuffreview/staffs
+[ info ] 10.0.53.230/CTT-MS-server/stuffreview/staffs [运行时间：0.057019s][吞吐率：17.54req/s] [内存消耗：3,894.23kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffReview',
+    2 => 'staffs',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_review.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffReview->staffs[ E:\code\php\CTT-MS-server\application\index\controller\StuffReview.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001154s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000750s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000420s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001542s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.001481s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.002113s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `staff` FROM `stuff_out_record` WHERE  `storehouse` = '丹棱库'  AND `is_out` = 0 [ RunTime:0.001061s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:50:58+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/stuffreview/newcount
+[ info ] 10.0.53.230/CTT-MS-server/stuffreview/newcount [运行时间：0.061514s][吞吐率：16.26req/s] [内存消耗：3,901.14kb] [文件加载：57]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffReview',
+    2 => 'newCount',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_review.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffReview->newCount[ E:\code\php\CTT-MS-server\application\index\controller\StuffReview.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001111s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001029s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000475s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.002092s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.001003s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.001395s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`quantity`,`b`.`manufacturer`,`b`.`type`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`storehouse` = '丹棱库'  AND `a`.`is_out` = 0 [ RunTime:0.000915s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:50:58+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/categoryquery
+[ info ] 10.0.53.230/CTT-MS-server/categoryquery [运行时间：0.061845s][吞吐率：16.17req/s] [内存消耗：3,847.57kb] [文件加载：56]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Query',
+    2 => 'category',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => '*/*',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_review.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Query->category[ E:\code\php\CTT-MS-server\application\index\controller\Query.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002126s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.002290s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000494s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000824s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000469s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `category` [ RunTime:0.000574s ]
+[ sql ] [ SQL ] SELECT `category_name` FROM `category` [ RunTime:0.000340s ]
+---------------------------------------------------------------
+[ 2017-12-27T17:50:58+08:00 ] 10.0.53.230 10.2.130.195 POST /CTT-MS-server/stuffreview/newapplication
+[ info ] 10.0.53.230/CTT-MS-server/stuffreview/newapplication [运行时间：0.047801s][吞吐率：20.92req/s] [内存消耗：3,906.77kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffReview',
+    2 => 'newApplication',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => '10.0.53.230',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://10.2.130.195:8000',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://10.2.130.195:8000/CTT-MS/stuff_review.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => '3f01b5036cdbf5bbfde6e461de152548',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffReview->newApplication[ E:\code\php\CTT-MS-server\application\index\controller\StuffReview.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001163s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000910s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = '3f01b5036cdbf5bbfde6e461de152548' LIMIT 1 [ RunTime:0.000576s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000635s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000321s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000518s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`quantity`,`b`.`manufacturer`,`b`.`type`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`storehouse` = '丹棱库'  AND `a`.`is_out` = 0 [ RunTime:0.000477s ]
+---------------------------------------------------------------
+[ 2017-12-27T18:04:43+08:00 ] ::1 ::1 POST /CTT-MS-server/login
+[ info ] localhost/CTT-MS-server/login [运行时间：0.042210s][吞吐率：23.69req/s] [内存消耗：3,452.38kb] [文件加载：53]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'login',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '28',
+  'accept' => '*/*',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=e97b8018263c0c0d69b01a551263c3c5',
+)
+[ info ] [ PARAM ] array (
+  'username' => '005',
+  'password' => '123456',
+)
+[ info ] [ RUN ] app\index\controller\Auth->login[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001255s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001282s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `username` = '005' LIMIT 1 [ RunTime:0.000639s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `cookie_username`='eee1bd340c5e3f022f0e9f525924cfaf'  WHERE  `username` = '005' [ RunTime:0.000566s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `last_login_time`='2017-12-27 18:04:43'  WHERE  `username` = '005' [ RunTime:0.000436s ]
+[ sql ] [ SQL ] UPDATE `user`  SET `last_logout_time`='2017-12-27 18:04:43'  WHERE  `username` = '005' [ RunTime:0.000424s ]
+---------------------------------------------------------------
+[ 2017-12-27T18:04:43+08:00 ] ::1 ::1 POST /CTT-MS-server/checkauth
+[ info ] localhost/CTT-MS-server/checkauth [运行时间：0.035384s][吞吐率：28.26req/s] [内存消耗：3,857.22kb] [文件加载：55]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/main.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => 'eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001190s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000726s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'eee1bd340c5e3f022f0e9f525924cfaf' LIMIT 1 [ RunTime:0.000463s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000768s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000455s ]
+---------------------------------------------------------------
+[ 2017-12-27T18:04:45+08:00 ] ::1 ::1 POST /CTT-MS-server/checkauth
+[ info ] localhost/CTT-MS-server/checkauth [运行时间：0.037170s][吞吐率：26.90req/s] [内存消耗：3,857.13kb] [文件加载：55]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/main.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => 'eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001007s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000801s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'eee1bd340c5e3f022f0e9f525924cfaf' LIMIT 1 [ RunTime:0.000406s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001270s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000449s ]
+---------------------------------------------------------------
+[ 2017-12-27T18:04:45+08:00 ] ::1 ::1 POST /CTT-MS-server/userstorehousequery
+[ info ] localhost/CTT-MS-server/userstorehousequery [运行时间：0.037381s][吞吐率：26.75req/s] [内存消耗：3,857.68kb] [文件加载：56]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Query',
+    2 => 'userStorehouse',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/check_stuff_out_record.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => 'eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Query->userStorehouse[ E:\code\php\CTT-MS-server\application\index\controller\Query.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000772s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000899s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'eee1bd340c5e3f022f0e9f525924cfaf' LIMIT 1 [ RunTime:0.000301s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000803s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000539s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'eee1bd340c5e3f022f0e9f525924cfaf' LIMIT 1 [ RunTime:0.000361s ]
+---------------------------------------------------------------
+[ 2017-12-27T18:04:46+08:00 ] ::1 ::1 POST /CTT-MS-server/stuffoutrecord
+[ info ] localhost/CTT-MS-server/stuffoutrecord [运行时间：0.049008s][吞吐率：20.40req/s] [内存消耗：3,904.04kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffOutRecord',
+    2 => 'check',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '102',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/check_stuff_out_record.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => 'eee1bd340c5e3f022f0e9f525924cfaf',
+  'query' => '{&quot;pageinfo&quot;:{&quot;curpage&quot;:1,&quot;pageinate&quot;:10},&quot;condition&quot;:{}}',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffOutRecord->check[ E:\code\php\CTT-MS-server\application\index\controller\StuffOutRecord.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000977s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001219s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'eee1bd340c5e3f022f0e9f525924cfaf' LIMIT 1 [ RunTime:0.000582s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000852s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000607s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000787s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`manufacturer`,`b`.`type`,`b`.`stuff_id`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`is_out` = 5  AND `a`.`storehouse` = '丹棱库' ORDER BY a.out_date desc LIMIT 0,10 [ RunTime:0.000827s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`manufacturer`,`b`.`type`,`b`.`stuff_id`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`is_out` = 5  AND `a`.`storehouse` = '丹棱库' [ RunTime:0.000559s ]
+---------------------------------------------------------------
+[ 2017-12-27T18:04:46+08:00 ] ::1 ::1 POST /CTT-MS-server/stuffoutrecord
+[ info ] localhost/CTT-MS-server/stuffoutrecord [运行时间：0.047578s][吞吐率：21.02req/s] [内存消耗：3,904.07kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffOutRecord',
+    2 => 'check',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '109',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/check_stuff_out_record.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => 'eee1bd340c5e3f022f0e9f525924cfaf',
+  'query' => '{&quot;pageinfo&quot;:{&quot;curpage&quot;:1,&quot;pageinate&quot;:100000000},&quot;condition&quot;:{}}',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffOutRecord->check[ E:\code\php\CTT-MS-server\application\index\controller\StuffOutRecord.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000963s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001212s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'eee1bd340c5e3f022f0e9f525924cfaf' LIMIT 1 [ RunTime:0.000636s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000879s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000605s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000857s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`manufacturer`,`b`.`type`,`b`.`stuff_id`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`is_out` = 5  AND `a`.`storehouse` = '丹棱库' ORDER BY a.out_date desc LIMIT 0,100000000 [ RunTime:0.000808s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`manufacturer`,`b`.`type`,`b`.`stuff_id`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`is_out` = 5  AND `a`.`storehouse` = '丹棱库' [ RunTime:0.000674s ]
+---------------------------------------------------------------
+[ 2017-12-27T18:04:47+08:00 ] ::1 ::1 POST /CTT-MS-server/checkauth
+[ info ] localhost/CTT-MS-server/checkauth [运行时间：0.044227s][吞吐率：22.61req/s] [内存消耗：3,857.13kb] [文件加载：55]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/main.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => 'eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010775s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000744s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'eee1bd340c5e3f022f0e9f525924cfaf' LIMIT 1 [ RunTime:0.000372s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000698s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000441s ]
+---------------------------------------------------------------
+[ 2017-12-27T18:04:47+08:00 ] ::1 ::1 POST /CTT-MS-server/stuffreview/newcount
+[ info ] localhost/CTT-MS-server/stuffreview/newcount [运行时间：0.039586s][吞吐率：25.26req/s] [内存消耗：3,902.17kb] [文件加载：57]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffReview',
+    2 => 'newCount',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/stuff_review.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => 'eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffReview->newCount[ E:\code\php\CTT-MS-server\application\index\controller\StuffReview.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002026s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001098s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'eee1bd340c5e3f022f0e9f525924cfaf' LIMIT 1 [ RunTime:0.000495s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001057s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000346s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000877s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`quantity`,`b`.`manufacturer`,`b`.`type`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`storehouse` = '丹棱库'  AND `a`.`is_out` = 0 [ RunTime:0.000446s ]
+---------------------------------------------------------------
+[ 2017-12-27T18:04:47+08:00 ] ::1 ::1 POST /CTT-MS-server/categoryquery
+[ info ] localhost/CTT-MS-server/categoryquery [运行时间：0.040203s][吞吐率：24.87req/s] [内存消耗：3,848.23kb] [文件加载：56]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Query',
+    2 => 'category',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => '*/*',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/stuff_review.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => 'eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Query->category[ E:\code\php\CTT-MS-server\application\index\controller\Query.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000805s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000942s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'eee1bd340c5e3f022f0e9f525924cfaf' LIMIT 1 [ RunTime:0.000423s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000882s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000502s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `category` [ RunTime:0.000808s ]
+[ sql ] [ SQL ] SELECT `category_name` FROM `category` [ RunTime:0.000444s ]
+---------------------------------------------------------------
+[ 2017-12-27T18:04:47+08:00 ] ::1 ::1 POST /CTT-MS-server/stuffreview/newapplication
+[ info ] localhost/CTT-MS-server/stuffreview/newapplication [运行时间：0.044910s][吞吐率：22.27req/s] [内存消耗：3,907.80kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffReview',
+    2 => 'newApplication',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/stuff_review.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => 'eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffReview->newApplication[ E:\code\php\CTT-MS-server\application\index\controller\StuffReview.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001176s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.002485s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'eee1bd340c5e3f022f0e9f525924cfaf' LIMIT 1 [ RunTime:0.000760s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000850s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000498s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000668s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`quantity`,`b`.`manufacturer`,`b`.`type`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`storehouse` = '丹棱库'  AND `a`.`is_out` = 0 [ RunTime:0.000474s ]
+---------------------------------------------------------------
+[ 2017-12-27T18:04:59+08:00 ] ::1 ::1 POST /CTT-MS-server/checkauth
+[ info ] localhost/CTT-MS-server/checkauth [运行时间：0.037363s][吞吐率：26.76req/s] [内存消耗：3,857.22kb] [文件加载：55]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/main.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => 'eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000839s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000863s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'eee1bd340c5e3f022f0e9f525924cfaf' LIMIT 1 [ RunTime:0.000371s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000627s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000476s ]
+---------------------------------------------------------------
+[ 2017-12-27T18:05:01+08:00 ] ::1 ::1 POST /CTT-MS-server/checkauth
+[ info ] localhost/CTT-MS-server/checkauth [运行时间：0.037473s][吞吐率：26.69req/s] [内存消耗：3,857.13kb] [文件加载：55]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/main.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => 'eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001136s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000852s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'eee1bd340c5e3f022f0e9f525924cfaf' LIMIT 1 [ RunTime:0.000496s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000758s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000398s ]
+---------------------------------------------------------------
+[ 2017-12-27T18:05:01+08:00 ] ::1 ::1 POST /CTT-MS-server/stuffreview/staffs
+[ info ] localhost/CTT-MS-server/stuffreview/staffs [运行时间：0.044567s][吞吐率：22.44req/s] [内存消耗：3,895.02kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffReview',
+    2 => 'staffs',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/stuff_review.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => 'eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffReview->staffs[ E:\code\php\CTT-MS-server\application\index\controller\StuffReview.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000855s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000922s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'eee1bd340c5e3f022f0e9f525924cfaf' LIMIT 1 [ RunTime:0.000490s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000873s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000485s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.002305s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `staff` FROM `stuff_out_record` WHERE  `storehouse` = '丹棱库'  AND `is_out` = 0 [ RunTime:0.000653s ]
+---------------------------------------------------------------
+[ 2017-12-27T18:05:01+08:00 ] ::1 ::1 POST /CTT-MS-server/stuffreview/newcount
+[ info ] localhost/CTT-MS-server/stuffreview/newcount [运行时间：0.048436s][吞吐率：20.65req/s] [内存消耗：3,902.17kb] [文件加载：57]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffReview',
+    2 => 'newCount',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/stuff_review.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => 'eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffReview->newCount[ E:\code\php\CTT-MS-server\application\index\controller\StuffReview.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000861s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001176s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'eee1bd340c5e3f022f0e9f525924cfaf' LIMIT 1 [ RunTime:0.000482s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000994s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000412s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000805s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`quantity`,`b`.`manufacturer`,`b`.`type`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`storehouse` = '丹棱库'  AND `a`.`is_out` = 0 [ RunTime:0.000581s ]
+---------------------------------------------------------------
+[ 2017-12-27T18:05:01+08:00 ] ::1 ::1 POST /CTT-MS-server/categoryquery
+[ info ] localhost/CTT-MS-server/categoryquery [运行时间：0.054339s][吞吐率：18.40req/s] [内存消耗：3,848.23kb] [文件加载：56]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Query',
+    2 => 'category',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => '*/*',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/stuff_review.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => 'eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Query->category[ E:\code\php\CTT-MS-server\application\index\controller\Query.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001043s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.003260s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'eee1bd340c5e3f022f0e9f525924cfaf' LIMIT 1 [ RunTime:0.000556s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000771s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000404s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `category` [ RunTime:0.000655s ]
+[ sql ] [ SQL ] SELECT `category_name` FROM `category` [ RunTime:0.000317s ]
+---------------------------------------------------------------
+[ 2017-12-27T18:05:01+08:00 ] ::1 ::1 POST /CTT-MS-server/stuffreview/newapplication
+[ info ] localhost/CTT-MS-server/stuffreview/newapplication [运行时间：0.049129s][吞吐率：20.35req/s] [内存消耗：3,907.80kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffReview',
+    2 => 'newApplication',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/stuff_review.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => 'eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffReview->newApplication[ E:\code\php\CTT-MS-server\application\index\controller\StuffReview.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001298s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001852s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'eee1bd340c5e3f022f0e9f525924cfaf' LIMIT 1 [ RunTime:0.002005s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000772s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000421s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.001146s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`quantity`,`b`.`manufacturer`,`b`.`type`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`storehouse` = '丹棱库'  AND `a`.`is_out` = 0 [ RunTime:0.000793s ]
+---------------------------------------------------------------
+[ 2017-12-27T18:05:06+08:00 ] ::1 ::1 POST /CTT-MS-server/checkauth
+[ info ] localhost/CTT-MS-server/checkauth [运行时间：0.035671s][吞吐率：28.03req/s] [内存消耗：3,857.13kb] [文件加载：55]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Auth',
+    2 => 'checkAuth',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/main.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => 'eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ RUN ] app\index\controller\Auth->checkAuth[ E:\code\php\CTT-MS-server\application\index\controller\Auth.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000756s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001046s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'eee1bd340c5e3f022f0e9f525924cfaf' LIMIT 1 [ RunTime:0.000609s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000799s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000441s ]
+---------------------------------------------------------------
+[ 2017-12-27T18:05:06+08:00 ] ::1 ::1 POST /CTT-MS-server/stuffout/staffs
+[ info ] localhost/CTT-MS-server/stuffout/staffs [运行时间：0.050447s][吞吐率：19.82req/s] [内存消耗：3,894.95kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffOut',
+    2 => 'staffs',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/stuff_out.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => 'eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffOut->staffs[ E:\code\php\CTT-MS-server\application\index\controller\StuffOut.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000817s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001032s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'eee1bd340c5e3f022f0e9f525924cfaf' LIMIT 1 [ RunTime:0.000643s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001002s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000490s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000765s ]
+[ sql ] [ SQL ] SELECT DISTINCT  `staff` FROM `stuff_out_record` WHERE  `storehouse` = '丹棱库'  AND `is_out` = 1 [ RunTime:0.000397s ]
+---------------------------------------------------------------
+[ 2017-12-27T18:05:06+08:00 ] ::1 ::1 POST /CTT-MS-server/stuffout/newcount
+[ info ] localhost/CTT-MS-server/stuffout/newcount [运行时间：0.050079s][吞吐率：19.97req/s] [内存消耗：3,902.23kb] [文件加载：57]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffOut',
+    2 => 'newCount',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/stuff_out.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => 'eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffOut->newCount[ E:\code\php\CTT-MS-server\application\index\controller\StuffOut.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000933s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.001054s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'eee1bd340c5e3f022f0e9f525924cfaf' LIMIT 1 [ RunTime:0.000510s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001139s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000528s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000669s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`quantity`,`b`.`manufacturer`,`b`.`type`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`storehouse` = '丹棱库'  AND `a`.`is_out` = 1 [ RunTime:0.000472s ]
+---------------------------------------------------------------
+[ 2017-12-27T18:05:06+08:00 ] ::1 ::1 POST /CTT-MS-server/categoryquery
+[ info ] localhost/CTT-MS-server/categoryquery [运行时间：0.047958s][吞吐率：20.85req/s] [内存消耗：3,848.21kb] [文件加载：56]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'Query',
+    2 => 'category',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => '*/*',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/stuff_out.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => 'eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Query->category[ E:\code\php\CTT-MS-server\application\index\controller\Query.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000949s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000805s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'eee1bd340c5e3f022f0e9f525924cfaf' LIMIT 1 [ RunTime:0.000586s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.000921s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000483s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `category` [ RunTime:0.000816s ]
+[ sql ] [ SQL ] SELECT `category_name` FROM `category` [ RunTime:0.000297s ]
+---------------------------------------------------------------
+[ 2017-12-27T18:05:06+08:00 ] ::1 ::1 POST /CTT-MS-server/stuffout/newapplication
+[ info ] localhost/CTT-MS-server/stuffout/newapplication [运行时间：0.047302s][吞吐率：21.14req/s] [内存消耗：3,907.85kb] [文件加载：58]
+[ info ] [ LANG ] E:\code\php\CTT-MS-server\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'StuffOut',
+    2 => 'newApplication',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '39',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'origin' => 'http://localhost',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/ctt-ms/stuff_out.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'pgv_pvi=4484905984; csrftoken=hP2kz6A2TThNEpfhLAqDRyRBIL6N1BjynFRQQe1Pbmw1jSePrYpG4BFXC6lWgmlw; _ga=GA1.1.203632370.1510848144; PHPSESSID=p5dobl68od3di741mq1gbpcdm6; username=eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ PARAM ] array (
+  'cookie' => 'eee1bd340c5e3f022f0e9f525924cfaf',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\StuffOut->newApplication[ E:\code\php\CTT-MS-server\application\index\controller\StuffOut.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000763s ] mysql:dbname=ctt-ms;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.000782s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `cookie_username` = 'eee1bd340c5e3f022f0e9f525924cfaf' LIMIT 1 [ RunTime:0.000332s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `auth` [ RunTime:0.001687s ]
+[ sql ] [ SQL ] SELECT * FROM `auth` WHERE  `uid` = 8 LIMIT 1 [ RunTime:0.000276s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `stuff_out_record` [ RunTime:0.000575s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`quantity`,`b`.`manufacturer`,`b`.`type`,`c`.`stuff_name`,`c`.`unit`,`c`.`category_name` FROM `stuff_out_record` `a` INNER JOIN `inventory` `b` ON `a`.`inventory_id`=`b`.`id` INNER JOIN `stuff` `c` ON `b`.`stuff_id`=`c`.`id` WHERE  `a`.`storehouse` = '丹棱库'  AND `a`.`is_out` = 1 [ RunTime:0.000508s ]

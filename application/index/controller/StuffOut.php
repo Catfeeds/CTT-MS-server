@@ -63,7 +63,12 @@ class StuffOut extends Base
             ->distinct(true)
             ->field('staff')
             ->select();
-        return json($res);
+        $list = [];
+        foreach ($res as $value){
+            $tmp = ['value'=>$value['staff'],'label'=>$value['staff']];
+            array_push($list,$tmp);
+        }
+        return json($list);
     }
 
     //根据装维姓名来查询
