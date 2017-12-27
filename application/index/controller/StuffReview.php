@@ -58,8 +58,8 @@ class StuffReview extends Base
     //查询申请的所有装维姓名
     public function staffs(){
         $res = db('stuff_out_record')
-            ->where('a.storehouse',$this->user['storehouse'])
-            ->where('a.is_out',0)
+            ->where('storehouse',$this->user['storehouse'])
+            ->where('is_out',0)
             ->distinct(true)
             ->field('staff')
             ->select();
