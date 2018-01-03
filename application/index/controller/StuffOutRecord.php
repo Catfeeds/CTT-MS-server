@@ -82,7 +82,7 @@ class StuffOutRecord extends Base
         return json($result);
     }
 
-    //查询已经发放的材料记录（尚未接收）
+    //查询已经发放的材料记录（已审批接收）
     public function check2(){
         $json = isset(Request::instance()->post(false)['query'])?Request::instance()->post(false)['query']:null;
         //$json = '{"pageinfo":{"curpage":1,"pageinate":10},"condition":{"where":["a.storehouse","丹棱一库"],"like":["manufacturer|a.storehouse|category_name|stuff_name|staff|operator1|operator2","%网%"]}}';
@@ -99,14 +99,14 @@ class StuffOutRecord extends Base
             ->join('inventory b','a.inventory_id = b.id')
             ->join('stuff c','b.stuff_id = c.id')
             ->field($filed)
-            ->where('a.is_out',3)
+            ->where('a.is_out',1)
             ->where('a.storehouse',$userStorehouse);
         $result1 = db('stuff_out_record')
             ->alias('a')
             ->join('inventory b','a.inventory_id = b.id')
             ->join('stuff c','b.stuff_id = c.id')
             ->field($filed)
-            ->where('a.is_out',3)
+            ->where('a.is_out',1)
             ->where('a.storehouse',$userStorehouse);
         $order = isset($limit['order'])?$limit['order']:'a.out_date desc';
         //若排序条件为normal，则将$oeder赋值为null，时间逆序
@@ -133,4 +133,5 @@ class StuffOutRecord extends Base
         array_unshift($result,['datacount'=>$dataCount]);
         return json($result);
     }
+
 }

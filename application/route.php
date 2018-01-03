@@ -145,6 +145,12 @@ Route::rule([
 
     //查询已发放的材料（尚未接收）
     'stuffoutrecord2' => 'index/StuffOutRecord/check2',
+
+    //确认接收
+    'stuffoutrecord/agree' => 'index/StuffOutRecord/agree',
+
+    //批量确认接收
+    'stuffoutrecord/agreeall' => 'index/StuffOutRecord/agreeAll',
 ]);
 
 //盘存
