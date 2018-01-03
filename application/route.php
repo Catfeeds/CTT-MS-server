@@ -120,6 +120,9 @@ Route::rule([
     'stuffreview/newapplication' => 'index/StuffReview/newApplication',//待审批的申请详情
     'stuffreview/staffs' => 'index/StuffReview/staffs',//待审批的装维姓名
     'stuffreview/newappbyname' => 'index/StuffReview/newAppByName',//按装维姓名查询待审批的申请
+    'stuffreview/stuffs' => 'index/StuffReview/stuffs',//查询所有的物资名称
+    'stuffreview/stufftype' => 'index/StuffReview/stuffType',//根据物资名称查询物资型号
+    'stuffreview/newappbytype' => 'index/StuffReview/newAppByType',//按物资名称型号查询待审批的申请
     'stuffreview/agree' => 'index/StuffReview/agree', //同意申请
     'stuffreview/agreeall' => 'index/StuffReview/agreeAll', //批量同意
     'stuffreview/refuse' => 'index/StuffReview/refuse', //拒绝申请
@@ -128,7 +131,10 @@ Route::rule([
     'stuffout/newcount' => 'index/StuffOut/newCount',//待审批的申请数量
     'stuffout/newapplication' => 'index/StuffOut/newApplication',//待发放的申请详情
     'stuffout/staffs' => 'index/StuffOut/staffs',//待发放的装维姓名
-    'stuffout/newappbyname' => 'index/StuffOut/newAppByName',//待发放的申请详情
+    'stuffout/newappbyname' => 'index/StuffOut/newAppByName',//按装维姓名查询待发放的申请
+    'stuffout/stuffs' => 'index/StuffOut/stuffs',//查询所有的物资名称
+    'stuffout/stufftype' => 'index/StuffOut/stuffType',//根据物资名称查询物资型号
+    'stuffout/newappbytype' => 'index/StuffOut/newAppByType',//按资名称型号查询待发放的申请
     'stuffout/agree' => 'index/StuffOut/agree', //同意申请
     'stuffout/agreeall' => 'index/StuffOut/agreeAll', //批量同意
     'stuffout/refuse' => 'index/StuffOut/refuse', //拒绝申请

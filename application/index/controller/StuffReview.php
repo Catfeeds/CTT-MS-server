@@ -87,6 +87,62 @@ class StuffReview extends Base
         return json($res);
     }
 
+
+    //查询所有的物资名称
+    public function stuffs(){
+        $res = db('stuff_out_record')
+            ->alias('a')
+            ->join('inventory b','a.inventory_id = b.id')
+            ->join('stuff c','b.stuff_id = c.id')
+            ->where('a.storehouse',$this->user['storehouse'])
+            ->where('a.is_out',0)
+            ->distinct(true)
+            ->field('c.stuff_name')
+            ->select();
+        $list = [];
+        foreach ($res as $value){
+            $tmp = ['value'=>$value['stuff_name'],'label'=>$value['stuff_name']];
+            array_push($list,$tmp);
+        }
+        return json($list);
+    }
+
+    //根据物资名称返回材料型号
+    public function stuffType($stuff_name){
+        $res = db('stuff_out_record')
+            ->alias('a')
+            ->join('inventory b','a.inventory_id = b.id')
+            ->join('stuff c','b.stuff_id = c.id')
+            ->where('a.storehouse',$this->user['storehouse'])
+            ->where('a.is_out',0)
+            ->where('c.stuff_name',$stuff_name)
+            ->distinct(true)
+            ->field('b.type')
+            ->select();
+        $list = [];
+        foreach ($res as $value){
+            $tmp = ['value'=>$value['type'],'label'=>$value['type']];
+            array_push($list,$tmp);
+        }
+        return json($list);
+    }
+
+    //根据材料名称和材料型号查询申请
+    public function newAppByType($stuff_name,$type){
+        $filed = ['a.*','b.quantity','b.manufacturer','b.type','c.stuff_name','c.unit','c.category_name'];
+        $res = db('stuff_out_record')
+            ->alias('a')
+            ->join('inventory b','a.inventory_id = b.id')
+            ->join('stuff c','b.stuff_id = c.id')
+            ->field($filed)
+            ->where('a.storehouse',$this->user['storehouse'])
+            ->where('a.is_out',0)
+            ->where('b.type',$type)
+            ->where('c.stuff_name',$stuff_name)
+            ->select();
+        return json($res);
+    }
+
     //检查提交的操作
     private function checkHandel($id){
         $app = Db::table('stuff_out_record')
