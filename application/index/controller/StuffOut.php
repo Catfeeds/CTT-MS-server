@@ -167,7 +167,7 @@ class StuffOut extends Base
             return returnWarning('申请数量大于库存数量！');
         Db::table('stuff_out_record')
             ->where('id',$id)
-            ->update(['is_out'=>3,'operator2'=>$this->user['name']]);
+            ->update(['is_out'=>3,'operator2'=>$this->user['name'],'is_out'=>1]);
         return returnSuccess('申请已同意');
     }
 
@@ -186,7 +186,7 @@ class StuffOut extends Base
         foreach ($idArr as $id){
             Db::table('stuff_out_record')
                 ->where('id',$id)
-                ->update(['is_out'=>3,'operator2'=>$this->user['name']]);
+                ->update(['is_out'=>3,'operator2'=>$this->user['name'],'is_out'=>1]);
         }
         return returnSuccess('申请已同意');
     }
@@ -199,7 +199,7 @@ class StuffOut extends Base
             return $res;
         Db::table('stuff_out_record')
             ->where('id',$id)
-            ->update(['is_out'=>4,'remark'=>$reason]);
+            ->update(['is_out'=>4,'remark'=>$reason,'is_out'=>1]);
         return returnSuccess('申请已驳回');
     }
 
